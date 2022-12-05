@@ -1,0 +1,64 @@
+/* properties section */
+
+.homepage-main__properties {
+    background: var(--properties-background);
+    margin-top: 103px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.homepage-main__properties-adapt {
+    display: none;
+}
+
+.homepage-main__property {
+    margin-top: 77px;
+    margin-bottom: 78px;
+    border-right: 1.79259px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homepage-main__property:last-child {
+    border-right: none;
+}
+
+.guarantee {
+    max-width: 105px;
+    max-height: 100px;
+}
+
+.rust-free {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.service {
+    max-width: 86px;
+    max-height: 100px;
+}
+
+.homepage-main__property-heading {
+    margin-top: 26.8px;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.265em;
+    text-transform: uppercase;
+    color: var(--text-on-picture);
+}
+
+.homepage-main__property-text {
+    margin-top: 17.36px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    text-align: center;
+    color: var(--text-on-picture);
+}

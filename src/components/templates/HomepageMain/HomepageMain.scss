@@ -1,0 +1,582 @@
+@media screen and (max-width: 1740px) {
+    .homepage-main__picture-section {
+        height: 920px;
+    }
+
+    .homepage-main__picture-section-inner-wrapper {
+        padding-top: 170px;
+    }
+
+    .homepage-main__picture-section-heading {
+        font-size: 55px;
+        max-width: 995px;
+    }
+
+    .homepage-main__picture-section-text {
+        font-size: 20px;
+    }
+
+    .homepage-main__picture-section-button {
+        font-size: 20px;
+    }
+
+    .homepage-main__comment-section-comment-heading {
+        font-size: 55px;
+    }
+
+    .homepage-main__comment-section-comment {
+        padding-right: 80px;
+        padding-top: 0;
+    }
+
+    .homepage-main__comment-section-comment-text {
+        margin-top: 40px;
+    }
+
+    .homepage-main__comment-section-comment-author {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .homepage-main__picture-section {
+        height: 730px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .homepage-main__picture-section-inner-wrapper {
+        padding-top: 90px;
+    }
+
+    .homepage-main__picture-section {
+        height: 665px;
+    }
+
+    .homepage-main__picture-section-heading {
+        font-size: 45px;
+        max-width: 810px;
+        line-height: 65px;
+    }
+
+    .homepage-main__picture-section-text {
+        font-size: 16px;
+        max-width: 480px;
+        line-height: 30px;
+    }
+
+    .homepage-main__picture-section-button {
+        width: 300px;
+        height: 70px;
+        font-size: 16px;
+    }
+
+    .homepage-main__properties {
+        margin-top: 50px;
+    }
+
+    .homepage-main__property {
+        margin: 40px 0;
+    }
+
+    .guarantee,
+    .rust-free,
+    .service {
+        max-width: 70px;
+        max-height: 70px;
+    }
+
+    .homepage-main__property-heading {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .homepage-main__property-text {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .homepage-main__in-stock {
+        margin-top: 50px;
+    }
+
+    .homepage-main__in-stock-heading {
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    .homepage-main__in-stock-text {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .homepage-main__european-manufacturing {
+        margin-top: 70px;
+        height: 580px;
+    }
+
+    .homepage-main__european-manufacturing-img {
+        height: 580px;
+        background-size: cover;
+    }
+
+    .homepage-main__european-manufacturing-icon {
+        height: 80px;
+        margin-top: 64px;
+    }
+
+    .homepage-main__european-manufacturing-heading {
+        font-size: 18px;
+    }
+
+    .homepage-main__european-manufacturing-text {
+        font-size: 45px;
+        line-height: 80px;
+    }
+
+    .homepage-main__comment-section {
+        margin-top: 50px;
+    }
+
+    .homepage-main__comment-section-comment {
+        padding-right: 40px;
+    }
+
+    .homepage-main__comment-section-comment-heading {
+        font-size: 45px;
+    }
+
+    .homepage-main__comment-section-comment-text,
+    .homepage-main__comment-section-comment-author-name {
+        font-size: 18px;
+    }
+
+    .homepage-main__comment-section-comment-author-rating-img {
+        width: 35px;
+    }
+
+    .homepage-main__gallery-section-heading {
+        font-size: 45px;
+        margin-top: 50px;
+    }
+
+    .homepage-main__gallery-section-gallery-btn {
+        font-size: 18px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    .homepage-main__picture-section {
+        height: 585px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .homepage-main__picture-section {
+        height: 530px;
+    }
+
+    .homepage-main__picture-section-heading {
+        font-size: 33px;
+        max-width: 530px;
+        line-height: 48px;
+    }
+
+    .homepage-main__picture-section-text {
+        font-size: 12px;
+        max-width: 346px;
+        line-height: 23px;
+    }
+
+    .homepage-main__picture-section-button {
+        width: 230px;
+        height: 55px;
+        font-size: 13px;
+    }
+
+    .homepage-main__properties {
+        margin-top: 35px;
+    }
+
+    .homepage-main__property {
+        margin: 25px 0;
+    }
+
+    .guarantee,
+    .rust-free,
+    .service {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .homepage-main__property-heading {
+        font-size: 13px;
+        margin-top: 15px;
+        line-height: 15px;
+    }
+
+    .homepage-main__property-text {
+        margin-top: 0px;
+        font-size: 12px;
+    }
+
+    .homepage-main__in-stock {
+        margin-top: 35px;
+    }
+
+    .homepage-main__in-stock-heading {
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    .homepage-main__in-stock-text {
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    .homepage-main__european-manufacturing {
+        margin-top: 40px;
+        height: 380px;
+    }
+
+    .homepage-main__european-manufacturing-img {
+        height: 380px;
+    }
+
+    .homepage-main__european-manufacturing-icon {
+        height: 55px;
+        margin-top: 35px;
+    }
+
+    .homepage-main__european-manufacturing-heading {
+        font-size: 14px;
+        margin-top: 25px;
+    }
+
+    .homepage-main__european-manufacturing-text {
+        font-size: 35px;
+        line-height: 60px;
+    }
+
+
+    .homepage-main__comment-section-comment-heading {
+        font-size: 31px;
+        line-height: 44px;
+    }
+
+    .homepage-main__comment-section-comment-text,
+    .homepage-main__comment-section-comment-author-name {
+        font-size: 13px;
+        line-height: 24px;
+    }
+
+    .homepage-main__comment-section-comment {
+        padding-right: 30px;
+    }
+
+    .homepage-main__comment-section-comment-author-rating-img {
+        width: 25px;
+    }
+
+    .homepage-main__gallery-section-heading {
+        font-size: 35px;
+        line-height: 45px;
+        margin-top: 30px;
+    }
+
+    .homepage-main__gallery-section-gallery {
+        margin-top: 15px;
+    }
+
+    .homepage-main__gallery-section-gallery-btn {
+        font-size: 11px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .homepage-main__picture-section {
+        height: 460px;
+        background-size: cover;
+    }
+
+    .homepage-main__picture-section-inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 88px;
+    }
+
+    .homepage-main__picture-section-heading {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 52px;
+        max-width: 351px;
+    }
+
+    .homepage-main__picture-section-text {
+        display: none;
+    }
+
+    .homepage-main__picture-section-button {
+        margin-top: 40px;
+    }
+
+    .homepage-main__properties {
+        display: none;
+    }
+
+    .homepage-main__properties-adapt {
+        display: block;
+        background: var(--properties-background);
+        display: grid;
+        margin-top: 42px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 285px 285px 285px;
+    }
+
+    .homepage-main__property {
+        border-right: none;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.3);
+        margin: 0 62px;
+        padding-top: 36px;
+    }
+
+    .homepage-main__property:first-child {
+        padding-top: 60px;
+    }
+
+    .guarantee {
+        max-width: 91px;
+        max-height: 91px;
+    }
+
+    .rust-free {
+        max-width: 95px;
+        max-height: 91px;
+    }
+
+    .service {
+        max-width: 78px;
+        max-height: 91px;
+    }
+
+    .homepage-main__property-heading {
+        margin-top: 24px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .homepage-main__property-text {
+        margin-top: 15px;
+        font-size: 22px;
+        line-height: 29px;
+    }
+
+    .homepage-main__in-stock {
+        margin-top: 42px;
+    }
+
+    .homepage-main__in-stock-heading {
+        line-height: 44px;
+        text-align: left;
+    }
+
+    .homepage-main__in-stock-text {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 29px;
+        max-width: 380px;
+        text-align: left;
+    }
+
+    .homepage-main__european-manufacturing,
+    .homepage-main__european-manufacturing-img {
+        height: 904px;
+    }
+
+    .homepage-main__european-manufacturing-icon {
+        margin-top: 72px;
+        height: 130px;
+    }
+
+    .homepage-main__european-manufacturing-heading {
+        margin-top: 50px;
+        font-size: 20px;
+        line-height: 41px;
+        text-align: center;
+        max-width: 379px;
+        letter-spacing: 6px;
+    }
+
+    .homepage-main__european-manufacturing-text {
+        margin-top: 29px;
+        font-size: 40px;
+        line-height: 67px;
+        max-width: 379px;
+    }
+
+    .product-section-2 {
+        display: none;
+    }
+
+    .homepage-main__comment-section-wrapper {
+        display: block;
+    }
+
+    .homepage-main__comment-section-comment {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .homepage-main__comment-section-comment-heading {
+        font-size: 35px;
+        line-height: 44px;
+        text-align: center;
+        max-width: 384px;
+    }
+
+    .homepage-main__comment-section-comment-text {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .homepage-main__comment-section-comment-author {
+        margin-top: 20px;
+    }
+
+    .homepage-main__comment-section-comment-author-name {
+        font-size: 20px;
+        line-height: 25px;
+        margin-left: 20px;
+    }
+
+    .homepage-main__gallery-section-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .homepage-main__gallery-section-heading {
+        margin-top: 43px;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 40px;
+        max-width: 408px;
+        text-align: center;
+    }
+
+    .homepage-main__gallery-section-gallery {
+        margin-top: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 380px 380px;
+    }
+
+    .homepage-main__gallery-section-gallery-btn {
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 0.445138px;
+        max-width: 155px;
+        height: 49px;
+        text-transform: none;
+        left: 32.5%;
+        right: 32.5%;
+        border: 1.78055px solid #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .homepage-main__gallery-section-gallery-btn {
+        left: 23.5%;
+        right: 23.5%;
+    }
+
+    .homepage-main__gallery-section-gallery {
+        grid-template-rows: 260px 260px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .homepage-main__gallery-section-gallery {
+        grid-template-rows: 214px 214px;
+    }
+
+    .homepage-main__gallery-section-gallery-btn {
+        left: 12.5%;
+        right: 12.5%;
+    }    
+
+    .homepage-main__comment-section-comment-text {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .homepage-main__picture-section-heading {
+        font-size: 30px;
+    }
+
+    .homepage-main__property {
+        margin: 0 20px;
+    }
+
+    .homepage-main__property-heading {
+        font-size: 22px;
+    }
+
+    .homepage-main__property-text {
+        font-size: 18px;
+    }
+
+    .homepage-main__european-manufacturing-icon {
+        height: 80px;
+    }
+
+    .homepage-main__european-manufacturing-text {
+        font-size: 35px;
+        line-height: 60px;
+    }
+
+    .homepage-main__comment-section-comment-heading {
+        padding: 0 10px;
+    }
+
+    .homepage-main__comment-section-comment-text {
+        font-size: 18px;
+    }
+    .homepage-main__comment-section-comment-author {
+        padding: 0 10px;
+    }
+
+    .homepage-main__comment-section-comment-author-rating-img {
+        width: 22px;
+    }
+
+    .homepage-main__comment-section-comment-author-name {
+        font-size: 18px;
+        margin-left: 15px;
+        letter-spacing: 1px;
+    }
+
+    .homepage-main__comment-section-comment-text {
+        padding-right: 10px;
+        padding-left: 10px;
+        line-height: 30px;
+    }
+
+    .homepage-main__gallery-section-gallery {
+        grid-template-rows: 170px 170px;
+    }
+
+    .homepage-main__gallery-section-gallery-btn {
+        font-size: 16px;
+        top: 38%;
+        height: 45px;
+    }
+}

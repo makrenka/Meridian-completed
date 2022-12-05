@@ -9,6 +9,7 @@ export class App extends Component {
     render() {
         return `
         <mrd-hederadbar></mrd-hederadbar>
+        <mrd-logo></mrd-logo>
         `
     }
 }

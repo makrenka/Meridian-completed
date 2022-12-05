@@ -1,0 +1,54 @@
+.container {
+    margin: 0 auto;
+    max-width: 1718px;
+}
+
+.divider {
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    height: 1.33px;
+}
+
+
+@media screen and (max-width: 1740px) {
+    .container {
+        max-width: 1260px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .container {
+        max-width: 1004px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 748px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 620px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        max-width: 408px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container {
+        max-width: 380px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .container {
+        max-width: 300px;
+    }
+}

@@ -7,6 +7,9 @@
 @import "./scss/theme/typography.scss";
 @import "./scss/theme/breakpoints.scss";
 
+@import "./scss/common.scss";
+@import "./scss/globals.scss";
+
 html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;

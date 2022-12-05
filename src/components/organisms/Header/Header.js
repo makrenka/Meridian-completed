@@ -6,13 +6,10 @@ export class Header extends Component {
         <mrd-hederadbar></mrd-hederadbar>
         <div class="container">
             <div class="header__main-bar">
-                <mrd-header-nav></mrd-header-nav>
-
                 <!-- Hamburger logo for adaptive -->
-                <img src="./images/icons/hamburger-menu.svg" alt="hamburger-menu" class="header__main-bar-hamburger-menu">
-
+                <img src="../../assets/images/icons/hamburger-menu.svg" alt="hamburger-menu" class="header__main-bar-hamburger-menu">
+                <mrd-header-nav></mrd-header-nav>
                 <mrd-logo></mrd-logo>
-
                 <div class="header__main-bar-retail-section-wrapper">
                     <mrd-header-retail></mrd-header-retail>
                     <div class="header__main-bar-icons">

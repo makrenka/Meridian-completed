@@ -1,0 +1,48 @@
+/* homepage-main__picture-section */
+
+.homepage-main__picture-section {
+    height: 1075.25px;
+    background: url(../../../assets/images/homepage-main-pic.jpg) no-repeat;
+    background-size: contain;
+}
+
+.homepage-main__picture-section-inner-wrapper {
+    padding-top: 223px;
+}
+
+.homepage-main__picture-section-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 75px;
+    line-height: 94px;
+    color: var(--text-on-picture);
+    max-width: 1099px;
+    margin: 0;
+}
+
+.homepage-main__picture-section-text {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 42px;
+    color: var(--text-on-picture);
+    max-width: 825px;
+    margin-top: 18px;
+}
+
+.homepage-main__picture-section-button {
+    margin-top: 55px;
+    width: 442.32px;
+    height: 96.57px;
+    background: var(--button-background);
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.265em;
+    text-transform: uppercase;
+    color: var(--text-on-picture);
+}

@@ -10,6 +10,7 @@ export class App extends Component {
         return `
         
             <mrd-header></mrd-header>
+            <mrd-home-main></mrd-home-main>
         `
     }
 }

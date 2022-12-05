@@ -21,3 +21,210 @@
     align-items: center;
 }
 
+
+@media screen and (max-width: 1740px) {
+    .header__main-bar-navigation-list-item {
+        padding-right: 15px;
+    }
+
+    .header__main-bar-navigation-list-link {
+        font-size: 19px;
+    }
+
+    .header__main-bar-logo {
+        width: 300px;
+    }
+
+    .header__main-bar-retail-section-list-item {
+        padding-right: 15px;
+    }
+
+    .header__main-bar-retail-section-list-link {
+        font-size: 19px;
+    }
+
+    .header__main-bar-icons-cart-img {
+        padding-right: 20px;
+    }
+
+    .header__main-bar-icons-cart-counter {
+        right: 10px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .header__ad-bar-text {
+        padding: 15px 0;
+    }
+
+    .header__ad-bar-text {
+        font-size: 16px;
+    }
+
+    .header__main-bar {
+        padding: 22px 0;
+    }
+
+    .header__main-bar-navigation-list-item {
+        padding-right: 15px;
+    }
+
+    .header__main-bar-navigation-list-link {
+        font-size: 15px;
+    }
+
+    .header__main-bar-logo {
+        width: 200px;
+    }
+
+    .header__main-bar-retail-section-list-item {
+        padding-right: 15px;
+    }
+
+    .header__main-bar-retail-section-list-link {
+        font-size: 16px;
+    }
+
+    .header__main-bar-icons-cart-img {
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header__ad-bar-text {
+        font-size: 14px;
+    }
+
+    .header__main-bar {
+        padding: 15px 0;
+    }
+
+    .header__main-bar-navigation-list-link,
+    .header__main-bar-retail-section-list-link {
+        font-size: 11px;
+    }
+
+    .header__main-bar-logo {
+        width: 180px;
+    }
+
+    .header__main-bar-navigation-list-item,
+    .header__main-bar-retail-section-list-item {
+        padding-right: 10px;
+    }
+
+    .header__main-bar-icons {
+        padding-left: 10px;
+    }
+
+    .header__main-bar-icons-cart {
+        padding-right: 5px;
+    }
+
+    .header__main-bar-icons-cart-img {
+        padding-right: 3px;
+        width: 28px;
+    }
+
+    .header__main-bar-icons-search {
+        width: 24px;
+    }
+
+    .header__main-bar-icons-cart-counter {
+        width: 20px;
+        height: 20px;
+        top: 13px;
+        right: 0;
+    }
+
+    .header__main-bar-icons-cart-counter-text {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__ad-bar-text {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    mrd-header-nav,
+    mrd-header-retail {
+        display: none;
+    }
+
+    .header__main-bar-hamburger-menu {
+        display: block;
+    }
+
+    .header__main-bar-logo {
+        width: 217px;
+    }
+
+    .header__main-bar-icons-search {
+        display: none;
+    }
+
+    .header__main-bar-icons-cart-img {
+        width: 30px;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header__main-bar-mobile {
+        position: absolute;
+        background: #fff;
+        padding: 20px;
+        border-top: 1px solid var(--header-nav-link);
+    }
+
+    .header__main-bar-mobile--active {
+        display: block;
+        z-index: 2;
+    }
+
+    .header__main-bar-mobile-search-input {
+        border: none;
+        border-bottom: 1px solid var(--header-nav-link);
+        font-family: 'HK Grotesk', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        margin-right: 10px;
+        width: 190px;
+    }
+
+    .header__main-bar-mobile-search-btn {
+        background: none;
+        border: none;
+    }
+
+    .header__main-mobile-bar-navigation-list {
+        padding: 20px 0;
+    }
+
+    .header__main-mobile-bar-retail-section-list {
+        padding-top: 20px;
+        border-top: 1px solid var(--header-nav-link);
+    }
+
+    .header__main-bar-navigation-list-link,
+    .header__main-bar-retail-section-list-link {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .header__ad-bar-text {
+        letter-spacing: 1px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .header__main-bar-logo {
+        width: 180px;
+    }
+}

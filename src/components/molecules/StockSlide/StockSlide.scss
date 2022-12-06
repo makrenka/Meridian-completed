@@ -1,0 +1,55 @@
+.homepage-main__in-stock-slide-img-wrapper {
+    height: 361px;
+    display: flex;
+    align-items: center;
+}
+
+.homepage-main__in-stock-slide-img-link {
+    display: contents;
+}
+
+.homepage-main__in-stock-slide-img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.homepage-main__in-stock-slide-description-wrapper {
+    margin: 0 auto;
+    max-width: 361px;
+}
+
+.homepage-main__in-stock-slide-title-link {
+    text-decoration: none;
+}
+
+.homepage-main__in-stock-slide-title {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25.1003px;
+    line-height: 32px;
+    color: var(--black-text);
+}
+
+.homepage-main__in-stock-slide-price {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: var(--grey-text);
+}
+
+.homepage-main__in-stock-slide-btn {
+    width: 100%;
+    height: 74px;
+    background: var(--button-background);
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: var(--text-on-picture);
+    cursor: pointer;
+}

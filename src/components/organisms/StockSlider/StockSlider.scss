@@ -1,0 +1,217 @@
+.homepage-main__in-stock {
+    margin-top: 100px;
+}
+
+.homepage-main__in-stock-heading {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 75px;
+    line-height: 94px;
+    color: var(--text-on-title);
+}
+
+.homepage-main__in-stock-text {
+    margin-top: 17px;
+    text-align: center;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: var(--text-on-title);
+}
+
+.homepage-main__in-stock-slider {
+    margin-top: 28px;
+    padding-right: 40px !important;
+    padding-left: 40px !important;
+}
+
+.homepage-main__in-stock-slider-adapt {
+    display: none;
+}
+
+.in-stock-button-prev,
+.in-stock-button-next {
+    color: #545454 !important;
+}
+
+.in-stock-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 1740px) {
+    .homepage-main__in-stock-slide-img {
+        width: 220px;
+    }
+
+    .homepage-main__in-stock-slider {
+        padding-right: 29px !important;
+        padding-left: 29px !important;
+    }
+
+    .homepage-main__in-stock-slide {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .homepage-main__in-stock-slide-img-wrapper {
+        height: 300px;
+    }
+
+    .homepage-main__in-stock-slide-title,
+    .homepage-main__in-stock-slide-price,
+    .homepage-main__in-stock-slide-btn {
+        font-size: 19px;
+    }
+
+    .in-stock-button-prev {
+        left: 0 !important;
+    }
+
+    .in-stock-button-next {
+        right: 0 !important;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .homepage-main__in-stock-slide-img {
+        width: 155px;
+    }
+
+    .homepage-main__in-stock-slide-img-wrapper {
+        height: 200px;
+    }
+
+    .homepage-main__in-stock-slide-title,
+    .homepage-main__in-stock-slide-price,
+    .homepage-main__in-stock-slide-btn {
+        font-size: 14px;
+    }
+
+    .homepage-main__in-stock-slide-btn {
+        height: 45px;
+    }
+
+    .in-stock-button-prev {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .homepage-main__in-stock-slider {
+        margin-top: 0;
+    }
+
+    .homepage-main__in-stock-slider {
+        padding-right: 19px !important;
+        padding-left: 19px !important;
+    }
+
+    .homepage-main__in-stock-slide-img-wrapper {
+        height: 170px;
+    }
+
+    .homepage-main__in-stock-slide-img {
+        width: 125px;
+    }
+
+    .homepage-main__in-stock-slide-title,
+    .homepage-main__in-stock-slide-price,
+    .homepage-main__in-stock-slide-btn {
+        font-size: 11px;
+    }
+
+    .homepage-main__in-stock-slide-title,
+    .homepage-main__in-stock-slide-price {
+        line-height: 20px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .in-stock-button-prev,
+    .in-stock-button-next {
+        display: none !important;
+    }
+
+    .homepage-main__in-stock-slide-img-wrapper {
+        height: 199px;
+    }
+
+    .homepage-main__in-stock-slide-img {
+        width: 150px;
+        padding-top: 34px;
+        padding-bottom: 17px;
+    }
+
+    .homepage-main__in-stock-slide-title,
+    .homepage-main__in-stock-slide-price {
+        font-size: 13.75px;
+        line-height: 18px;
+    }
+
+    .homepage-main__in-stock-slide-btn {
+        margin-top: 8px;
+        height: 40px;
+        font-size: 13.75px;
+        line-height: 18px;
+    }
+
+    .in-stock-scrollbar {
+        display: block;
+    }
+
+    .homepage-main__in-stock-slider {
+        padding-bottom: 50px !important;
+    }
+
+    .in-stock-scrollbar {
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .homepage-main__in-stock-slider {
+        padding: 0 0 50px 0 !important;
+    }
+
+    .homepage-main__in-stock-slide {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .in-stock-scrollbar {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .homepage-main__in-stock-slider-adapt-wrapper {
+        margin-left: 20px;
+    }
+    
+    .homepage-main__in-stock-slide {
+        padding-right: 0;
+        padding-left: 0;
+        width: 200px !important;
+    }
+
+    .homepage-main__in-stock-slider {
+        display: none;
+    }
+    
+    .homepage-main__in-stock-slider-adapt {
+        display: block;
+        padding-bottom: 50px !important;
+    }
+
+    .in-stock-scrollbar {
+        margin: 0;
+        left: 0 !important;
+        width: 100% !important;
+    }
+}

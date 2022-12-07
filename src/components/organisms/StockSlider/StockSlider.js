@@ -1,48 +1,44 @@
+import Swiper, { Navigation, Pagination } from 'swiper';
 import { Component } from "../../../core/Component/Component";
-
-// import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
-// import styles bundle
-import 'swiper/css/bundle';
-
 
 export class StockSlider extends Component {
     constructor() {
-        super();
+        super();     
         this.swiper = new Swiper('.homepage-main__in-stock-slider', {
-            // Optional parameters
             direction: 'horizontal',
             slidesPerView: 4,
             spaceBetween: 30,
             loop: true,
-
+          
             breakpoints: {
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 30
-                },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 10
-                },
-                300: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 30
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 10
+              },
+              300: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
             },
 
-            // Navigation arrows
+            modules: [Navigation, Pagination],
+          
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
             },
-
+          
             scrollbar: {
-                el: '.swiper-scrollbar',
-                draggable: true,
-                dragSize: 250,
+              el: '.swiper-scrollbar',
+              draggable: true,
+              dragSize: 250,
             },
-        });
+          
+          });
         this.state = {
             data: [
                 {
@@ -73,11 +69,8 @@ export class StockSlider extends Component {
         }
     }
 
-    componentDidMount() {
-        this.swiper;
-    }
-
     render() {
+        console.log(this.swiper)
         return `
         <section class="homepage-main__in-stock">
             <div class="container">

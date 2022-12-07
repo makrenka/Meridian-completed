@@ -12,6 +12,7 @@ export class HomepageMain extends Component {
         <mrd-stock-slider></mrd-stock-slider>
         <mrd-euro-manuf></mrd-euro-manuf>
         <mrd-product-section2></mrd-product-section2>
+        <mrd-comment-slider></mrd-comment-slider>
         `
     }
 }

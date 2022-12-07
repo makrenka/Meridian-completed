@@ -1,0 +1,53 @@
+.homepage-main__european-manufacturing {
+    margin-top: 127px;
+    height: 901px;
+    position: relative;
+}
+
+.homepage-main__european-manufacturing-img {
+    background: url(../../../assets/images/european-manufacturing.png);
+    position: absolute;
+    width: 100%;
+    height: 901px;
+    filter: brightness(.4);
+    z-index: -1;
+}
+
+.homepage-main__european-manufacturing-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homepage-main__european-manufacturing-icon {
+    width: 124px;
+    height: 130px;
+    margin-top: 109px;
+}
+
+.homepage-main__european-manufacturing-heading {
+    margin-top: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 42px;
+    letter-spacing: 7px;
+    color: #F5F3ED;
+}
+
+.homepage-main__european-manufacturing-text {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 75px;
+    line-height: 112px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #F5F3ED;
+    max-width: 1360px;
+}
+
+.homepage-main__european-manufacturing-text strong {
+    text-transform: uppercase;
+}

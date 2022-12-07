@@ -1,3 +1,5 @@
+import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
+
 let swiper = new Swiper('.homepage-main__in-stock-slider', {
     // Optional parameters
     direction: 'horizontal',
@@ -19,6 +21,8 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
         spaceBetween: 30,
       },
     },
+
+    modules: [Navigation, Pagination, Scrollbar],
   
     // Navigation arrows
     navigation: {

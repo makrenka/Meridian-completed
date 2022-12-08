@@ -1,0 +1,87 @@
+.footer__top-bar {
+    height: 471px;
+    background: url(../../../assets/images/footer-background.png);
+    background-size: cover;
+}
+
+.footer__top-bar-service {
+    padding-top: 131px;
+}
+
+.footer__top-bar-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer__top-bar-service-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 75px;
+    line-height: 94px;
+    color: var(--text-on-picture);
+}
+
+.footer__top-bar-service-text {
+    max-width: 714px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+    color: #C1C1C1;
+    margin-top: 10px;
+}
+
+.footer__top-bar-service-contact {
+    margin-top: 10px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+    color: var(--text-on-picture);
+}
+
+.footer__top-bar-service-phone {
+    display: flex;
+    justify-content: end;
+}
+
+.footer__top-bar-service-phone-wrapper {
+    padding-top: 175px;
+    max-width: 316px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__top-bar-service-phone-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 248px;
+    height: 80px;
+    background: #FFFFFF;
+}
+
+.footer__top-bar-service-phone-link {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: #232323;
+    text-decoration: none;
+    padding-left: 11px;
+}
+
+.footer__top-bar-service-phone-description {
+    margin-top: 28px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: var(--text-on-picture);
+}

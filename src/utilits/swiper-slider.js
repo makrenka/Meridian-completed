@@ -22,20 +22,13 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
       },
     },
 
-    modules: [Navigation, Pagination, Scrollbar],
+    modules: [Navigation, Pagination],
   
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true,
-      dragSize: 250,
-    },
-  
   });
   
   new Swiper('.homepage-main__in-stock-slider-adapt', {
@@ -44,6 +37,8 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
     slidesPerView: 'auto',
     spaceBetween: 30,
     loop: true,
+
+    modules: [Scrollbar],
   
     scrollbar: {
       el: '.swiper-scrollbar',
@@ -57,6 +52,8 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
     slidesPerView: 1,
     spaceBetween: 25,
     loop: true,
+
+    modules: [Navigation, Pagination],
   
     pagination: {
       el: ".swiper-pagination",
@@ -72,6 +69,8 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
     slidesPerView: 1,
     spaceBetween: 60,
     loop: true,
+
+    modules: [Navigation, Pagination],
   
     pagination: {
       el: ".swiper-pagination",

@@ -5,3 +5,8 @@ export * from './HomeProperties';
 export * from './StockSlider';
 export * from './HomeEuroManuf';
 export * from './HomeCommentSlider';
+export * from './HomeGallerySection';
+export * from './FooterTopBar';
+export * from './FooterBottomBar';
+export * from './FooterBottomBarMiddleLine';
+export * from './FooterBottomBarBottomLine';

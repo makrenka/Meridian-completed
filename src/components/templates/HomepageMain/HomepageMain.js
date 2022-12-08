@@ -13,6 +13,7 @@ export class HomepageMain extends Component {
         <mrd-euro-manuf></mrd-euro-manuf>
         <mrd-product-section2></mrd-product-section2>
         <mrd-comment-slider></mrd-comment-slider>
+        <mrd-home-gallery></mrd-home-gallery>
         `
     }
 }

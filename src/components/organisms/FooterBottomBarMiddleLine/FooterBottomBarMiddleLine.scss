@@ -1,0 +1,140 @@
+.footer__bottom-bar-middle-line {
+    display: grid;
+    grid-template-columns: 1fr minmax(155px, 343px) minmax(117px, 231px) 450px;
+    margin-top: 43px;
+}
+
+.footer__bottom-bar-middle-line-head-office-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: -0.309091px;
+    color: var(--text-on-picture);
+}
+
+.footer__bottom-bar-middle-line-head-office-address {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 42px;
+    color: var(--footer-text);
+    max-width: 329px;
+    margin-bottom: 38px;
+}
+
+.footer__bottom-bar-middle-line-head-office-phone,
+.footer__bottom-bar-middle-line-head-office-email {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.footer__bottom-bar-middle-line-head-office-phone-link,
+.footer__bottom-bar-middle-line-head-office-email-link {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: var(--footer-text);
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.footer__bottom-bar-middle-line-product-heading,
+.footer__bottom-bar-middle-line-help-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: -0.309091px;
+    color: var(--text-on-picture);
+}
+
+.footer__bottom-bar-middle-line-product-navigation,
+.footer__bottom-bar-middle-line-help-navigation {
+    margin-top: 24px;
+}
+
+.footer__bottom-bar-middle-line-product-item,
+.footer__bottom-bar-middle-line-help-item {
+    margin-top: 20px;
+}
+
+.footer__bottom-bar-middle-line-product-item-link {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 33px;
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.footer__bottom-bar-middle-line-help-item-link {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.footer__bottom-bar-middle-line-email-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 42px;
+    letter-spacing: -0.4px;
+    color: var(--text-on-picture);
+}
+
+.footer__bottom-bar-middle-line-email-form {
+    margin-top: 66px;
+    display: flex;
+}
+
+.footer__bottom-bar-middle-line-email-form-input-wrapper {
+    padding-right: 28px;
+    width: 378px;
+}
+
+.footer__bottom-bar-middle-line-email-form-input {
+    width: 100%;
+    height: 66.67px;
+    background: none;
+    border: none;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    letter-spacing: -0.272727px;
+    color: var(--text-on-picture);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.footer__bottom-bar-middle-line-email-form-btn {
+    width: 66.67px;
+    height: 66.67px;
+    background: #FFFFFF;
+    border-radius: 10.6667px 10.6667px 0px 0px;
+}
+
+.footer__bottom-bar-middle-line-email-text {
+    margin-top: 20px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 35px;
+    color: var(--text-on-picture);
+}

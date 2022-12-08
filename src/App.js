@@ -11,6 +11,7 @@ export class App extends Component {
         
             <mrd-header></mrd-header>
             <mrd-home-main></mrd-home-main>
+            <mrd-footer></mrd-footer>
         `
     }
 }

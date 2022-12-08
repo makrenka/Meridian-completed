@@ -1,0 +1,43 @@
+.footer__bottom-bar-bottom-line {
+    margin-top: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__bottom-bar-bottom-line-heading-adapt {
+    display: none;
+}
+
+.footer__bottom-bar-bottom-line-rules-list {
+    display: flex;
+    align-items: center;
+}
+
+.footer__bottom-bar-bottom-line-rules-item {
+    margin-right: 24px;
+}
+
+.footer__bottom-bar-bottom-line-rules-item-link {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: -0.272727px;
+    color: var(--text-on-picture);
+    text-decoration: none;
+}
+
+.footer__bottom-bar-bottom-line-social {
+    display: flex;
+    align-items: center;
+}
+
+.footer__bottom-bar-bottom-line-social-link:first-child {
+    margin-right: 30px;
+}
+
+.footer__bottom-bar-bottom-line-social-adapt {
+    display: none;
+}

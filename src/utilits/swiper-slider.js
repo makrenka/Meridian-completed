@@ -88,7 +88,7 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
   new Swiper(".product-main__product-section-slider", {
     spaceBetween: 10,
 
-    modules: [Navigation, Thumbs],
+    modules: [Navigation, Pagination, Thumbs],
   
     pagination: {
       el: ".product-section-slider-pagination",
@@ -105,6 +105,19 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
         slidesPerView: 5,
       },
     },
+  });
+
+  new Swiper(".product-main__product-section-slider-adapt", {
+    spaceBetween: 10,
+
+    modules: [Pagination],
+  
+    pagination: {
+      el: ".product-section-slider-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    
   });
   
   

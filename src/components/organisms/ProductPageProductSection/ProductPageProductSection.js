@@ -6,13 +6,14 @@ export class ProductPageProductSection extends Component {
         return `
         
         <section class="product-main__product-section">
-
-            <div class="container">
-                <div class="product-main__product-section-wrapper">
-                    <mrd-product-page-product-slider></mrd-product-page-product-slider>
-                </div>
+            <div class="product-main__product-section-slider-wrapper-adapt">
+                <mrd-product-page-product-slider-adapt></mrd-product-page-product-slider-adapt>
             </div>
-
+                <div class="container">
+                    <div class="product-main__product-section-wrapper">
+                        <mrd-product-page-product-slider></mrd-product-page-product-slider>
+                    </div>
+                </div>
         </section>
         `
     }

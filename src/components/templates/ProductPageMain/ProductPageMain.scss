@@ -1,0 +1,956 @@
+@media screen and (max-width: 1740px) {
+
+    /* Product section  */
+    .product-main__product-section-options-heading {
+        font-size: 50px;
+        line-height: 40px;
+    }
+
+    .product-main__product-section-options-price,
+    .product-main__product-section-options-discount {
+        font-size: 23px;
+        line-height: 45px;
+    }
+
+    .product-main__product-section-options-rating {
+        margin-top: 10px;
+    }
+
+    .product-main__product-section-options-rating-text {
+        font-size: 22px;
+        line-height: 40px;
+    }
+
+    .product-main__product-section-options-colors {
+        margin-top: 20px;
+    }
+
+    .product-main__product-section-options-colors-text {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .product-main__product-section-options-form {
+        margin-top: 20px;
+    }
+
+    .product-main__product-section-options-form-btn {
+        height: 90px;
+    }
+
+    .product-main__product-section-options-paying-text {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .product-main__product-section-options-paying-images {
+        margin-top: 20px;
+    }
+
+    .product-main__product-section-options-delivery-free-icon {
+        margin: 30px 29px 30px 30px;
+    }
+
+    .product-main__product-section-options-delivery-free-text-wrapper {
+        padding-right: 10px;
+    }
+
+    .product-main__product-section-options-delivery-free-heading {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .product-main__product-section-options-delivery-free-text {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .product-main__product-section-options-delivery-description {
+        margin-top: 20px;
+    }
+
+    .product-main__product-section-options-delivery-description-nav-link {
+        font-size: 22px;
+        margin-right: 15px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-heading {
+        font-size: 23px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-text {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    /* Property section  */
+    .product-main__property {
+        margin-top: 50px;
+    }
+
+    .product-main__property-img {
+        max-width: 600px;
+    }
+
+    .product-main__property-description {
+        padding: 0 0 0 40px;
+    }
+
+    .product-main__property-description-heading {
+        font-size: 48px;
+        line-height: 45px;
+    }
+
+    .product-main__property-description-text {
+        margin-top: 20px;
+        font-size: 23px;
+        line-height: 32px;
+    }
+
+    /* FAQ section  */
+    .product-main__faq {
+        margin-top: 60px;
+    }
+
+    .product-main__faq-heading {
+        font-size: 48px;
+        line-height: 50px;
+    }
+
+    .product-main__faq-question-wrapper {
+        padding: 20px 30px 20px 0;
+    }
+
+    .product-main__faq-question-heading {
+        font-size: 23px;
+    }
+
+    .product-main__faq-question-text {
+        font-size: 23px;
+        line-height: 38px;
+    }
+
+    /* Popular section  */
+    .product-main__popular {
+        margin-top: 80px;
+    }
+
+    .product-main__popular-heading {
+        font-size: 50px;
+        line-height: 45px;
+    }
+
+    .product-main__popular-sets {
+        margin-top: 45px;
+    }
+
+    .product-main__popular-set-img {
+        width: 300px;
+    }
+
+    .product-main__popular-set-heading {
+        margin-top: 15px;
+    }
+
+    .product-main__popular-set-heading,
+    .product-main__popular-set-text {
+        font-size: 23px;
+        line-height: 25px;
+    }
+
+    .product-main__popular-set-form {
+        margin-top: 15px;
+    }
+
+    /* Reviews section  */
+    .product-main__reviews {
+        margin-top: 60px;
+    }
+
+    .product-main__reviews-heading {
+        font-size: 45px;
+    }
+
+    .product-main__reviews-btn {
+        height: 80px;
+        font-size: 23px;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+    .product-main__breadcrump {
+        padding: 20px 0 20px 0;
+    }
+
+    .product-main__breadcrump-link,
+    .product-main__breadcrump-text-sep,
+    .product-main__breadcrump-text {
+        font-size: 16px;
+        line-height: 100%;
+    }
+
+    /* Product section  */
+    .product-main__product-section-options {
+        padding-left: 30px;
+    }
+
+    .product-main__product-section-options-heading {
+        font-size: 40px;
+    }
+
+    .product-main__product-section-options-price,
+    .product-main__product-section-options-discount {
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    .product-main__product-section-options-rating-img {
+        width: 35px;
+    }
+
+    .product-main__product-section-options-rating-text {
+        font-size: 18px;
+        line-height: 35px;
+    }
+
+    .product-main__product-section-options-colors-text {
+        font-size: 20px;
+        line-height: 15px;
+    }
+
+    .product-main__product-section-options-colors-circles-img {
+        margin-right: 10px;
+        width: 50px;
+    }
+
+    .product-main__product-section-options-form-btn {
+        height: 70px;
+        font-size: 20px;
+    }
+
+    .product-main__product-section-options-paying-text-wrapper {
+        margin-top: 20px;
+    }
+
+    .product-main__product-section-options-paying-text {
+        font-size: 20px;
+    }
+
+    .product-main__product-section-options-paying-images {
+        margin-top: 10px;
+    }
+
+    .product-main__product-section-options-paying-images-img {
+        width: 60px;
+        margin-left: 18px;
+    }
+
+    .product-main__product-section-options-delivery-free {
+        grid-template-columns: 133px 1fr;
+    }
+
+    .product-main__product-section-options-delivery-free-icon {
+        width: 80px;
+        margin: 20px 20px 20px 30px;
+    }
+
+    .product-main__product-section-options-delivery-free-heading {
+        font-size: 18px;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+
+    .product-main__product-section-options-delivery-free-text {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .product-main__product-section-options-delivery-description-nav-link {
+        font-size: 18px;
+        padding: 8px 0;
+        margin-right: 20px;
+    }
+
+    .product-main__product-section-options-delivery-description-section {
+        padding-top: 20px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article {
+        height: 170px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-heading {
+        font-size: 18px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-text {
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 5px;
+    }
+
+    /* Property section  */
+    .product-main__property {
+        margin-top: 40px;
+    }
+
+    .product-main__property-img {
+        max-width: 500px;
+    }
+
+    .product-main__property-description-heading {
+        font-size: 40px;
+        line-height: 30px;
+    }
+
+    .product-main__property-description-text {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    /* FAQ section  */
+    .product-main__faq {
+        margin-top: 50px;
+    }
+
+    .product-main__faq-question-wrapper {
+        padding: 10px 20px 10px 0;
+    }
+
+    .product-main__faq-question-heading {
+        font-size: 18px;
+    }
+
+    .product-main__faq-question-icon {
+        width: 40px;
+    }
+
+    .product-main__faq-question-text {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    /* Popular section  */
+    .product-main__popular {
+        margin-top: 50px;
+    }
+
+    .product-main__popular-heading {
+        font-size: 40px;
+        line-height: 30px;
+    }
+
+    .product-main__popular-sets {
+        margin-top: 30px;
+    }
+
+    .product-main__popular-set-img {
+        width: 230px;
+    }
+
+    .product-main__popular-set-heading,
+    .product-main__popular-set-text {
+        font-size: 18px;
+        line-height: 15px;
+    }
+
+    .product-main__popular-set-form-btn {
+        font-size: 18px;
+        height: 50px;
+    }
+
+    /* Reviews section  */
+    .product-main__reviews {
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+
+    .product-main__reviews-heading {
+        font-size: 35px;
+    }
+
+    .product-main__reviews-btn {
+        height: 65px;
+        font-size: 18px;
+        width: 185px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    /* Product section  */
+    .product-main__breadcrump-link,
+    .product-main__breadcrump-text-sep,
+    .product-main__breadcrump-text {
+        font-size: 13px;
+    }
+
+    .product-main__product-section-options {
+        padding-left: 15px;
+    }
+
+    .product-main__product-section-options-heading {
+        font-size: 30px;
+    }
+
+    .product-main__product-section-options-price,
+    .product-main__product-section-options-discount {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .product-main__product-section-options-rating-img {
+        width: 24px;
+    }
+
+    .product-main__product-section-options-rating-text {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .product-main__product-section-options-colors {
+        margin-top: 14px;
+    }
+
+    .product-main__product-section-options-colors-text {
+        font-size: 16px;
+    }
+
+    .product-main__product-section-options-colors-circles {
+        margin-top: 7px;
+    }
+
+    .product-main__product-section-options-colors-circles-img {
+        margin-right: 5px;
+        width: 40px;
+    }
+
+    .product-main__product-section-options-form {
+        margin-top: 10px;
+    }
+
+    .product-main__product-section-options-form-btn {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .product-main__product-section-options-paying-text-wrapper {
+        margin-top: 10px;
+    }
+
+    .product-main__product-section-options-paying-text {
+        font-size: 16px;
+    }
+
+    .product-main__product-section-options-paying-images-img {
+        width: 50px;
+        margin-left: 8px;
+    }
+
+    .product-main__product-section-options-delivery-free {
+        grid-template-columns: 88px 1fr;
+        margin-top: 15px;
+    }
+
+    .product-main__product-section-options-delivery-free-icon {
+        width: 62px;
+        margin: 15px;
+    }
+
+    .product-main__product-section-options-delivery-free-heading {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .product-main__product-section-options-delivery-free-text {
+        font-size: 13px;
+        line-height: 20px;
+        margin-top: 5px;
+    }
+
+    .product-main__product-section-options-delivery-description-nav-link {
+        font-size: 13px;
+        padding: 3px 0;
+        margin-right: 11px;
+    }
+
+    .product-main__product-section-options-delivery-description-section {
+        padding-top: 5px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article {
+        padding-left: 1px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-heading {
+        font-size: 15px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-text {
+        font-size: 13px;
+        line-height: 20px;
+        margin-top: 0px;
+    }
+
+    /* Property section  */
+    .product-main__property {
+        margin-top: 20px;
+    }
+
+    .product-main__property-img {
+        max-width: 373px;
+    }
+
+    .product-main__property-description-heading {
+        font-size: 27px;
+        line-height: 24px;
+    }
+
+    .product-main__property-description-text {
+        font-size: 13px;
+        line-height: 20px;
+        margin-top: 12px;
+    }
+
+    /* FAQ section  */
+    .product-main__faq {
+        margin-top: 40px;
+    }
+
+    .product-main__faq-heading {
+        font-size: 27px;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+
+    .product-main__faq-question-heading {
+        font-size: 14px;
+    }
+
+    .product-main__faq-question-icon {
+        width: 30px;
+    }
+
+    /* Popular section  */
+    .product-main__popular {
+        margin-top: 40px;
+    }
+
+    .product-main__popular-heading {
+        font-size: 27px;
+        line-height: 24px;
+    }
+
+    .product-main__popular-set-img {
+        width: 170px;
+    }
+
+    .product-main__popular-set-heading,
+    .product-main__popular-set-text {
+        font-size: 14px;
+        line-height: 7px;
+    }
+
+    .product-main__popular-set-form-btn {
+        font-size: 14px;
+        height: 40px;
+    }
+
+    /* Reviews section  */
+    .product-main__reviews {
+        margin-top: 23px;
+    }
+
+    .product-main__reviews-heading {
+        font-size: 27px;
+    }
+
+    .product-main__reviews-btn {
+        height: 50px;
+        font-size: 14px;
+        width: 140px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .product-main {
+        border: none;
+    }
+
+    .product-main__breadcrump {
+        display: none;
+    }
+
+    .product-main__product-section-options {
+        display: none;
+    }
+
+    .product-main__product-section-options-adapt {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .product-main__product-section-options-heading {
+        font-size: 35px;
+        line-height: 56px;
+        color: var(--grey-text);
+    }
+
+    .product-main__product-section-options-text-wrapper {
+        margin-top: 18px;
+    }
+
+    .product-main__product-section-options-price,
+    .product-main__product-section-options-discount {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .product-main__product-section-options-discount {
+        text-decoration-line: line-through;
+    }
+
+    .product-main__product-section-options-rating {
+        margin-top: 26px;
+    }
+
+    .product-main__product-section-options-rating-img {
+        width: 26px;
+        padding-right: 6px;
+    }
+
+    .product-main__product-section-options-rating-text {
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .product-main__product-section-options-colors {
+        display: none;
+    }
+
+    .product-main__product-section-options-available {
+        display: flex;
+        align-items: center;
+        background: #EDEDED;
+        padding: 17px 0 17px 10px;
+        margin-top: 18px;
+    }
+
+    .product-main__product-section-options-available-text-wrapper {
+        padding-left: 17px;
+    }
+
+    .product-main__product-section-options-available-text {
+        font-family: 'HK Grotesk', sans-serif;
+        font-size: 16px;
+        line-height: 19px;
+        color: var(--black-text);
+    }
+
+    .product-main__product-section-options-available-text span {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.3px;
+        color: #232323;
+    }
+
+    .product-main__product-section-options-form {
+        margin-top: 18px;
+    }
+
+    .product-main__product-section-options-form-btn {
+        height: 66px;
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 0.265em;
+    }
+
+    .product-main__product-section-options-paying-text-wrapper {
+        margin-top: 41px;
+    }
+
+    .product-main__product-section-options-paying-text {
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .product-main__product-section-options-paying-images {
+        margin-top: 30px;
+    }
+
+    .product-main__product-section-options-paying-images-img {
+        width: 74px;
+        margin-left: 28px;
+    }
+
+    .product-main__product-section-options-paying-images-img:first-child {
+        margin-left: 0;
+    }
+
+    .product-main__product-section-options-delivery-free {
+        margin-top: 30px;
+    }
+
+    .product-main__product-section-options-delivery-free-icon {
+        width: 54px;
+        margin: 17px;
+    }
+
+    .product-main__product-section-options-delivery-free-heading {
+        margin-top: 17px;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.265em;
+    }
+
+    .product-main__product-section-options-delivery-free-text {
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .product-main__product-section-options-delivery-description {
+        margin-top: 37px;
+    }
+
+    .product-main__product-section-options-delivery-description-nav-link {
+        font-size: 25px;
+        line-height: 22px;
+        margin-right: 39px;
+        padding: 13px 0;
+    }
+
+    .product-main__product-section-options-delivery-description-section {
+        padding-top: 20px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article {
+        height: 200px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-heading {
+        font-size: 25px;
+        line-height: 33px;
+    }
+
+    .product-main__product-section-options-delivery-description-section-article-text {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    /* Property section  */
+    .product-main__property {
+        margin-top: 39px;
+        display: block;
+    }
+
+    .product-main__property-img {
+        max-width: 100%;
+    }
+
+    .product-main__property-description {
+        padding: 0;
+    }
+
+    .product-main__property-description-heading {
+        margin-top: 20px;
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .product-main__property-description-text {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+    /* FAQ section  */
+    .product-main__faq-heading {
+        font-size: 30px;
+        line-height: 38px;
+        text-align: center;
+    }
+
+    .product-main__faq-question-wrapper {
+        padding: 30px 0;
+    }
+
+    .product-main__faq-question-heading {
+        font-size: 20px;
+        line-height: 42px;
+    }
+
+    .product-main__faq-question-icon {
+        width: 50px;
+    }
+
+    .product-main__faq-question-text {
+        font-size: 18px;
+        line-height: 35px;
+    }
+
+    /* Popular section  */
+    .product-main__popular-heading {
+        font-size: 35px;
+        line-height: 44px;
+        text-align: start;
+    }
+
+    .product-main__popular-sets {
+        margin-top: 28px;
+        block-size: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 45%;
+        overflow: auto;
+    }
+
+    .product-main__popular-sets::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    .product-main__popular-set-img {
+        width: 247px;
+    }
+
+    .product-main__popular-set {
+        margin-right: 32px;
+    }
+
+    .product-main__popular-set-heading,
+    .product-main__popular-set-text {
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    .product-main__popular-set-heading {
+        margin-top: 14px;
+    }
+
+    .product-main__popular-set-text {
+        margin-top: 8px;
+    }
+
+    .product-main__popular-set-form-btn {
+        height: 50px;
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    /* Reviews section  */
+    .product-main__reviews-heading-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-main__reviews {
+        margin-top: 25px;
+    }
+
+    .product-main__reviews-heading {
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #272727;
+        width: 160px;
+    }
+
+    .product-main__reviews-btn {
+        width: 378px;
+        height: 74px;
+        margin-top: 27px;
+        font-size: 19px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .product-main__product-section-options-rating-text {
+        font-size: 22px;
+    }
+
+    .product-main__product-section-options-delivery-description-nav-link:first-child {
+        min-width: 192px;
+    }
+
+    .product-main__popular-sets {
+        grid-auto-columns: 69%;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .product-main__product-section-options-rating-img {
+        padding-right: 0;
+        margin-right: 5px;
+    }
+
+    .product-main__product-section-options-rating-text {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .product-main__product-section-options-heading {
+        font-size: 32px;
+    }
+
+    .product-main__product-section-options-price,
+    .product-main__product-section-options-discount {
+        font-size: 22px;
+    }
+
+    .product-main__product-section-options-rating-img {
+        width: 20px;
+        margin-right: 0;
+    }
+
+    .product-main__product-section-options-rating-text {
+        font-size: 16px;
+    }
+
+    .product-main__product-section-options-paying-text {
+        font-size: 20px;
+    }
+
+    .product-main__product-section-options-paying-images-img {
+        width: 65px;
+        margin-left: 13px;
+    }
+
+    .product-main__product-section-options-delivery-free-text {
+        margin-top: 4px;
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .product-main__faq-question-heading {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .product-main__popular-sets {
+        grid-auto-columns: 69%;
+        grid-column-gap: 20px;
+    }
+
+    .product-main__popular-set {
+        margin-right: 0;
+    }
+
+    .product-main__popular-set-img {
+        width: 208px;
+    }
+
+    .product-main__reviews-btn {
+        width: 300px;
+    }
+}

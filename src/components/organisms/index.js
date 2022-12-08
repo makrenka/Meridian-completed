@@ -13,3 +13,5 @@ export * from './FooterBottomBarBottomLine';
 export * from './ProductPageProductSection';
 export * from './ProductPageProductSlider';
 export * from './ProductPageProductSliderAdapt';
+export * from './ProductDescription';
+export * from './ProductDescriptionDelivery';

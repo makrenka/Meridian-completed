@@ -6,8 +6,7 @@ export class ProductPage extends Component {
         return `
         
         <mrd-header></mrd-header>
-        <mrd-breadcrump></mrd-breadcrump>
-        <mrd-product-page-product-section></mrd-product-page-product-section>
+        <mrd-product-page-main></mrd-product-page-main>
         `
     }
 }

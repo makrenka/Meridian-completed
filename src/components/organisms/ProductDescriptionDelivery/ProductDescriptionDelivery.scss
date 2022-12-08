@@ -1,0 +1,113 @@
+.product-main__product-section-options-delivery-free {
+    margin-top: 27px;
+    background: #F3F3F3;
+    display: grid;
+    grid-template-columns: 153px 1fr;
+}
+
+.product-main__product-section-options-delivery-free-icon {
+    margin: 46px 29px 46px 30px;
+}
+
+.product-main__product-section-options-delivery-free-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.265em;
+    text-transform: uppercase;
+    color: #545454;
+    margin-top: 30px;
+}
+
+.product-main__product-section-options-delivery-free-text {
+    margin-top: 10px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 42px;
+    color: #545454;
+}
+
+/* Delivery description */
+.product-main__product-section-options-delivery-description {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.product-main__product-section-options-delivery-description-adapt {
+    display: none;
+}
+
+.product-main__product-section-options-delivery-description-nav-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-main__product-section-options-delivery-description-nav-wrapper,
+.product-main__product-section-options-delivery-description-section {
+    overflow: auto hidden;
+}
+
+.product-main__product-section-options-delivery-description-nav {
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0px -1px 0px #EEEEEE;
+}
+
+.product-main__product-section-options-delivery-description-nav-link {
+    padding: 13px 0;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 22px;
+    color: #9E9E9E;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+.product-main__product-section-options-delivery-description-nav-link:last-child {
+    margin-right: 0;
+}
+
+.product-main__product-section-options-delivery-description-section {
+    block-size: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    padding-top: 30px;
+}
+
+.product-main__product-section-options-delivery-description-section::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.product-main__product-section-options-delivery-description-section-article-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 33px;
+    color: #333333;
+}
+
+.product-main__product-section-options-delivery-description-section-article {
+    overflow: auto;
+    height: 253px;
+}
+
+.product-main__product-section-options-delivery-description-section-article-text {
+    margin-top: 20px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+    color: #848484;
+}

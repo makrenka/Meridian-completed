@@ -4,3 +4,7 @@ export * from './CollectionCard';
 export * from './StockSlide';
 export * from './FooterBottomTopLine';
 export * from './Breadcrump';
+export * from './ProductDescriptionHeading';
+export * from './ProductRating';
+export * from './ProductColors';
+export * from './ProductPaying';

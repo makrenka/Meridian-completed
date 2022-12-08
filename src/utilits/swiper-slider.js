@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
+import Swiper, { Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
 
 let swiper = new Swiper('.homepage-main__in-stock-slider', {
     // Optional parameters
@@ -87,6 +87,8 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
   
   new Swiper(".product-main__product-section-slider", {
     spaceBetween: 10,
+
+    modules: [Navigation, Thumbs],
   
     pagination: {
       el: ".product-section-slider-pagination",

@@ -1,0 +1,52 @@
+.product-main__breadcrump-wrapper {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.product-main__breadcrump {
+    padding: 40px 0 42px 0;
+}
+
+.product-main__breadcrump-list {
+    display: flex;
+    align-items: center;
+}
+
+.product-main__breadcrump-item {
+    display: flex;
+    align-items: center;
+}
+
+.product-main__breadcrump-link {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    color: var(--header-nav-link);
+    text-decoration: none;
+    padding-right: 9px;
+}
+
+.product-main__breadcrump-text-sep {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.015em;
+    color: #BDBDBD;
+    padding-right: 9px;
+}
+
+.product-main__breadcrump-text {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    color: #272727;
+}

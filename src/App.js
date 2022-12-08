@@ -9,9 +9,7 @@ export class App extends Component {
     render() {
         return `
         
-            <mrd-header></mrd-header>
-            <mrd-home-main></mrd-home-main>
-            <mrd-footer></mrd-footer>
+            <mrd-product-page></mrd-product-page>
         `
     }
 }

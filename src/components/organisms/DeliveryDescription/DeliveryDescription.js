@@ -2,12 +2,17 @@ import { Component } from "../../../core/Component/Component";
 
 export class DeliveryDescription extends Component {
 
-    addClass = () => {
-        const links = [...this.querySelectorAll('.product-main__product-section-options-delivery-description-nav-link')];
+    addClass = (evt) => {
+        const link = evt.target
+            .closest('.product-main__product-section-options-delivery-description-nav-link');
         const pgurl = window.location;
-        const target = links.filter(a => a.href == pgurl)
-            
-        console.log(target)
+        
+        if (link.href = pgurl) {
+            link.classList
+                .add('product-main__product-section-options-delivery-description-nav-link--active')
+        } 
+        
+        console.log(link)
     }
 
     componentDidMount() {

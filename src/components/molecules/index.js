@@ -8,3 +8,4 @@ export * from './ProductDescriptionHeading';
 export * from './ProductRating';
 export * from './ProductColors';
 export * from './ProductPaying';
+export * from './ProductFinanceAvailableForAdaptive';

@@ -15,3 +15,5 @@ export * from './ProductPageProductSlider';
 export * from './ProductPageProductSliderAdapt';
 export * from './ProductDescription';
 export * from './ProductDescriptionDelivery';
+export * from './ProductDescriptionAdapt';
+export * from './DeliveryDescription';

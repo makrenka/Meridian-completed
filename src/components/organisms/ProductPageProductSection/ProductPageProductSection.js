@@ -13,8 +13,8 @@ export class ProductPageProductSection extends Component {
                 <div class="product-main__product-section-wrapper">
                     <mrd-product-page-product-slider></mrd-product-page-product-slider>
                     <mrd-product-description></mrd-product-description>
-                    
                 </div>
+                <mrd-product-description-adapt></mrd-product-description-adapt>
             </div>
         </section>
         `

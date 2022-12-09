@@ -1,10 +1,26 @@
 import { Component } from "../../../core/Component/Component";
 
 export class DeliveryDescription extends Component {
-    
+
+    addClass = () => {
+        const links = [...this.querySelectorAll('.product-main__product-section-options-delivery-description-nav-link')];
+        const pgurl = window.location;
+        const target = links.filter(a => a.href == pgurl)
+            
+        console.log(target)
+    }
+
+    componentDidMount() {
+        this.addEventListener('click', this.addClass);
+    }
+
+    componentWillUnmount() {
+        this.removeEventListener('click', this.addClass);
+    }
+
     static get observedAttributes() {
         return ['name'];
-    }    
+    }
 
     render() {
         return `

@@ -75,6 +75,11 @@
     margin-right: 0;
 }
 
+.product-main__product-section-options-delivery-description-nav-link--active {
+    color: #333333;
+    border-bottom: solid 1px #333333;
+}
+
 .product-main__product-section-options-delivery-description-section {
     block-size: 100%;
     display: grid;

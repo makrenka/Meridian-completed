@@ -874,6 +874,11 @@
         font-size: 22px;
     }
 
+    .product-main__product-section-options-delivery-description-nav-wrapper::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
     .product-main__product-section-options-delivery-description-nav-link:first-child {
         min-width: 192px;
     }

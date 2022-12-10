@@ -2,25 +2,39 @@ import { Component } from "../../../core/Component/Component";
 
 export class DeliveryDescription extends Component {
 
-    addClass = (evt) => {
-        const link = evt.target
-            .closest('.product-main__product-section-options-delivery-description-nav-link');
+    removeClass = () => {
+        const links = [...this
+            .querySelectorAll('.product-main__product-section-options-delivery-description-nav-link')]
+            .filter(item => item.className.endsWith('active'))
+            .forEach(item => item
+                .classList.remove('product-main__product-section-options-delivery-description-nav-link--active'));
+    }
+
+    addClassOnload = () => {
         const pgurl = window.location;
-        
-        if (link.href = pgurl) {
-            link.classList
-                .add('product-main__product-section-options-delivery-description-nav-link--active')
-        } 
-        
-        console.log(link)
+        const links = [...this
+            .querySelectorAll('.product-main__product-section-options-delivery-description-nav-link')]
+            .filter(item => pgurl.href.endsWith(item.href))
+            .forEach(item => item
+                .classList.add('product-main__product-section-options-delivery-description-nav-link--active'))
+    }
+
+    addClassOnclick = (evt) => {
+        const link = evt.target
+            .closest('.product-main__product-section-options-delivery-description-nav-link')
+            .classList.add('product-main__product-section-options-delivery-description-nav-link--active');
     }
 
     componentDidMount() {
-        this.addEventListener('click', this.addClass);
+        this.addEventListener('click', this.removeClass);
+        this.addClassOnload();
+        this.addEventListener('click', this.addClassOnclick);
     }
 
     componentWillUnmount() {
-        this.removeEventListener('click', this.addClass);
+        this.removeEventListener('click', this.removeClass);
+        this.addClassOnload();
+        this.removeEventListener('click', this.addClassOnclick);
     }
 
     static get observedAttributes() {

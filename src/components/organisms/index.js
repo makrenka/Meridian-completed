@@ -17,3 +17,6 @@ export * from './ProductDescription';
 export * from './ProductDescriptionDelivery';
 export * from './ProductDescriptionAdapt';
 export * from './DeliveryDescription';
+export * from './ProductPageFaqSection';
+export * from './ProductPagePopularSection';
+export * from './ProductPageReviewSection';

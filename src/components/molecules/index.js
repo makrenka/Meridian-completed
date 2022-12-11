@@ -9,3 +9,4 @@ export * from './ProductRating';
 export * from './ProductColors';
 export * from './ProductPaying';
 export * from './ProductFinanceAvailableForAdaptive';
+export * from './ProductPagePropertySection';

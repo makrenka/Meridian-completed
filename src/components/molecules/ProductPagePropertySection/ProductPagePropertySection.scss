@@ -1,0 +1,28 @@
+.product-main__property {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 100px;
+}
+
+.product-main__property-description {
+    padding: 70px 0 0 110px;
+}
+
+.product-main__property-description-heading {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 65px;
+    line-height: 82px;
+    color: var(--black-text);
+}
+
+.product-main__property-description-text {
+    margin-top: 30px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+    color: #848484;
+}

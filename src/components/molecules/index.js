@@ -3,6 +3,7 @@ export * from './HeaderRetail';
 export * from './CollectionCard';
 export * from './StockSlide';
 export * from './FooterBottomTopLine';
+export * from './FooterBottomPays';
 export * from './Breadcrump';
 export * from './ProductDescriptionHeading';
 export * from './ProductRating';

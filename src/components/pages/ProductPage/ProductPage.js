@@ -7,6 +7,7 @@ export class ProductPage extends Component {
         
         <mrd-header></mrd-header>
         <mrd-product-page-main></mrd-product-page-main>
+        <mrd-footer></mrd-footer>
         `
     }
 }

@@ -10,6 +10,7 @@ export class ProductPageMain extends Component {
         <mrd-pp-property-section></mrd-pp-property-section>
         <mrd-pp-faq-section></mrd-pp-faq-section>
         <mrd-pp-popular-section></mrd-pp-popular-section>
+        <mrd-pp-review-section></mrd-pp-review-section>
         `
     }
 }

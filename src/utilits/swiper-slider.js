@@ -125,6 +125,8 @@ let swiper = new Swiper('.homepage-main__in-stock-slider', {
   
   new Swiper(".product-main__reviews-slider", {
     slidesPerView: 1,
+
+    modules: [Navigation, Pagination],
   
     pagination: {
       el: ".reviews-slider-pagination",

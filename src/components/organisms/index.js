@@ -20,3 +20,4 @@ export * from './DeliveryDescription';
 export * from './ProductPageFaqSection';
 export * from './ProductPagePopularSection';
 export * from './ProductPageReviewSection';
+export * from './ProductPageReviewSlide';

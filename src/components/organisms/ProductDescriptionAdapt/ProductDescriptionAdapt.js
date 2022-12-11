@@ -17,5 +17,5 @@ export class ProductDescriptionAdapt extends Component {
         `
     }
 }
-
+ 
 customElements.define('mrd-product-description-adapt', ProductDescriptionAdapt);

@@ -40,7 +40,7 @@ export class DeliveryDescription extends Component {
     static get observedAttributes() {
         return ['name'];
     }
-
+ 
     render() {
         return `
         

@@ -16,5 +16,5 @@ export class ProductDescription extends Component {
         `
     }
 }
-
+ 
 customElements.define('mrd-product-description', ProductDescription);

@@ -4,7 +4,7 @@ export class ProductDescriptionDelivery extends Component {
 
     static get observedAttributes() {
         return ['name'];
-    } 
+    }  
 
     render() {
         return `

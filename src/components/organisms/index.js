@@ -6,6 +6,7 @@ export * from './StockSlider';
 export * from './HomeEuroManuf';
 export * from './HomeCommentSlider';
 export * from './HomeGallerySection';
+export * from './Footer';
 export * from './FooterTopBar';
 export * from './FooterBottomBar';
 export * from './FooterBottomBarMiddleLine';

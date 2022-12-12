@@ -3,6 +3,7 @@ export const appRoutes = {
     admin: '/admin',
     signUp: '/signUp',
     signIn: '/signIn',
+    products: '/products',
     productDetails: '/product-details',
-    errorPage: '*'
+    errorPage: '*',
 }

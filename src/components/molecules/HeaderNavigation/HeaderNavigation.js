@@ -1,4 +1,6 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
+import './HeaderNavigation.scss';
 
 export class HeaderNavigation extends Component {
 
@@ -8,10 +10,14 @@ export class HeaderNavigation extends Component {
         <nav class="header__main-bar-navigation">
             <ul class="header__main-bar-navigation-list">
                 <li class="header__main-bar-navigation-list-item">
-                    <a href="/" class="header__main-bar-navigation-list-link home-link">Home</a>
+                    <mrd-link to="${appRoutes.home}">
+                        <span class="header__main-bar-navigation-list-link home-link">Home</span>
+                    </mrd-link>
                 </li>
                 <li class="header__main-bar-navigation-list-item">
-                    <a href="./product.html" class="header__main-bar-navigation-list-link">Products</a>
+                    <mrd-link to="${appRoutes.products}">
+                        <span class="header__main-bar-navigation-list-link">Products</span>
+                    </mrd-link>
                 </li>
                 <li class="header__main-bar-navigation-list-item">
                     <a href="#" class="header__main-bar-navigation-list-link">Showroom</a>

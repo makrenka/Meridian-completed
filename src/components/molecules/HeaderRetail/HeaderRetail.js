@@ -1,3 +1,4 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class HeaderRetail extends Component {
@@ -8,13 +9,19 @@ export class HeaderRetail extends Component {
         <nav class="header__main-bar-retail-section">
             <ul class="header__main-bar-retail-section-list">
                 <li class="header__main-bar-retail-section-list-item">
-                    <a href="#" class="header__main-bar-retail-section-list-link">Dealer Login</a>
+                    <mrd-link to="${appRoutes.signIn}">
+                        <span class="header__main-bar-retail-section-list-link">Dealer Login</span>
+                    </mrd-link>
                 </li>
                 <li class="header__main-bar-retail-section-list-item">
-                    <a href="#" class="header__main-bar-retail-section-list-link">Become A Dealer</a>
+                    <mrd-link to="${appRoutes.signUp}">
+                        <span class="header__main-bar-retail-section-list-link">Become A Dealer</span>
+                    </mrd-link>
                 </li>
                 <li class="header__main-bar-retail-section-list-item">
-                    <a href="#" class="header__main-bar-retail-section-list-link">Find A Retail</a>
+                    <mrd-link to="${appRoutes.findRetail}">
+                        <span class="header__main-bar-retail-section-list-link">Find A Retail</span>
+                    </mrd-link>
                 </li>
             </ul>
         </nav>

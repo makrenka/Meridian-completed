@@ -8,4 +8,4 @@ export class Admin extends Component {
     }
 }
 
-customElements.define('admin-page', AboutUs);
+customElements.define('admin-page', Admin);

@@ -2,3 +2,614 @@
     background: var(--black-background);
     padding-bottom: 48px;
 }
+
+
+
+@media screen and (max-width: 1280px) {
+    .footer__top-bar {
+        height: 400px;
+    }
+
+    .footer__top-bar-service {
+        padding-top: 91px;
+    }
+
+    .footer__top-bar-service-heading {
+        font-size: 45px;
+    }
+
+    .footer__top-bar-service-text,
+    .footer__top-bar-service-contact {
+        font-size: 18px;
+    }
+
+    .footer__top-bar-service-phone-wrapper {
+        padding-top: 140px;
+    }
+
+    .footer__top-bar-service-phone-number {
+        width: 210px;
+        height: 65px;
+    }
+
+    .footer__top-bar-service-phone-icon {
+        width: 30px;
+    }
+
+    .footer__top-bar-service-phone-link,
+    .footer__top-bar-service-phone-description {
+        font-size: 18px;
+    }
+
+    .footer__bottom-bar-top-line {
+        padding: 30px 0;
+    }
+
+    .footer__bottom-bar-top-line-icon {
+        width: 120px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-heading,
+    .footer__bottom-bar-middle-line-product-heading,
+    .footer__bottom-bar-middle-line-help-heading,
+    .footer__bottom-bar-middle-line-head-office-phone-link,
+    .footer__bottom-bar-middle-line-head-office-email-link,
+    .footer__bottom-bar-middle-line-email-heading,
+    .footer__bottom-bar-middle-line-email-text,
+    .footer__bottom-bar-middle-line-email-form-input,
+    .footer__bottom-bar-bottom-line-rules-item-link {
+        font-size: 17px;
+    }
+
+    .footer__bottom-bar-middle-line-email-heading {
+        line-height: 32px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone,
+    .footer__bottom-bar-middle-line-head-office-email {
+        margin-top: 0;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-address {
+        font-size: 17px;
+        line-height: 38px;
+        margin-top: 11px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone-img,
+    .footer__bottom-bar-middle-line-head-office-email-icon {
+        width: 22px;
+    }
+
+    .footer__bottom-bar-middle-line-product-item-link,
+    .footer__bottom-bar-middle-line-help-item-link {
+        font-size: 17px;
+        line-height: 20px;
+    }
+
+    .footer__bottom-bar-middle-line-product-navigation,
+    .footer__bottom-bar-middle-line-help-navigation {
+        margin-top: 0;
+    }
+
+    .footer__bottom-bar-middle-line {
+        grid-template-columns: 1fr minmax(155px, 220px) minmax(117px, 130px) 330px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form {
+        margin-top: 15px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input-wrapper {
+        width: 250px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input {
+        height: 50px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer__bottom-bar-bottom-line-social-link:first-child {
+        margin-right: 23px;
+    }
+
+    .footer__bottom-bar-pays-img {
+        margin-right: 18px;
+        width: 60px;
+    }
+
+    .footer__bottom-bar-pays {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .footer__top-bar {
+        height: 230px;
+    }
+
+    .footer__top-bar-service {
+        padding-top: 35px;
+    }
+
+    .footer__top-bar-service-heading {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .footer__top-bar-service-text,
+    .footer__top-bar-service-contact {
+        font-size: 13px;
+        line-height: 24px;
+    }
+
+    .footer__top-bar-service-phone-wrapper {
+        padding-top: 60px;
+    }
+
+    .footer__top-bar-service-phone-link,
+    .footer__top-bar-service-phone-description {
+        font-size: 13px;
+    }
+
+    .footer__top-bar-service-phone-icon {
+        width: 25px;
+    }
+
+    .footer__top-bar-service-phone-number {
+        width: 170px;
+        height: 50px;
+    }
+
+    .footer__bottom-bar {
+        padding-bottom: 20px;
+    }
+
+    .footer__bottom-bar-top-line {
+        padding: 15px 0;
+    }
+
+    .footer__bottom-bar-top-line-icon {
+        width: 80px;
+    }
+
+    .footer__bottom-bar-middle-line {
+        margin-top: 20px;
+        grid-template-columns: 1fr 150px 90px 250px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office {
+        padding-right: 56px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-heading,
+    .footer__bottom-bar-middle-line-product-heading,
+    .footer__bottom-bar-middle-line-help-heading,
+    .footer__bottom-bar-middle-line-head-office-phone-link,
+    .footer__bottom-bar-middle-line-head-office-email-link,
+    .footer__bottom-bar-middle-line-email-heading,
+    .footer__bottom-bar-middle-line-email-text,
+    .footer__bottom-bar-middle-line-email-form-input,
+    .footer__bottom-bar-bottom-line-rules-item-link {
+        font-size: 13px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-address {
+        font-size: 13px;
+        line-height: 20px;
+        margin-bottom: 14px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone,
+    .footer__bottom-bar-middle-line-head-office-email {
+        padding-left: 0;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone-img,
+    .footer__bottom-bar-middle-line-head-office-email-icon {
+        width: 17px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone-link,
+    .footer__bottom-bar-middle-line-head-office-email-link {
+        line-height: 21px;
+        padding-left: 10px;
+    }
+
+    .footer__bottom-bar-middle-line-product-item-link,
+    .footer__bottom-bar-middle-line-help-item-link {
+        font-size: 13px;
+    }
+
+    .footer__bottom-bar-middle-line-product-item,
+    .footer__bottom-bar-middle-line-help-item {
+        margin-top: 10px;
+    }
+
+    .footer__bottom-bar-middle-line-email-text {
+        line-height: 20px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form {
+        margin-top: 0;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input-wrapper {
+        padding-right: 15px;
+        width: 200px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input {
+        height: 40px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer__bottom-bar-bottom-line {
+        margin-top: 15px;
+    }
+
+    .footer__bottom-bar-bottom-line-social-link:first-child {
+        margin-right: 20px;
+    }
+
+    .footer__bottom-bar-bottom-line-social-link-img {
+        height: 25px;
+    }
+
+    .footer__bottom-bar-bottom-line-rules-item-link {
+        line-height: 20px;
+    }
+
+    .footer__bottom-bar-pays-img {
+        width: 50px;
+    }
+
+    .footer__bottom-bar-pays {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer__top-bar {
+        height: 445px;
+    }
+
+    .footer__top-bar-wrapper,
+    .footer__top-bar-service,
+    .footer__top-bar-service-phone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__top-bar-service {
+        padding-top: 100px;
+    }
+
+    .footer__top-bar-service-heading {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .footer__top-bar-service-text {
+        font-size: 16px;
+        line-height: 23px;
+        text-align: center;
+        margin-top: 8px;
+        max-width: 288px;
+    }
+
+    .footer__top-bar-service-contact {
+        display: none;
+    }
+
+    .footer__top-bar-service-phone-wrapper {
+        padding-top: 3px;
+    }
+
+    .footer__top-bar-service-phone-number {
+        width: 268px;
+        height: 68px;
+    }
+
+    .footer__top-bar-service-phone-icon {
+        width: 32px;
+    }
+
+    .footer__top-bar-service-phone-link {
+        font-size: 25px;
+        line-height: 32px;
+    }
+
+    .footer__top-bar-service-phone-description {
+        margin-top: 35px;
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .footer__bottom-bar {
+        padding-bottom: 54px;
+    }
+
+    .footer__bottom-bar-top-line {
+        display: flex;
+        justify-content: center;
+        padding: 37px 0 0 0;
+    }
+
+    .footer__bottom-bar-top-line-icon {
+        width: 145px;
+    }
+
+    .footer__bottom-bar-divider {
+        display: none;
+    }
+
+    .footer__bottom-bar-middle-line {
+        display: flex;
+        flex-direction: column;
+        margin-top: 44px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office {
+        padding-right: 0;
+        padding-bottom: 33px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.31);
+    }
+
+    .footer__bottom-bar-middle-line-head-office-heading {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-address {
+        margin-top: 28px;
+        margin-bottom: 0;
+        font-size: 25px;
+        line-height: 42px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone {
+        margin-top: 11px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone-link {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone-img {
+        width: 29px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-email {
+        margin-top: 23px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-email-link {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-email-icon {
+        width: 26px;
+    }
+
+    .footer__bottom-bar-middle-line-product {
+        padding: 33px 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.31);
+    }
+
+    .footer__bottom-bar-middle-line-product-heading {
+        font-size: 25px;
+        line-height: 32px;
+    }
+
+    .footer__bottom-bar-middle-line-product-navigation {
+        margin-top: 24px;
+    }
+
+    .footer__bottom-bar-middle-line-product-item {
+        margin-top: 20px;
+    }
+
+    .footer__bottom-bar-middle-line-product-item-link {
+        font-size: 25px;
+        line-height: 33px;
+    }
+
+    .footer__bottom-bar-middle-line-help {
+        padding: 34px 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.31);
+    }
+
+    .footer__bottom-bar-middle-line-help-heading {
+        font-size: 23px;
+        line-height: 29px;
+    }
+
+    .footer__bottom-bar-middle-line-help-item {
+        margin-top: 27px;
+    }
+
+    .footer__bottom-bar-middle-line-help-item-link {
+        font-size: 20px;
+        line-height: 25px;
+        color: var(--text-on-picture);
+    }
+
+    .footer__bottom-bar-middle-line-email {
+        padding-top: 43px;
+        padding-bottom: 45px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.31);
+    }
+
+    .footer__bottom-bar-middle-line-email-heading {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form {
+        margin-top: 22px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input-wrapper {
+        width: 313px;
+        padding-right: 0;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input {
+        height: 67px;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-btn {
+        width: 67px;
+        height: 67px;
+    }
+
+    .footer__bottom-bar-middle-line-email-text {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .footer__bottom-bar-bottom-line {
+        margin-top: 36px;
+        display: block;
+    }
+
+    .footer__bottom-bar-bottom-line-heading-adapt {
+        display: block;
+        font-family: 'Outfit', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 33px;
+        color: #F5F3ED;
+    }
+
+    .footer__bottom-bar-bottom-line-social {
+        display: none;
+    }
+
+    .footer__bottom-bar-bottom-line-social-adapt {
+        display: block;
+        margin-top: 37px;
+    }
+
+    .footer__bottom-bar-bottom-line-social-link-img {
+        height: 33px;
+    }
+
+    .footer__bottom-bar-bottom-line-social-link:first-child {
+        margin-right: 30px;
+    }
+
+    .footer__bottom-bar-bottom-line-rules {
+        margin-top: 35px;
+    }
+
+    .footer__bottom-bar-bottom-line-rules-item {
+        margin-right: 14px;
+    }
+
+    .footer__bottom-bar-bottom-line-rules-item-link {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .footer__bottom-bar-pays {
+        margin-top: 41px;
+    }
+
+    .footer__bottom-bar-pays-img {
+        width: 71px;
+        margin-right: 27px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .footer__bottom-bar-pays-img {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .footer__top-bar {
+        height: 400px;
+    }
+
+    .footer__top-bar-service {
+        padding-top: 60px;
+    }
+
+    .footer__top-bar-service-phone-link {
+        font-size: 23px;
+    }
+
+    .footer__top-bar-service-phone-description {
+        font-size: 20px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-heading,
+    .footer__bottom-bar-middle-line-head-office-address,
+    .footer__bottom-bar-middle-line-product-heading,
+    .footer__bottom-bar-middle-line-help-heading {
+        font-size: 20px;
+    }
+
+    .footer__bottom-bar-middle-line-head-office-phone-link,
+    .footer__bottom-bar-middle-line-head-office-email-link {
+        font-size: 18px;
+    }
+
+    .footer__bottom-bar-middle-line-product-item-link {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .footer__bottom-bar-middle-line-help-item-link {
+        line-height: 20px;
+    }
+
+    .footer__bottom-bar-middle-line-email-heading {
+        font-size: 25px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input {
+        height: 55px;
+        font-size: 18px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .footer__bottom-bar-middle-line-email-form-input-wrapper {
+        width: 230px;
+    }
+
+    .footer__bottom-bar-bottom-line-heading-adapt {
+        font-size: 24px;
+    }
+
+    .footer__bottom-bar-pays {
+        margin-top: 25px;
+    }
+
+    .footer__bottom-bar-pays-img {
+        margin-right: 10px;
+        width: 60px;
+    }
+}

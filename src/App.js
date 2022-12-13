@@ -20,6 +20,8 @@ export class App extends core.Component {
             <mrd-route path="${appRoutes.products}" component="products-page" title="Products"></mrd-route>
             <mrd-route path="${appRoutes.showroom}" component="showroom-page" title="Showroom"></mrd-route>
             <mrd-route path="${appRoutes.contact}" component="contact-page" title="Contact"></mrd-route>
+            <mrd-route path="${appRoutes.aboutUs}" component="about-us-page" title="AboutUs"></mrd-route>
+            <mrd-route path="${appRoutes.findRetail}" component="find-retail-page" title="Find A Retail"></mrd-route>
             <mrd-route path="${appRoutes.productDetails}/:id" component="product-page" title="Product page"></mrd-route>
             <mrd-route path="${appRoutes.errorPage}" component="error-page" title="Not Found page"></mrd-route>
             <mrd-outlet></mrd-outlet>

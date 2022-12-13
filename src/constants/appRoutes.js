@@ -7,6 +7,7 @@ export const appRoutes = {
     showroom: '/showroom',
     aboutUs: '/aboutUs',
     contact: '/contact',
+    findRetail: '/find-retail',
     productDetails: '/product-details',
     errorPage: '*',
 }

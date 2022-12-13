@@ -11,7 +11,7 @@ export class HeaderNavigation extends Component {
             <ul class="header__main-bar-navigation-list">
                 <li class="header__main-bar-navigation-list-item">
                     <mrd-link to="${appRoutes.home}">
-                        <span class="header__main-bar-navigation-list-link home-link">Home</span>
+                        <span class="header__main-bar-navigation-list-link">Home</span>
                     </mrd-link>
                 </li>
                 <li class="header__main-bar-navigation-list-item">

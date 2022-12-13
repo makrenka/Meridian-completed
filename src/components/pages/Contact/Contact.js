@@ -1,11 +1,11 @@
 import { Component } from "../../../core/Component/Component";
 
-export class Admin extends Component {
+export class Contact extends Component {
     render() {
         return `
-        <h1>Admin</h1>
+        <h1>Contact</h1>
         `
     }
 }
 
-customElements.define('admin-page', AboutUs);
+customElements.define('contact-page', Contact);

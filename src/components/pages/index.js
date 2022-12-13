@@ -5,3 +5,6 @@ export * from './Error';
 export * from './SignIn';
 export * from './SignUp';
 export * from './Products';
+export * from './Showroom';
+export * from './AboutUs';
+export * from './Contact';

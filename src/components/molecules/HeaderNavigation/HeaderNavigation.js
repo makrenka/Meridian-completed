@@ -20,13 +20,19 @@ export class HeaderNavigation extends Component {
                     </mrd-link>
                 </li>
                 <li class="header__main-bar-navigation-list-item">
-                    <a href="#" class="header__main-bar-navigation-list-link">Showroom</a>
+                    <mrd-link to="${appRoutes.showroom}">
+                        <span class="header__main-bar-navigation-list-link">Showroom</span>
+                    </mrd-link>
                 </li>
                 <li class="header__main-bar-navigation-list-item">
-                    <a href="#" class="header__main-bar-navigation-list-link">About Us</a>
+                    <mrd-link to="${appRoutes.aboutUs}">
+                        <span class="header__main-bar-navigation-list-link">About Us</span>
+                    </mrd-link>
                 </li>
                 <li class="header__main-bar-navigation-list-item">
-                    <a href="#" class="header__main-bar-navigation-list-link">Contact</a>
+                    <mrd-link to="${appRoutes.contact}">
+                        <span class="header__main-bar-navigation-list-link">Contact</span>
+                    </mrd-link>
                 </li>
             </ul>
         </nav>

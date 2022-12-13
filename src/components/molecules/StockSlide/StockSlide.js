@@ -1,3 +1,4 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class StockSlide extends Component {
@@ -9,21 +10,21 @@ export class StockSlide extends Component {
     render() {
         return `
         <div class="homepage-main__in-stock-slide-img-wrapper">
-            <a href="./product.html" class="homepage-main__in-stock-slide-img-link">
+            <mrd-link to="${appRoutes.productDetails}" class="homepage-main__in-stock-slide-img-link">            
                 <img src="../../assets/images/ready-to-ship-pictures/${this.props.poster}.jpg" alt="${this.props.poster}"
                 class="homepage-main__in-stock-slide-img">
-            </a>                                
+            </mrd-link>                                
         </div>
         <div class="homepage-main__in-stock-slide-description-wrapper">
-            <a href="./product.html" class="homepage-main__in-stock-slide-title-link">
+            <mrd-link to="${appRoutes.productDetails}" class="homepage-main__in-stock-slide-title-link">            
                 <h4 class="homepage-main__in-stock-slide-title">${this.props.title}</h4>
-            </a>                                
+            </mrd-link>                                
             <p class="homepage-main__in-stock-slide-price">${this.props.price}</p>
-            <form action="./product.html">
+            <mrd-link to="${appRoutes.productDetails}">
                 <button class="homepage-main__in-stock-slide-btn" type="submit">
                     View Details Products
                 </button>
-            </form>                                
+            </mrd-link>                                
         </div>
         `
     }

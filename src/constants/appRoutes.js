@@ -9,5 +9,6 @@ export const appRoutes = {
     contact: '/contact',
     findRetail: '/find-retail',
     productDetails: '/product-details',
+    cart: '/cart',
     errorPage: '*',
 }

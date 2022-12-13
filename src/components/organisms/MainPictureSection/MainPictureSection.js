@@ -1,3 +1,4 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class MainPictureSection extends Component {
@@ -13,7 +14,10 @@ export class MainPictureSection extends Component {
                     <p class="homepage-main__picture-section-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit.
                         Semper eget ultrices gravida gravida. Suspendisse pharetra quis eros facilisi.</p>
-                    <button class="homepage-main__picture-section-button" type="submit">Shop Collections</button>
+                    <mrd-link to="${appRoutes.products}">
+                        <button class="homepage-main__picture-section-button">Shop Collections</button>
+                    </mrd-link>
+                        
                 </div>
             </div>
         </div>

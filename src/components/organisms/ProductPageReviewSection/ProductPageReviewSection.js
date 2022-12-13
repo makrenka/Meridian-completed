@@ -13,7 +13,7 @@ export class ProductPageReviewSection extends Component {
                 },
             ]
         }
-        console.log(this.state.slide)
+        
     }
 
     render() {

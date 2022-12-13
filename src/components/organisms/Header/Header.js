@@ -13,7 +13,7 @@ export class Header extends Component {
                 <div class="header__main-bar-retail-section-wrapper">
                     <mrd-header-retail></mrd-header-retail>
                     <div class="header__main-bar-icons">
-                        <mrd-cart></mrd-cart>
+                        <mrd-cart-icon></mrd-cart-icon>
                         <img src="../../assets/images/icons/search.svg" alt="search-icon" class="header__main-bar-icons-search">
                     </div>
                 </div>

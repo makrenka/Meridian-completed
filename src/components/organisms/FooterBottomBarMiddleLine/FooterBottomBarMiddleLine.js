@@ -1,3 +1,4 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class FooterBottomBarMiddleLine extends Component {
@@ -27,36 +28,44 @@ export class FooterBottomBarMiddleLine extends Component {
                 <nav class="footer__bottom-bar-middle-line-product-navigation">
                     <ul class="footer__bottom-bar-middle-line-product-list">
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                New Arrival</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                New Arrival
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                Living Room</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                Living Room
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                Kitchen & Dining Room</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                Kitchen & Dining Room
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                Bed Room</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                Bed Room
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                Accent</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                Accent
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                Occasional Table</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                Occasional Table
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                Office/Home Office</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                Office/Home Office
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-product-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-product-item-link">
-                                Outdoor Furniture</a>
+                            <mrd-link-footer to="${appRoutes.productDetails}" class="footer__bottom-bar-middle-line-product-item-link">
+                                Outdoor Furniture
+                            </mrd-link-footer>
                         </li>
                     </ul>
                 </nav>
@@ -66,12 +75,14 @@ export class FooterBottomBarMiddleLine extends Component {
                 <nav class="footer__bottom-bar-middle-line-help-navigation">
                     <ul class="footer__bottom-bar-middle-line-help-list">
                         <li class="footer__bottom-bar-middle-line-help-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-help-item-link">
-                                About Us</a>
+                            <mrd-link-footer to="${appRoutes.aboutUs}" class="footer__bottom-bar-middle-line-help-item-link">
+                                About Us
+                            </mrd-link-footer>
                         </li>
                         <li class="footer__bottom-bar-middle-line-help-item">
-                            <a href="#" class="footer__bottom-bar-middle-line-help-item-link">
-                                Contact</a>
+                            <mrd-link-footer to="${appRoutes.contact}" class="footer__bottom-bar-middle-line-help-item-link">
+                                Contact
+                            </mrd-link-footer>
                         </li>
                     </ul>
                 </nav>

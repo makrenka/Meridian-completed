@@ -1,3 +1,4 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class HomeGallerySection extends Component {
@@ -12,9 +13,9 @@ export class HomeGallerySection extends Component {
                 <div class="homepage-main__gallery-section-gallery-img-wrapper">
                     <img src="../../assets/images/gallery/gallery-img1.jpg" alt="gallery-img"
                         class="homepage-main__gallery-section-gallery-img">
-                    <form action="./product.html">
-                        <button type="submit" class="homepage-main__gallery-section-gallery-btn">View Product</button>
-                    </form>
+                    <mrd-link to="${appRoutes.productDetails}">
+                        <button class="homepage-main__gallery-section-gallery-btn">View Product</button>
+                    </mrd-link>
                 </div>
                 <img src="../../assets/images/gallery/gallery-img2.jpg" alt="gallery-img"
                     class="homepage-main__gallery-section-gallery-img">

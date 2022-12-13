@@ -1,4 +1,4 @@
 export * from './HeaderAdBar';
 export * from './Logo';
-export * from './Cart';
+export * from './CartIcon';
 export * from './ButtonAddToCart';

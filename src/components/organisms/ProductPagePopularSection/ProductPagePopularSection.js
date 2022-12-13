@@ -1,3 +1,4 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class ProductPagePopularSection extends Component {
@@ -43,9 +44,9 @@ export class ProductPagePopularSection extends Component {
                                 class="product-main__popular-set-img">
                             <h6 class="product-main__popular-set-heading">${title}</h6>
                             <p class="product-main__popular-set-text">${price}</p>
-                            <form action="./product.html" class="product-main__popular-set-form">
+                            <mrd-link to="${appRoutes.productDetails}" class="product-main__popular-set-form">
                                 <button class="product-main__popular-set-form-btn">View Set</button>
-                            </form>
+                            </mrd-link>
                         </div>
                         `
                     ).join(' ')}                                       

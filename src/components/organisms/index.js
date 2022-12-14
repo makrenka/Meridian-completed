@@ -22,3 +22,4 @@ export * from './ProductPageFaqSection';
 export * from './ProductPagePopularSection';
 export * from './ProductPageReviewSection';
 export * from './ProductPageReviewSlide';
+export * from './HeaderMobileMenu';

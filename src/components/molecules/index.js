@@ -11,3 +11,4 @@ export * from './ProductColors';
 export * from './ProductPaying';
 export * from './ProductFinanceAvailableForAdaptive';
 export * from './ProductPagePropertySection';
+export * from './RegisterInput';

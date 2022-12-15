@@ -2,71 +2,60 @@ import { Component } from "../../../core/Component/Component";
 
 export class DeliveryDescription extends Component {
 
-    removeClass = () => {
+    toggleClasses(evt) {
+        const articles = [...this
+            .querySelectorAll('.product-main__product-section-options-delivery-description-section-article')];
         const links = [...this
-            .querySelectorAll('.product-main__product-section-options-delivery-description-nav-link')]
-            .filter(item => item.className.endsWith('active'))
-            .forEach(item => item
-                .classList.remove('product-main__product-section-options-delivery-description-nav-link--active'));
-    }
+            .querySelectorAll('.product-main__product-section-options-delivery-description-nav-link')];
+        const target = evt.target.closest('.product-main__product-section-options-delivery-description-nav-link')
+        const article = articles.filter(item => target.className.includes(item.id));
 
-    addClassOnload = () => {
-        const pgurl = window.location;
-        const links = [...this
-            .querySelectorAll('.product-main__product-section-options-delivery-description-nav-link')]
-            .filter(item => pgurl.href.endsWith(item.href))
-            .forEach(item => item
-                .classList.add('product-main__product-section-options-delivery-description-nav-link--active'))
-    }
-
-    addClassOnclick = (evt) => {
-        const link = evt.target
-            .closest('.product-main__product-section-options-delivery-description-nav-link')
-            .classList.add('product-main__product-section-options-delivery-description-nav-link--active');
+        if(target) {
+            links.forEach(item => item.classList
+                .remove('product-main__product-section-options-delivery-description-nav-link--active'))
+            target.classList.add('product-main__product-section-options-delivery-description-nav-link--active');
+            articles.forEach(item => item.classList
+                .remove('product-main__product-section-options-delivery-description-section-article--active'))
+            article.forEach(item => item
+                .classList.add('product-main__product-section-options-delivery-description-section-article--active'));
+        } 
     }
 
     componentDidMount() {
-        this.addEventListener('click', this.removeClass);
-        this.addClassOnload();
-        this.addEventListener('click', this.addClassOnclick);
+        this.addEventListener('click', this.toggleClasses);
     }
 
     componentWillUnmount() {
-        this.removeEventListener('click', this.removeClass);
-        this.addClassOnload();
-        this.removeEventListener('click', this.addClassOnclick);
+        this.removeEventListener('click', this.toggleClasses);
     }
 
-    static get observedAttributes() {
-        return ['name'];
-    }
- 
     render() {
+
         return `
         
         <div class="product-main__product-section-options-delivery-description">
-            <div class="product-main__product-section-options-delivery-description-nav-wrapper">
-                <nav class="product-main__product-section-options-delivery-description-nav">
-                    <a href="#include${this.props.name}"
-                        class="product-main__product-section-options-delivery-description-nav-link">
-                        What’s Included?</a>
-                    <a href="#delivery${this.props.name}"
-                        class="product-main__product-section-options-delivery-description-nav-link">
-                        Delivery
-                    </a>
-                    <a href="#dimensions${this.props.name}"
-                        class="product-main__product-section-options-delivery-description-nav-link">
-                        Dimensions
-                    </a>
-                    <a href="#finance${this.props.name}"
-                        class="product-main__product-section-options-delivery-description-nav-link">
-                        Finance
-                    </a>
-                </nav>
+            <div class="product-main__product-section-options-delivery-description-nav">
+                <p class="product-main__product-section-options-delivery-description-nav-link included
+                    product-main__product-section-options-delivery-description-nav-link--active">
+                    What’s Included?</p>
+                <p
+                    class="product-main__product-section-options-delivery-description-nav-link bringing">
+                    Delivery
+                </p>
+                <p
+                    class="product-main__product-section-options-delivery-description-nav-link dimensions">
+                    Dimensions
+                </p>
+                <p
+                    class="product-main__product-section-options-delivery-description-nav-link finance">
+                    Finance
+                </p>
             </div>
-            <section class="product-main__product-section-options-delivery-description-section">
-                <article id="include${this.props.name}"
-                    class="product-main__product-section-options-delivery-description-section-article">
+            
+            <div class="product-main__product-section-options-delivery-description-section">
+                <article id="included"
+                    class="product-main__product-section-options-delivery-description-section-article 
+                    product-main__product-section-options-delivery-description-section-article--active">
                     <h5
                         class="product-main__product-section-options-delivery-description-section-article-heading">
                         What’s Included?
@@ -79,7 +68,7 @@ export class DeliveryDescription extends Component {
                         adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
                     </p>
                 </article>
-                <article id="delivery${this.props.name}"
+                <article id="bringing"
                     class="product-main__product-section-options-delivery-description-section-article">
                     <h5
                         class="product-main__product-section-options-delivery-description-section-article-heading">
@@ -93,7 +82,7 @@ export class DeliveryDescription extends Component {
                         adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
                     </p>
                 </article>
-                <article id="dimensions${this.props.name}"
+                <article id="dimensions"
                     class="product-main__product-section-options-delivery-description-section-article">
                     <h5
                         class="product-main__product-section-options-delivery-description-section-article-heading">
@@ -107,7 +96,7 @@ export class DeliveryDescription extends Component {
                         adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
                     </p>
                 </article>
-                <article id="finance${this.props.name}"
+                <article id="finance"
                     class="product-main__product-section-options-delivery-description-section-article">
                     <h5
                         class="product-main__product-section-options-delivery-description-section-article-heading">
@@ -121,7 +110,7 @@ export class DeliveryDescription extends Component {
                         adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
                     </p>
                 </article>
-            </section>
+            </div>
         </div>
         `
     }

@@ -105,6 +105,11 @@
 .product-main__product-section-options-delivery-description-section-article {
     overflow: auto;
     height: 253px;
+    display: none;
+}
+
+.product-main__product-section-options-delivery-description-section-article--active {
+    display: block;
 }
 
 .product-main__product-section-options-delivery-description-section-article-text {

@@ -6,7 +6,7 @@ export class HeaderRetail extends Component {
     render() {
         return `
         
-        <nav class="header__main-bar-retail-section">
+        
             <ul class="header__main-bar-retail-section-list">
                 <li class="header__main-bar-retail-section-list-item">
                     <mrd-link to="${appRoutes.signIn}">
@@ -24,7 +24,7 @@ export class HeaderRetail extends Component {
                     </mrd-link>
                 </li>
             </ul>
-        </nav>
+        
         `
     }
 }

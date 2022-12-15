@@ -153,6 +153,15 @@
         display: none;
     }
 
+    .header__main-bar-navigation {
+        display: none;
+    }
+
+    .mrd-header-nav-mobile,
+    .mrd-header-retail-mobile {
+        display: block;
+    }
+
     .header__main-bar-hamburger-menu {
         display: block;
     }
@@ -202,11 +211,13 @@
         border: none;
     }
 
-    .header__main-mobile-bar-navigation-list {
+    .header__main-bar-navigation-list {
+        display: block;
         padding: 20px 0;
     }
 
-    .header__main-mobile-bar-retail-section-list {
+    .header__main-bar-retail-section-list {
+        display: block;
         padding-top: 20px;
         border-top: 1px solid var(--header-nav-link);
     }

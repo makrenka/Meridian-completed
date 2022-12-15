@@ -2,6 +2,33 @@ import { Component } from "../../../core";
 
 export class HeaderMobileMenu extends Component {
 
+    userClickOutside(evt) {
+        const target = evt.target.closest('.header__main-bar-hamburger-menu')
+        const mobileMenu = document.querySelector('.header__main-bar-mobile');
+        if (!target) {
+            mobileMenu.classList.remove('header__main-bar-mobile--active');
+        }
+    }
+
+
+
+    toggleMenu() {
+        const mobileMenu = document.querySelector('.header__main-bar-mobile');
+        mobileMenu.classList.toggle('header__main-bar-mobile--active');
+    }
+
+    componentDidMount() {
+        const hamburgerButton = document.querySelector('.header__main-bar-hamburger-menu');
+        hamburgerButton.addEventListener('click', this.toggleMenu);
+        window.addEventListener('click', this.userClickOutside);
+    }
+
+    componentWillUnmount() {
+        const hamburgerButton = document.querySelector('.header__main-bar-hamburger-menu');
+        hamburgerButton.removeEventListener('click', this.toggleMenu);
+        window.removeEventListener('click', this.userClickOutside);
+    }
+
     render() {
         return `
         
@@ -10,38 +37,12 @@ export class HeaderMobileMenu extends Component {
                 <input type="text" name="header-search" placeholder="Search"
                     class="header__main-bar-mobile-search-input">
                 <button type="submit" class="header__main-bar-mobile-search-btn">
-                    <img src="./images/icons/search.svg" alt="search-icon">
+                    <img src="../../assets/images/icons/search.svg" alt="search-icon">
                 </button>
             </form>
             <nav class="header__main-mobile-bar-navigation">
-                <ul class="header__main-mobile-bar-navigation-list">
-                    <li class="header__main-bar-navigation-list-item">
-                        <a href="/" class="header__main-bar-navigation-list-link home-link">Home</a>
-                    </li>
-                    <li class="header__main-bar-navigation-list-item">
-                        <a href="#" class="header__main-bar-navigation-list-link">Products</a>
-                    </li>
-                    <li class="header__main-bar-navigation-list-item">
-                        <a href="#" class="header__main-bar-navigation-list-link">Showroom</a>
-                    </li>
-                    <li class="header__main-bar-navigation-list-item">
-                        <a href="#" class="header__main-bar-navigation-list-link">About Us</a>
-                    </li>
-                    <li class="header__main-bar-navigation-list-item">
-                        <a href="#" class="header__main-bar-navigation-list-link">Contact</a>
-                    </li>
-                </ul>
-                <ul class="header__main-mobile-bar-retail-section-list">
-                    <li class="header__main-bar-retail-section-list-item">
-                        <a href="#" class="header__main-bar-retail-section-list-link">Dealer Login</a>
-                    </li>
-                    <li class="header__main-bar-retail-section-list-item">
-                        <a href="#" class="header__main-bar-retail-section-list-link">Become A Dealer</a>
-                    </li>
-                    <li class="header__main-bar-retail-section-list-item">
-                        <a href="#" class="header__main-bar-retail-section-list-link">Find A Retail</a>
-                    </li>
-                </ul>
+                <mrd-header-nav class="mrd-header-nav-mobile"></mrd-header-nav>
+                <mrd-header-retail class="mrd-header-retail-mobile"></mrd-header-retail>
             </nav>
         </div>
         `

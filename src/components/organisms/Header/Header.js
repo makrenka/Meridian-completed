@@ -13,7 +13,9 @@ export class Header extends Component {
                 </nav>
                 <mrd-logo></mrd-logo>
                 <div class="header__main-bar-retail-section-wrapper">
-                    <mrd-header-retail></mrd-header-retail>
+                    <nav class="header__main-bar-retail-section">
+                        <mrd-header-retail></mrd-header-retail>
+                    </nav>
                     <div class="header__main-bar-icons">
                         <mrd-cart-icon></mrd-cart-icon>
                         <img src="../../assets/images/icons/search.svg" alt="search-icon" class="header__main-bar-icons-search">
@@ -21,6 +23,8 @@ export class Header extends Component {
                 </div>
             </div>
         </div>
+
+        <mrd-header-mobile-menu></mrd-header-mobile-menu>
         `
     }
 }

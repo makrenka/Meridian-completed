@@ -7,7 +7,7 @@ export class HeaderNavigation extends Component {
     render() {
         return `
         
-        <nav class="header__main-bar-navigation">
+        
             <ul class="header__main-bar-navigation-list">
                 <li class="header__main-bar-navigation-list-item">
                     <mrd-link to="${appRoutes.home}">
@@ -35,7 +35,7 @@ export class HeaderNavigation extends Component {
                     </mrd-link>
                 </li>
             </ul>
-        </nav>
+        
         `
     }
 }

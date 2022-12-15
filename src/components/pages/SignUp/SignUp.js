@@ -1,28 +1,56 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 import { FormManager } from "../../../core/FormManager/FormManager";
 import { Validator } from "../../../core/FormManager/Validator";
+import { authService } from "../../../services/Auth";
 import { initialFieldsState } from "./initialState";
 
 export class SignUp extends Component {
     constructor() {
         super();
         this.state = {
-          error: "",
-          isLoading: false,
-          fields: {
-            ...initialFieldsState,
-          },
+            error: "",
+            isLoading: false,
+            fields: {
+                ...initialFieldsState,
+            },
         };
 
         this.form = new FormManager();
     }
 
+    toggleisLoading = () => {
+        this.setState((state) => {
+            return {
+                ...state,
+                isLoading: !state.isLoading,
+            };
+        });
+    };
+
     registerUser = (data) => {
-        console.log(data);
-    }
+        this.toggleisLoading();
+        authService
+            .signUp(data.email, data.password)
+            .then((user) => {
+                authService.user = user;
+                this.dispatch("change-route", { target: appRoutes.home });
+            })
+            .catch((error) => {
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        error: error.message,
+                    };
+                });
+            })
+            .finally(() => {
+                this.toggleisLoading();
+            });
+    };
 
     validateForm(evt) {
-        if(evt.target.closest('mrd-register-input')) {
+        if (evt.target.closest('mrd-register-input')) {
             this.form.init(this.querySelector('.register-form'), {
                 email: [
                     Validator.email('Email is not valid'),
@@ -35,15 +63,15 @@ export class SignUp extends Component {
 
     validate = (evt) => {
         this.setState((state) => {
-          return {
-            ...state,
-            fields: {
-              ...state.fields,
-              ...evt.detail,
-            },
-          };
+            return {
+                ...state,
+                fields: {
+                    ...state.fields,
+                    ...evt.detail,
+                },
+            };
         });
-      };
+    };
 
     componentDidMount() {
         this.addEventListener('click', this.validateForm);
@@ -61,16 +89,21 @@ export class SignUp extends Component {
 
         const {
             fields: { email, password },
-          } = this.state;
+        } = this.state;
 
+        
         return `
         <mrd-preloader is-loading="${this.state.isLoading}">
             <form class="register-form">
-                <div class="form-container">
+                <div class="form-container">                    
                     <h1 class="register-heading">Register</h1>
                     <p class="register-text">Please fill in this form to create an account.</p>
                     <hr>
 
+                    <div class="invalid-feedback invalid-feedback--active" style="text-align: center;">
+                        ${this.state.error}
+                    </div>
+                    
                     <mrd-register-input
                         type="email"
                         label="Email"

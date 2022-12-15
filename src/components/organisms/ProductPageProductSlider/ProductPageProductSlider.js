@@ -1,6 +1,41 @@
 import { Component } from "../../../core/Component/Component";
+import Swiper, { Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
 
 export class ProductPageProductSlider extends Component {
+
+    initSwiper() {
+        let swiper = new Swiper(".product-main__product-section-slider", {
+            spaceBetween: 10,
+
+            modules: [Navigation, Pagination, Thumbs],
+
+            pagination: {
+                el: ".product-section-slider-pagination",
+                type: "bullets",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: {
+                    el: '.product-main__product-section-slider2',
+                    slidesPerView: 5,
+                },
+            },
+        });
+
+        return swiper;
+    }
+
+    componentDidMount() {
+        this.initSwiper();
+    }
+
+    componentWillUnmount() {
+        this.initSwiper();
+    }
 
     render() {
         return `

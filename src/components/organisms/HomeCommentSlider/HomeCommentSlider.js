@@ -1,6 +1,53 @@
 import { Component } from "../../../core/Component/Component";
+import Swiper, { Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
 
 export class HomeCommentSlider extends Component {
+
+    initSwiper() {
+        let swiper = new Swiper(".homepage-main__comment-section-slider", {
+            slidesPerView: 1,
+            spaceBetween: 25,
+            loop: true,
+
+            modules: [Navigation, Pagination],
+
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        new Swiper(".homepage-main__comment-section-slider-adapt", {
+            slidesPerView: 1,
+            spaceBetween: 60,
+            loop: true,
+
+            modules: [Navigation, Pagination],
+
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        return swiper;
+    }
+
+    componentDidMount() {
+        this.initSwiper();
+    }
+
+    componentWillUnmount() {
+        this.initSwiper();
+    }
 
     render() {
         return `

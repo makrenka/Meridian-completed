@@ -1,9 +1,10 @@
 import { Component } from "../../../core/Component/Component";
+import Swiper, { Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
 
 export class StockSlider extends Component {
     constructor() {
-        super();     
-        
+        super();
+
         this.state = {
             data: [
                 {
@@ -34,6 +35,66 @@ export class StockSlider extends Component {
         }
     }
 
+    initSwiper() {
+        let swiper = new Swiper('.homepage-main__in-stock-slider', {
+            // Optional parameters
+            direction: 'horizontal',
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+
+            breakpoints: {
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 10
+                },
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+            },
+
+            modules: [Navigation, Pagination],
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        new Swiper('.homepage-main__in-stock-slider-adapt', {
+            // Optional parameters
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+
+            modules: [Scrollbar],
+
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+                dragSize: 250,
+            },
+
+        });
+
+        return swiper;
+    }
+
+    componentDidMount() {
+        this.initSwiper();
+    }
+
+    componentWillUnmount() {
+        this.initSwiper();
+    }
+
     render() {
         return `
         <section class="homepage-main__in-stock">
@@ -45,7 +106,7 @@ export class StockSlider extends Component {
                     <div class="swiper homepage-main__in-stock-slider">
                     <div class="swiper-wrapper">
                         ${this.state.data.map(({ id, poster, title, price }) => {
-                            return `
+            return `
                                             <div class="swiper-slide homepage-main__in-stock-slide">
                                                 <mrd-stock-slide 
                                                     id='${id}'
@@ -55,7 +116,7 @@ export class StockSlider extends Component {
                                                 </mrd-stock-slide>
                                             </div>
                                             `
-                        }).join(' ')}
+        }).join(' ')}
                 
                 
                     </div>
@@ -69,7 +130,7 @@ export class StockSlider extends Component {
             <div class="swiper homepage-main__in-stock-slider-adapt">
             <div class="swiper-wrapper">
                 ${this.state.data.map(({ id, poster, title, price }) => {
-                    return `
+            return `
                                     <div class="swiper-slide homepage-main__in-stock-slide">
                                         <mrd-stock-slide 
                                             id='${id}'
@@ -79,7 +140,7 @@ export class StockSlider extends Component {
                                         </mrd-stock-slide>
                                     </div>
                                     `
-                }).join(' ')}
+        }).join(' ')}
         
         
             </div>

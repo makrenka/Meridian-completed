@@ -1,4 +1,5 @@
 import { Component } from "../../../core/Component/Component";
+import Swiper, { Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
 
 export class ProductPageReviewSection extends Component {
     constructor() {
@@ -13,7 +14,37 @@ export class ProductPageReviewSection extends Component {
                 },
             ]
         }
-        
+
+    }
+
+    initSwiper() {
+        let swiper = new Swiper(".product-main__reviews-slider", {
+            slidesPerView: 1,
+
+            modules: [Navigation, Pagination],
+
+            pagination: {
+                el: ".reviews-slider-pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+            navigation: {
+                nextEl: ".reviews-slider-btn-next",
+                prevEl: ".reviews-slider-btn-prev",
+            },
+        });
+
+        return swiper;
+    }
+
+    componentDidMount() {
+        this.initSwiper();
+    }
+
+    componentWillUnmount() {
+        this.initSwiper();
     }
 
     render() {
@@ -28,13 +59,13 @@ export class ProductPageReviewSection extends Component {
     
                 <div class="swiper product-main__reviews-slider">
                     <div class="swiper-wrapper product-main__reviews-slider-wrapper">
-                        ${this.state.slide.map(({ id }) => 
-                            `
+                        ${this.state.slide.map(({ id }) =>
+            `
                             <div class="swiper-slide product-main__reviews-slider-slide" slide-id="${id}">
                                 <mtd-pp-review-slide></mtd-pp-review-slide>
                             </div>
                             `
-                        ).join(' ')}
+        ).join(' ')}
                         
     
                         

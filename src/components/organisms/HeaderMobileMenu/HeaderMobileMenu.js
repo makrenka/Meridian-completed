@@ -10,22 +10,21 @@ export class HeaderMobileMenu extends Component {
         }
     }
 
-
-
-    toggleMenu() {
+    toggleMenu(evt) {
+        const target = evt.target.closest('.header__main-bar-hamburger-menu')
         const mobileMenu = document.querySelector('.header__main-bar-mobile');
-        mobileMenu.classList.toggle('header__main-bar-mobile--active');
+        if(target) {
+            mobileMenu.classList.toggle('header__main-bar-mobile--active');
+        }        
     }
 
     componentDidMount() {
-        const hamburgerButton = document.querySelector('.header__main-bar-hamburger-menu');
-        hamburgerButton.addEventListener('click', this.toggleMenu);
+        window.addEventListener('click', this.toggleMenu);
         window.addEventListener('click', this.userClickOutside);
     }
 
     componentWillUnmount() {
-        const hamburgerButton = document.querySelector('.header__main-bar-hamburger-menu');
-        hamburgerButton.removeEventListener('click', this.toggleMenu);
+        window.removeEventListener('click', this.toggleMenu);
         window.removeEventListener('click', this.userClickOutside);
     }
 

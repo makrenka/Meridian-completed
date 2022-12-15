@@ -1,0 +1,12 @@
+.register-input-wrapper {
+    margin-top: 20px;
+}
+
+.invalid-feedback {
+    color: red;
+    display: none;
+}
+
+.invalid-feedback--active {
+    display: block;
+}

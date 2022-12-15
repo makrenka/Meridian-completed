@@ -16,19 +16,26 @@ export class RegisterInput extends Component {
     }
 
     render() {
-        const controlClassName = JSON.parse(this.props['is-valid']) ? 'is-valid' : 'is-invalid';
-        const isAddClassName = JSON.parse(this.props['is-touched']) ? controlClassName : '';
+        const controlClassNameInput = JSON.parse(this.props['is-valid']) ? 'is-valid' : 'is-invalid';
+        const controlClassNameMessage = JSON.parse(this.props['is-valid']) ? 'invalid-feedback' : 'invalid-feedback--active';
+        const isAddClassNameInput = JSON.parse(this.props['is-touched']) ? controlClassNameInput : '';
+        const isAddClassNameMessage = JSON.parse(this.props['is-touched']) ? controlClassNameMessage : '';
 
         return `
+        <div class="register-input-wrapper">
+            <label for="email" class="register-label-email"><b>${this.props.label}</b></label>
+            <input 
+                type="${this.props.type}" 
+                placeholder="Enter ${this.props.label}" 
+                name="${this.props['control-name']}" 
+                required 
+                class="register-input ${isAddClassNameInput} ${this.props['class-name'] ?? ''}" 
+                value="${this.props.value}"
+            >
+        </div>
         
-        <label for="email" class="register-label-email"><b>${this.props.label}</b></label>
-        <input 
-            type="${this.props.type}" 
-            placeholder="Enter ${this.props.label}" 
-            name="${this.props['control-name']}" 
-            required 
-            class="register-input ${isAddClassName} ${this.props['class-name'] ?? ''}"
-            x-moz-errormessage="${this.props['error-message']}">
+        <div class="invalid-feedback ${isAddClassNameMessage}">${this.props['error-message']}</div>
+        </div>
         `
     }
 }

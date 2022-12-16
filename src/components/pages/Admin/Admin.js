@@ -1,7 +1,19 @@
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
+import { authService } from "../../../services/Auth";
 
 export class Admin extends Component {
+
+    componentDidMount() {
+        if (!authService.user) {
+            this.dispatch('change-route', {
+                target: appRoutes[this.props.path ?? "signUp"],
+            });
+        }
+    }
+
     render() {
+        console.log(authService.user)
         return `
         <div class="admin-page__wrapper">
             <div class="admin-page__container">

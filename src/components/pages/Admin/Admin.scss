@@ -1,0 +1,186 @@
+.admin-page__wrapper {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 80px 0;
+}
+
+.admin-page__container {
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.admin-page__heading {
+    color: #272727;
+    font-family: Outfit, sans-serif;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 56px;
+}
+
+.admin-page__form-label {
+    color: #848484;
+    font-family: HK Grotesk, sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.admin-page__form-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    margin: 30px 0;
+}
+
+.admin-page__form-control,
+.admin-page__form-price,
+.admin-page__form-select,
+.admin-page__form-area {
+    border: 1px solid #848484;
+}
+
+.admin-page__form-file,
+.admin-page__form-select {
+    font-family: HK Grotesk, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: #272727;
+}
+
+.admin-page__btn {
+    background-color: var(--properties-background);
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 56px;
+}
+
+@media screen and (max-width: 1280px) {
+    .admin-page__container {
+        max-width: 1004px;
+    }
+
+    .admin-page__wrapper {
+        padding: 50px 0;
+    }
+
+    .admin-page__heading {
+        font-size: 40px;
+    }
+
+    .admin-page__form-item {
+        grid-template-columns: 170px 1fr;
+    }
+
+    .admin-page__form-label {
+        font-size: 20px;
+    }
+
+    .admin-page__form-file,
+    .admin-page__form-select {
+        font-size: 17px;
+    }
+
+    .admin-page__btn {
+        font-size: 20px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .admin-page__container {
+        max-width: 748px;
+    }
+
+    .admin-page__heading {
+        font-size: 35px;
+    }
+
+    .admin-page__form-item {
+        grid-template-columns: 150px 1fr;
+    }
+
+    .admin-page__form-label {
+        font-size: 16px;
+    }
+
+    .admin-page__form-file,
+    .admin-page__form-select {
+        font-size: 14px;
+    }
+
+    .admin-page__btn {
+        font-size: 16px;
+        line-height: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .admin-page__container {
+        max-width: 620px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .admin-page__container {
+        max-width: 408px;
+    }
+
+    .admin-page__form-item {
+        grid-template-columns: 130px 1fr;
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .admin-page__container {
+        max-width: 380px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .admin-page__container {
+        max-width: 300px;
+    }
+
+    .admin-page__form-item {
+        grid-template-columns: 115px 1fr;
+    }
+
+    .admin-page__form-control,
+    .admin-page__form-price {
+        width: 100%;
+    }
+
+    .admin-page__form-control,
+    .admin-page__form-price,
+    .admin-page__form-select {
+        height: 30px;
+    }
+
+    .admin-page__form-file {
+        font-size: 9px;
+    }
+
+    .admin-page__form-select {
+        font-size: 11px;
+    }
+
+    .admin-page__form-label {
+        font-size: 14px;
+    }
+
+    .admin-page__form-file {
+        line-height: 25px;
+    }
+}

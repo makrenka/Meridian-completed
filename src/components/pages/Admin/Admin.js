@@ -3,17 +3,56 @@ import { Component } from "../../../core/Component/Component";
 import { authService } from "../../../services/Auth";
 
 export class Admin extends Component {
+    constructor() {
+        super();
+        this.state = {
+            isLoading: false,
+            error: "",
+        };
+    }
+
+    toggleIsLoading() {
+        this.setState((state) => {
+            return {
+                ...state,
+                isLoading: !state.isLoading,
+            }
+        })
+    }
+
+    checkUser() {
+        this.toggleIsLoading();
+        authService.init()
+            .then((user) => {
+                authService.user = user;
+                if (!authService.user) {
+                    this.dispatch('change-route', {
+                        target: appRoutes[this.props.path ?? "signUp"],
+                    });
+                }
+            })
+            .catch((error) => {
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        error: error.message,
+                    }
+                })
+            })
+            .finally(() => {
+                this.toggleIsLoading();
+            })  
+    }
 
     componentDidMount() {
-        if (!authService.user) {
-            this.dispatch('change-route', {
-                target: appRoutes[this.props.path ?? "signUp"],
-            });
-        }
+        this.checkUser();
+    }
+
+    componentWillUnmount() {
+        this.checkUser();
     }
 
     render() {
-        console.log(authService.user)
         return `
         <div class="admin-page__wrapper">
             <div class="admin-page__container">

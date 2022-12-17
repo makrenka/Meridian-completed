@@ -1,4 +1,5 @@
 import './components';
+import { appEvents } from './constants/appEvents';
 import { appRoutes } from './constants/appRoutes';
 import * as core from "./core";
 import { authService } from './services/Auth';
@@ -8,6 +9,7 @@ export class App extends core.Component {
         super();
         this.state = {
             isLoading: false,
+            isLogged: false,
             error: "",
         };
     }
@@ -21,11 +23,17 @@ export class App extends core.Component {
         })
     }
 
-    componentDidMount() {
+    getUser() {
         this.toggleIsLoading();
         authService.init()
             .then((user) => {
                 authService.user = user;
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        isLogged: Boolean(user),
+                    }
+                })
             })
             .catch((error) => {
                 this.setState((state) => {
@@ -38,15 +46,49 @@ export class App extends core.Component {
             .finally(() => {
                 this.toggleIsLoading();
             })
-        
+    }
+
+    onSignOut = () => {
+        this.toggleIsLoading();
+        authService.signOut()
+            .then(() => {
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        isLogged: false,
+                    }
+                })
+            })
+            .catch((error) => {
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        error: error.message,
+                    }
+                })
+            })
+            .finally(() => {
+                this.toggleIsLoading();
+            })
+    }
+
+    componentDidMount() {
+        this.getUser();
+        this.addEventListener(appEvents.userLoggedOut, this.onSignOut);
+    }
+
+    componentWillUnmount() {
+        this.getUser();
+        this.removeEventListener(appEvents.userLoggedOut, this.onSignOut);
     }
 
     render() {
-        return `
-        
+        return this.state.isLoading
+            ? `<mrd-preloader is-loading="${this.state.isLoading}"></mrd-preloader>`
+            : `        
         <mrd-router>
-            <mrd-preloader is-loading="${this.state.isLoading}">
-                <mrd-header></mrd-header>
+            
+                <mrd-header is-logged="${this.state.isLogged}"></mrd-header>
 
                 <mrd-route path="${appRoutes.home}" component="home-page" title="Home page"></mrd-route>
                 <mrd-route path="${appRoutes.admin}" component="admin-page" title="Admin page"></mrd-route>
@@ -63,7 +105,7 @@ export class App extends core.Component {
                 <mrd-outlet></mrd-outlet>
 
                 <mrd-footer></mrd-footer>    
-            </mrd-preloader>        
+                    
         </mrd-router>
         `
     }

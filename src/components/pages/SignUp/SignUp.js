@@ -1,3 +1,4 @@
+import { appEvents } from "../../../constants/appEvents";
 import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 import { FormManager } from "../../../core/FormManager/FormManager";
@@ -34,7 +35,7 @@ export class SignUp extends Component {
             .signUp(data.email, data.password)
             .then((user) => {
                 authService.user = user;
-                this.dispatch("change-route", { target: appRoutes.home });
+                this.dispatch(appEvents.changeRoute, { target: appRoutes.home });
             })
             .catch((error) => {
                 this.setState((state) => {
@@ -91,7 +92,7 @@ export class SignUp extends Component {
             fields: { email, password },
         } = this.state;
 
-        
+
         return `
         <mrd-preloader is-loading="${this.state.isLoading}">
             <form class="register-form">

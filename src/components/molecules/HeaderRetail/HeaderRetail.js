@@ -3,10 +3,10 @@ import { Component } from "../../../core/Component/Component";
 
 export class HeaderRetail extends Component {
 
+
+
     render() {
-        return `
-        
-        
+        return `               
             <ul class="header__main-bar-retail-section-list">
                 <li class="header__main-bar-retail-section-list-item">
                     <mrd-link to="${appRoutes.signIn}">
@@ -23,6 +23,8 @@ export class HeaderRetail extends Component {
                         <span class="header__main-bar-retail-section-list-link">Find A Retail</span>
                     </mrd-link>
                 </li>
+            
+                
             </ul>
         
         `

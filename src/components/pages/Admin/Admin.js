@@ -1,14 +1,18 @@
+import { appEvents } from "../../../constants/appEvents";
 import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
+import { FormManager } from "../../../core/FormManager/FormManager";
 import { authService } from "../../../services/Auth";
+import { storageService } from "../../../services/Storage";
 
 export class Admin extends Component {
     constructor() {
         super();
         this.state = {
             isLoading: false,
-            error: "",
         };
+
+        this.form = new FormManager();
     }
 
     toggleIsLoading() {
@@ -26,7 +30,7 @@ export class Admin extends Component {
             .then((user) => {
                 authService.user = user;
                 if (!authService.user) {
-                    this.dispatch('change-route', {
+                    this.dispatch(appEvents.changeRoute, {
                         target: appRoutes[this.props.path ?? "signUp"],
                     });
                 }
@@ -41,11 +45,24 @@ export class Admin extends Component {
             })
             .finally(() => {
                 this.toggleIsLoading();
-            })  
+            })
+    }
+
+    createProduct = (data) => {
+        this.toggleIsLoading();
+        storageService.uploadImage(data.image)
+            .then((snapshot) => {
+                storageService.getDownloadURL(snapshot.ref)
+                    .then((url) => {
+                        console.log(url)
+                    })
+            })
     }
 
     componentDidMount() {
         this.checkUser();
+        this.form.init(this.querySelector('.admin-page__form'), {});
+        this.addEventListener('submit', this.form.handleSubmit(this.createProduct));
     }
 
     componentWillUnmount() {
@@ -53,6 +70,7 @@ export class Admin extends Component {
     }
 
     render() {
+
         return `
         <div class="admin-page__wrapper">
             <div class="admin-page__container">
@@ -68,7 +86,7 @@ export class Admin extends Component {
                     </div>
                     <div class="admin-page__form-item">
                         <label class="admin-page__form-label">Upload a photo</label>
-                        <input class="admin-page__form-file" type="file" id="formFile" name="poster">
+                        <input class="admin-page__form-file" type="file" id="formFile" name="image">
                     </div>
                     <div class="admin-page__form-item">
                         <label class="admin-page__form-label">Chose a type</label>
@@ -84,29 +102,25 @@ export class Admin extends Component {
                         <label for="exampleFormControlTextarea1" class="admin-page__form-label">
                             What’s Included?
                         </label>
-                        <textarea name="description" class="admin-page__form-area" id="exampleFormControlTextarea1" rows="3">
-                        </textarea>
+                        <textarea name="includes" class="admin-page__form-area" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="admin-page__form-item">
                         <label for="exampleFormControlTextarea1" class="admin-page__form-label">
                             Delivery
                         </label>
-                        <textarea name="description" class="admin-page__form-area" id="exampleFormControlTextarea1" rows="3">
-                        </textarea>
+                        <textarea name="delivery" class="admin-page__form-area" id="exampleFormControlTextarea2" rows="3"></textarea>
                     </div>
                     <div class="admin-page__form-item">
                         <label for="exampleFormControlTextarea1" class="admin-page__form-label">
                             Dimensions
                         </label>
-                        <textarea name="description" class="admin-page__form-area" id="exampleFormControlTextarea1" rows="3">
-                        </textarea>
+                        <textarea name="dimensions" class="admin-page__form-area" id="exampleFormControlTextarea3" rows="3"></textarea>
                     </div>
                     <div class="admin-page__form-item">
                         <label for="exampleFormControlTextarea1" class="admin-page__form-label">
                             Finance
                         </label>
-                        <textarea name="description" class="admin-page__form-area" id="exampleFormControlTextarea1" rows="3">
-                        </textarea>
+                        <textarea name="finance" class="admin-page__form-area" id="exampleFormControlTextarea4" rows="3"></textarea>
                     </div>
                     <button type="submit" class="admin-page__btn">Send</button>
                 </form>

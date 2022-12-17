@@ -1,7 +1,30 @@
+import { appEvents } from "../../../constants/appEvents";
+import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class Header extends Component {
+
+    static get observedAttributes() {
+        return ["is-logged"];
+    }
+
+    onSignOut(evt) {
+        evt.preventDefault();
+        if (evt.target.closest('.sign-out-link')) {
+            this.dispatch(appEvents.userLoggedOut);
+        }
+    }
+
+    componentDidMount() {
+        this.addEventListener('click', this.onSignOut);
+    }
+
+    componentWillUnmount() {
+        this.removeEventListener('click', this.onSignOut);
+    }
+
     render() {
+
         return `
         <mrd-hederadbar></mrd-hederadbar>
         <div class="container">
@@ -14,7 +37,26 @@ export class Header extends Component {
                 <mrd-logo></mrd-logo>
                 <div class="header__main-bar-retail-section-wrapper">
                     <nav class="header__main-bar-retail-section">
-                        <mrd-header-retail></mrd-header-retail>
+                        
+                        ${JSON.parse(this.props["is-logged"])
+                ? ` <li class="header__main-bar-retail-section-list-item">
+                        <a href="#" class="sign-out-link">
+                            <span class="link">Sign Out</span>
+                        </a>
+                    </li>
+                    <li class="header__main-bar-retail-section-list-item">
+                        <mrd-link to="${appRoutes.signUp}">
+                            <span class="header__main-bar-retail-section-list-link">Become A Dealer</span>
+                        </mrd-link>
+                    </li>
+                    <li class="header__main-bar-retail-section-list-item">
+                        <mrd-link to="${appRoutes.findRetail}">
+                            <span class="header__main-bar-retail-section-list-link">Find A Retail</span>
+                        </mrd-link>
+                    </li>
+                    `
+                : "<mrd-header-retail></mrd-header-retail>"
+            }
                     </nav>
                     <div class="header__main-bar-icons">
                         <mrd-cart-icon></mrd-cart-icon>

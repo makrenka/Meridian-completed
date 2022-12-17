@@ -18,7 +18,13 @@
     padding-right: 0;
 }
 
-.header__main-bar-retail-section-list-link {
+.header__main-bar-retail-section {
+    display: flex;
+    align-items: center;
+}
+
+.header__main-bar-retail-section-list-link,
+.sign-out-link {
     font-family: 'HK Grotesk', sans-serif;
     font-style: normal;
     font-weight: 400;

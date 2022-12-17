@@ -36,6 +36,7 @@ export class SignIn extends Component {
             .then((user) => {
                 authService.user = user;
                 this.dispatch(appEvents.changeRoute, { target: appRoutes.home });
+                this.dispatch(appEvents.userAuthorized);
             })
             .catch((error) => {
                 this.setState((state) => {

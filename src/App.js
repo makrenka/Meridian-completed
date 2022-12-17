@@ -72,14 +72,25 @@ export class App extends core.Component {
             })
     }
 
+    setIsLogged = () => {
+        this.setState((state) => {
+            return {
+                ...state,
+                isLogged: true,
+            }
+        })
+    }
+
     componentDidMount() {
         this.getUser();
         this.addEventListener(appEvents.userLoggedOut, this.onSignOut);
+        this.addEventListener(appEvents.userAuthorized, this.setIsLogged);
     }
 
     componentWillUnmount() {
         this.getUser();
         this.removeEventListener(appEvents.userLoggedOut, this.onSignOut);
+        this.removeEventListener(appEvents.userAuthorized, this.setIsLogged);
     }
 
     render() {

@@ -5,8 +5,9 @@ export class ProductSection extends Component {
     constructor() {
         super();
         this.state = {
+            isLoading: false,
             collections: [],
-        }
+        };
     }
 
     getCollections() {
@@ -32,7 +33,7 @@ export class ProductSection extends Component {
             <div class="container">
                 <div class="homepage-main__product-section-wrapper">
                     ${this.state.collections.map(({ id, title, poster, classname, altname }) => {
-                        return `
+            return `
                         <mrd-collection-card
                             id="${id}"
                             title="${title}"
@@ -42,7 +43,7 @@ export class ProductSection extends Component {
                         >
                         </mrd-collection-card>
                         `
-                    }).join(' ')}
+        }).join(' ')}
                     
                     
                 </div>

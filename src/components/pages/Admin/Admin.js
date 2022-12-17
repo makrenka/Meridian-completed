@@ -3,6 +3,7 @@ import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 import { FormManager } from "../../../core/FormManager/FormManager";
 import { authService } from "../../../services/Auth";
+import { databaseService } from "../../../services/Database";
 import { storageService } from "../../../services/Storage";
 
 export class Admin extends Component {
@@ -31,7 +32,7 @@ export class Admin extends Component {
                 authService.user = user;
                 if (!authService.user) {
                     this.dispatch(appEvents.changeRoute, {
-                        target: appRoutes[this.props.path ?? "signUp"],
+                        target: appRoutes[this.props.path ?? "signIn"],
                     });
                 }
             })
@@ -54,8 +55,13 @@ export class Admin extends Component {
             .then((snapshot) => {
                 storageService.getDownloadURL(snapshot.ref)
                     .then((url) => {
-                        console.log(url)
-                    })
+                        databaseService.create("collections", {
+                            ...data,
+                            image: url,
+                        });
+                    });
+            }).finally(() => {
+                this.toggleIsLoading();
             })
     }
 

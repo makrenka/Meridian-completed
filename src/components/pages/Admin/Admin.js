@@ -55,7 +55,7 @@ export class Admin extends Component {
             .then((snapshot) => {
                 storageService.getDownloadURL(snapshot.ref)
                     .then((url) => {
-                        databaseService.create("collections", {
+                        databaseService.create("products", {
                             ...data,
                             image: url,
                         });
@@ -73,6 +73,7 @@ export class Admin extends Component {
 
     componentWillUnmount() {
         this.checkUser();
+        this.removeEventListener('submit', this.form.handleSubmit(this.createProduct));
     }
 
     render() {
@@ -81,9 +82,13 @@ export class Admin extends Component {
         <div class="admin-page__wrapper">
             <div class="admin-page__container">
                 <h1 class="admin-page__heading">Admin Page</h1>
+                <mrd-link to="${appRoutes.adminCollections}">
+                    <button class="admin-page__collections-btn">Collections</button>
+                </mrd-link>
+                
                 <form class="admin-page__form">
                     <div class="admin-page__form-item">
-                        <label class="admin-page__form-label">Collection name</label>
+                        <label class="admin-page__form-label">Product name</label>
                         <input class="admin-page__form-control" type="text" name="title">
                     </div>
                     <div class="admin-page__form-item">
@@ -93,17 +98,7 @@ export class Admin extends Component {
                     <div class="admin-page__form-item">
                         <label class="admin-page__form-label">Upload a photo</label>
                         <input class="admin-page__form-file" type="file" id="formFile" name="image">
-                    </div>
-                    <div class="admin-page__form-item">
-                        <label class="admin-page__form-label">Chose a type</label>
-                        <select class="admin-page__form-select" name="type">
-                            <option selected value="livingroom">For the living room</option>
-                            <option value="bedroom">For bedroom</option>
-                            <option value="kitchen">For kitchen</option>
-                            <option value="hallway">For hallway</option>
-                            <option value="bathroom">For bathroom</option>
-                        </select>
-                    </div>
+                    </div>                    
                     <div class="admin-page__form-item">
                         <label for="exampleFormControlTextarea1" class="admin-page__form-label">
                             What’s Included?

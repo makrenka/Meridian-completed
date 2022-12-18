@@ -1,5 +1,6 @@
 import { Component } from "../../../core/Component/Component";
 import { collectionService } from "../../../services/CollectionService";
+import { databaseService } from "../../../services/Database";
 
 export class ProductSection extends Component {
     constructor() {
@@ -10,19 +11,37 @@ export class ProductSection extends Component {
         };
     }
 
+    toggleIsLoading() {
+        this.setState((state) => {
+            return {
+                ...state,
+                isLoading: !state.isLoading,
+            }
+        })
+    }
+
     getCollections() {
-        collectionService.getAllCollections()
-            .then(({ data }) => {
+        this.toggleIsLoading();
+        databaseService.read("collections")
+            .then((data) => {
                 this.setState((state) => {
                     return {
                         ...state,
                         collections: data,
                     }
-                })
+                });
+
+            })
+            .finally(() => {
+                this.toggleIsLoading();
             })
     }
 
     componentDidMount() {
+        this.getCollections();
+    }
+
+    componentWillUnmount() {
         this.getCollections();
     }
 
@@ -32,14 +51,11 @@ export class ProductSection extends Component {
         <section class="homepage-main__product-section">
             <div class="container">
                 <div class="homepage-main__product-section-wrapper">
-                    ${this.state.collections.map(({ id, title, poster, classname, altname }) => {
+                    ${this.state.collections.map(({ image, collectionNumber }) => {
             return `
                         <mrd-collection-card
-                            id="${id}"
-                            title="${title}"
-                            poster="${poster}"
-                            class="${classname}"
-                            altname="${altname}"
+                            image="${image}"
+                            collection-number="${collectionNumber}"
                         >
                         </mrd-collection-card>
                         `

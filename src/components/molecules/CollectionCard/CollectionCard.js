@@ -3,16 +3,16 @@ import { Component } from "../../../core/Component/Component";
 
 export class CollectionCard extends Component {
     static get observedAttributes() {
-        return ["title", "poster", "classname", "altname"];
-      }
+        return ["collection-number", "image"];
+    }
 
     render() {
         return `
         
         <mrd-link to="${appRoutes.productDetails}" class="homepage-main__product-section-card-link">
-            <img src="../../assets/images/collections/section-1/${this.props.poster}" alt="${this.props.altname}"
+            <img src="${this.props.image}" alt="Collection image"
                 class="homepage-main__product-section-card-img">
-            <h4 class="homepage-main__product-section-card-title-heading">${this.props.title}</h4>
+            <h4 class="homepage-main__product-section-card-title-heading">Collection ${this.props["collection-number"]}</h4>
         </mrd-link>
             
         

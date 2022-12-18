@@ -40,7 +40,7 @@ export class Header extends Component {
                         
                         ${JSON.parse(this.props["is-logged"])
                 ? ` <li class="header__main-bar-retail-section-list-item">
-                        <a href="#" class="sign-out-link">
+                        <a href="#" class="header__main-bar-retail-section-list-link sign-out-link">
                             <span class="link">Sign Out</span>
                         </a>
                     </li>

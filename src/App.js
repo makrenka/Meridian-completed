@@ -103,6 +103,7 @@ export class App extends core.Component {
 
                 <mrd-route path="${appRoutes.home}" component="home-page" title="Home page"></mrd-route>
                 <mrd-route path="${appRoutes.admin}" component="admin-page" title="Admin page"></mrd-route>
+                <mrd-route path="${appRoutes.adminCollections}" component="admin-collections-page" title="Admin collections page"></mrd-route>
                 <mrd-route path="${appRoutes.signIn}" component="sign-in-page" title="Dealer Login"></mrd-route>
                 <mrd-route path="${appRoutes.signUp}" component="sign-up-page" title="Become A Dealer"></mrd-route>
                 <mrd-route path="${appRoutes.products}" component="products-page" title="Products"></mrd-route>

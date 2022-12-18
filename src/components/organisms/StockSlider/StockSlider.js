@@ -1,37 +1,14 @@
 import { Component } from "../../../core/Component/Component";
 import Swiper, { Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
+import { databaseService } from "../../../services/Database";
 
 export class StockSlider extends Component {
     constructor() {
         super();
 
         this.state = {
-            data: [
-                {
-                    id: 1,
-                    title: 'Alina Velvet Modular Armless',
-                    poster: 'alina-armless',
-                    price: '£799.00',
-                },
-                {
-                    id: 2,
-                    title: 'Alina Velvet Modular Sectional',
-                    poster: 'alina-sectional',
-                    price: '£799.00',
-                },
-                {
-                    id: 3,
-                    title: 'Serpentine Velvet Sofa',
-                    poster: 'serpentine-sofa',
-                    price: '£795.00',
-                },
-                {
-                    id: 4,
-                    title: 'Clarion Dining Chair',
-                    poster: 'clarion-chair',
-                    price: '£795.00',
-                },
-            ]
+            isLoading: false,
+            products: [],
         }
     }
 
@@ -55,10 +32,16 @@ export class StockSlider extends Component {
                 300: {
                     slidesPerView: 2,
                     spaceBetween: 30,
+                    modules: [Scrollbar],
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                        draggable: true,
+                        dragSize: 250,
+                    },
                 },
             },
 
-            modules: [Navigation, Pagination],
+            modules: [Navigation, Pagination, Scrollbar],
 
             // Navigation arrows
             navigation: {
@@ -67,90 +50,78 @@ export class StockSlider extends Component {
             },
         });
 
-        new Swiper('.homepage-main__in-stock-slider-adapt', {
-            // Optional parameters
-            direction: 'horizontal',
-            slidesPerView: 'auto',
-            spaceBetween: 30,
-            loop: true,
-
-            modules: [Scrollbar],
-
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                draggable: true,
-                dragSize: 250,
-            },
-
-        });
-
         return swiper;
     }
 
+    toggleIsLoading() {
+        this.setState((state) => {
+            return {
+                ...state,
+                isLoading: !state.isLoading,
+            }
+        })
+    }
+
+    getProducts() {
+        this.toggleIsLoading();
+        databaseService.read("products")
+            .then((data) => {
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        products: data,
+                    }
+                });
+
+            })
+            .finally(() => {
+                this.toggleIsLoading();
+                this.initSwiper();
+            })
+    }
+
     componentDidMount() {
-        this.initSwiper();
+        this.getProducts();
     }
 
     componentWillUnmount() {
-        this.initSwiper();
+        this.getProducts();
     }
 
     render() {
         return `
-        <section class="homepage-main__in-stock">
-            <div class="container">
-                <h2 class="homepage-main__in-stock-heading">Ready To Ship</h2>
-                <p class="homepage-main__in-stock-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est id
-                    pretium pellentesque leo. Lorem.</p>
+        <mrd-preloader is-loading="${this.state.isLoading}">
+            <section class="homepage-main__in-stock">
+                <div class="container">
+                    <h2 class="homepage-main__in-stock-heading">Ready To Ship</h2>
+                    <p class="homepage-main__in-stock-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est id
+                        pretium pellentesque leo. Lorem.</p>
 
-                    <div class="swiper homepage-main__in-stock-slider">
-                    <div class="swiper-wrapper">
-                        ${this.state.data.map(({ id, poster, title, price }) => {
+                        <div class="swiper homepage-main__in-stock-slider">
+                        <div class="swiper-wrapper">
+                            
+                            ${this.state.products.map(({ id, image, title, price }) => {
             return `
-                                            <div class="swiper-slide homepage-main__in-stock-slide">
-                                                <mrd-stock-slide 
-                                                    id='${id}'
-                                                    poster='${poster}'
-                                                    title='${title}'
-                                                    price='${price}'>
-                                                </mrd-stock-slide>
-                                            </div>
-                                            `
-        }).join(' ')}
-                
-                
+                            <div class="swiper-slide homepage-main__in-stock-slide">               
+                                <mrd-stock-slide 
+                                    id='${id}'
+                                    image='${image}'
+                                    title='${title}'
+                                    price='${price}'>
+                                </mrd-stock-slide>
+                            </div>
+                        `
+        }).join(' ')}                       
+                        </div>
+                        <div class="swiper-button-prev in-stock-button-prev"></div>
+                        <div class="swiper-button-next in-stock-button-next"></div>
+                        <div class="swiper-scrollbar in-stock-scrollbar"></div>
                     </div>
-                    <div class="swiper-button-prev in-stock-button-prev"></div>
-                    <div class="swiper-button-next in-stock-button-next"></div>
-                    <div class="swiper-scrollbar in-stock-scrollbar"></div>
                 </div>
-            </div>
 
-            <div class="homepage-main__in-stock-slider-adapt-wrapper">
-            <div class="swiper homepage-main__in-stock-slider-adapt">
-            <div class="swiper-wrapper">
-                ${this.state.data.map(({ id, poster, title, price }) => {
-            return `
-                                    <div class="swiper-slide homepage-main__in-stock-slide">
-                                        <mrd-stock-slide 
-                                            id='${id}'
-                                            poster='${poster}'
-                                            title='${title}'
-                                            price='${price}'>
-                                        </mrd-stock-slide>
-                                    </div>
-                                    `
-        }).join(' ')}
-        
-        
-            </div>
-            <div class="swiper-button-prev in-stock-button-prev"></div>
-            <div class="swiper-button-next in-stock-button-next"></div>
-            <div class="swiper-scrollbar in-stock-scrollbar"></div>
-        </div>
-            </div>
-        </section>
-
+                
+            </section>
+        </mrd-preloader>
         
         `
     }

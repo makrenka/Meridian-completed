@@ -1,58 +1,75 @@
 import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
+import { databaseService } from "../../../services/Database";
 
 export class ProductPagePopularSection extends Component {
     constructor() {
         super();
+
         this.state = {
-            data: [
-                {
-                    image: 'Alma Velvet Armless.jpg',
-                    title: 'Alma Velvet Armless',
-                    price: '£3,400.00',
-                },
-                {
-                    image: 'Alma Velvet Armless Set.jpg',
-                    title: 'Alma Velvet Armless Set',
-                    price: '£3,600.00',
-                },
-                {
-                    image: 'Alina Velvet Set.jpg',
-                    title: 'Alina Velvet Set',
-                    price: '£3,700.00',
-                },
-                {
-                    image: 'Serpentine Velvet Sofa.jpg',
-                    title: 'Serpentine Velvet Sofa',
-                    price: '£4,600.00',
-                },
-            ]
+            isLoading: false,
+            products: [],
         }
+    }
+
+    toggleIsLoading() {
+        this.setState((state) => {
+            return {
+                ...state,
+                isLoading: !state.isLoading,
+            }
+        })
+    }
+
+    getProducts() {
+        this.toggleIsLoading();
+        databaseService.read("products")
+            .then((data) => {
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        products: data,
+                    }
+                });
+
+            })
+            .finally(() => {
+                this.toggleIsLoading();
+            })
+    }
+
+    componentDidMount() {
+        this.getProducts();
+    }
+
+    componentWillUnmount() {
+        this.getProducts();
     }
 
     render() {
         return `
-        
-        <section class="product-main__popular">
-            <div class="container">
-                <h2 class="product-main__popular-heading">Shop Our Other Popular Sets</h2>
-                <div class="product-main__popular-sets">
-                    ${this.state.data.map(({ image, title, price }) => 
-                        `
-                        <div class="product-main__popular-set">
-                            <img src="../../assets/images/product-popular-sets/${image}" alt="popular-sets-image"
-                                class="product-main__popular-set-img">
-                            <h6 class="product-main__popular-set-heading">${title}</h6>
-                            <p class="product-main__popular-set-text">${price}</p>
-                            <mrd-link to="${appRoutes.productDetails}" class="product-main__popular-set-form">
-                                <button class="product-main__popular-set-form-btn">View Set</button>
-                            </mrd-link>
-                        </div>
-                        `
-                    ).join(' ')}                                       
+        <mrd-preloader is-loading="${this.state.isLoading}">
+            <section class="product-main__popular">
+                <div class="container">
+                    <h2 class="product-main__popular-heading">Shop Our Other Popular Sets</h2>
+                    <div class="product-main__popular-sets">
+                        ${this.state.products.map(({ image, title, price }) =>
+            `
+                            <div class="product-main__popular-set">
+                                <img src="${image}" alt="popular-sets-image"
+                                    class="product-main__popular-set-img">
+                                <h6 class="product-main__popular-set-heading">${title}</h6>
+                                <p class="product-main__popular-set-text">£${price}</p>
+                                <mrd-link to="${appRoutes.productDetails}" class="product-main__popular-set-form">
+                                    <button class="product-main__popular-set-form-btn">View Set</button>
+                                </mrd-link>
+                            </div>
+                            `
+        ).join(' ')}                                       
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </mrd-preloader>
         `
     }
 }

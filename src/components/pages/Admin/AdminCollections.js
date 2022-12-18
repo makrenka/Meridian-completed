@@ -56,11 +56,11 @@ export class AdminCollections extends Component {
                 <form class="admin-page__collections-form">
                     <div class="admin-page__form-item">
                         <label class="admin-page__form-label">Collection number</label>
-                        <input class="admin-page__form-control" type="number" name="collection-number">
+                        <input class="admin-page__form-control" type="number" name="collectionNumber">
                     </div>
                     <div class="admin-page__form-item">
                         <label class="admin-page__form-label">Section number</label>
-                        <input class="admin-page__form-control" type="number" name="section-number">
+                        <input class="admin-page__form-control" type="number" name="sectionNumber">
                     </div>
                     <div class="admin-page__form-item">
                         <label class="admin-page__form-label">Upload a photo</label>

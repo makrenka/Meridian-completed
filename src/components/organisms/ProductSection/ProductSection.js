@@ -46,16 +46,18 @@ export class ProductSection extends Component {
     }
 
     render() {
+        console.log(this.state.collections.slice(0, 5))
         return `
         
         <section class="homepage-main__product-section">
             <div class="container">
                 <div class="homepage-main__product-section-wrapper">
-                    ${this.state.collections.map(({ image, collectionNumber }) => {
+                    ${this.state.collections.slice(0, 5).map(({ image, collectionNumber }) => {
             return `
                         <mrd-collection-card
                             image="${image}"
                             collection-number="${collectionNumber}"
+                            class="homepage-main__product-section-card-${collectionNumber}"
                         >
                         </mrd-collection-card>
                         `

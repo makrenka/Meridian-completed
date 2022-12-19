@@ -16,11 +16,11 @@ export class StockSlide extends Component {
             </mrd-link>                                
         </div>
         <div class="homepage-main__in-stock-slide-description-wrapper">
-            <mrd-link to="${appRoutes.productDetails}" class="homepage-main__in-stock-slide-title-link">            
+            <mrd-link to="${appRoutes.productDetails}/${this.props.id}" class="homepage-main__in-stock-slide-title-link">            
                 <h4 class="homepage-main__in-stock-slide-title">${this.props.title}</h4>
             </mrd-link>                                
             <p class="homepage-main__in-stock-slide-price">£${this.props.price}</p>
-            <mrd-link to="${appRoutes.productDetails}">
+            <mrd-link to="${appRoutes.productDetails}/${this.props.id}">
                 <button class="homepage-main__in-stock-slide-btn" type="submit">
                     View Details Products
                 </button>

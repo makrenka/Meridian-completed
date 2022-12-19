@@ -3,7 +3,11 @@ import { Component } from "../../../core/Component/Component";
 export class FindRetail extends Component {
     render() {
         return `
-        <h1>FindRetail</h1>
+        <div class="find-retail-page__wrapper">
+            <div class="container">
+                <h1 class="find-retail-page__h1">Find A Retail</h1>
+            </div>
+        </div>
         `
     }
 }

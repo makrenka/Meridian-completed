@@ -96,8 +96,24 @@ export class Admin extends Component {
                         <input class="admin-page__form-price" type="number" name="price">
                     </div>
                     <div class="admin-page__form-item">
-                        <label class="admin-page__form-label">Upload a photo</label>
-                        <input class="admin-page__form-file" type="file" id="formFile" name="image">
+                        <label class="admin-page__form-label">Photo 1</label>
+                        <input class="admin-page__form-file" type="file" id="formFile" name="image1">
+                    </div>                    
+                    <div class="admin-page__form-item">
+                        <label class="admin-page__form-label">Photo 2</label>
+                        <input class="admin-page__form-file" type="file" id="formFile" name="image2">
+                    </div>                    
+                    <div class="admin-page__form-item">
+                        <label class="admin-page__form-label">Photo 3</label>
+                        <input class="admin-page__form-file" type="file" id="formFile" name="image3">
+                    </div>                    
+                    <div class="admin-page__form-item">
+                        <label class="admin-page__form-label">Photo 4</label>
+                        <input class="admin-page__form-file" type="file" id="formFile" name="image4">
+                    </div>                    
+                    <div class="admin-page__form-item">
+                        <label class="admin-page__form-label">Photo 5</label>
+                        <input class="admin-page__form-file" type="file" id="formFile" name="image5">
                     </div>                    
                     <div class="admin-page__form-item">
                         <label for="exampleFormControlTextarea1" class="admin-page__form-label">

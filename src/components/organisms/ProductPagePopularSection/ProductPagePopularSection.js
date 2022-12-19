@@ -53,14 +53,14 @@ export class ProductPagePopularSection extends Component {
                 <div class="container">
                     <h2 class="product-main__popular-heading">Shop Our Other Popular Sets</h2>
                     <div class="product-main__popular-sets">
-                        ${this.state.products.map(({ image, title, price }) =>
+                        ${this.state.products.map(({ image, title, price, id }) =>
             `
                             <div class="product-main__popular-set">
                                 <img src="${image}" alt="popular-sets-image"
                                     class="product-main__popular-set-img">
                                 <h6 class="product-main__popular-set-heading">${title}</h6>
                                 <p class="product-main__popular-set-text">£${price}</p>
-                                <mrd-link to="${appRoutes.productDetails}" class="product-main__popular-set-form">
+                                <mrd-link to="${appRoutes.productDetails}/${id}" class="product-main__popular-set-form">
                                     <button class="product-main__popular-set-form-btn">View Set</button>
                                 </mrd-link>
                             </div>

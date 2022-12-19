@@ -1,27 +1,49 @@
 import { Component } from "../../../core/Component/Component";
 import { collectionService } from "../../../services/CollectionService";
+import { databaseService } from "../../../services/Database";
 
 export class ProductSectionTwo extends Component {
     constructor() {
         super();
         this.state = {
+            isLoading: false,
             collections: [],
-        }
+        };
+    }
+
+    toggleIsLoading() {
+        this.setState((state) => {
+            return {
+                ...state,
+                isLoading: !state.isLoading,
+            }
+        })
     }
 
     getCollections() {
-        collectionService.getAllCollections()
-            .then(({ data2 }) => {
+        this.toggleIsLoading();
+        databaseService.read("collections")
+            .then((data) => {
                 this.setState((state) => {
                     return {
                         ...state,
-                        collections: data2,
+                        collections: data
+                            .sort((a, b) => a.collectionNumber > b.collectionNumber ? 1 : -1)
+                            .filter(item => item.sectionNumber == 2),
                     }
-                })
+                });
+
+            })
+            .finally(() => {
+                this.toggleIsLoading();
             })
     }
 
     componentDidMount() {
+        this.getCollections();
+    }
+
+    componentWillUnmount() {
         this.getCollections();
     }
 
@@ -34,18 +56,17 @@ export class ProductSectionTwo extends Component {
                 <p class="homepage-main__product-section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Est id pretium pellentesque leo. Lorem.</p>
                 <div class="homepage-main__product-section-wrapper">
-                    ${this.state.collections.map(({ id, title, poster, classname, altname }) => {
-                        return `
-                        <mrd-collection-card2
-                            id="${id}"
-                            title="${title}"
-                            poster="${poster}"
-                            class="${classname}"
-                            altname="${altname}"
+                ${this.state.collections
+                .slice(0, 5).map(({ image, collectionNumber }) => {
+                    return `
+                        <mrd-collection-card
+                            image="${image}"
+                            collection-number="${collectionNumber}"
+                            class="homepage-main__product-section-card-${collectionNumber}"
                         >
-                        </mrd-collection-card2>
+                        </mrd-collection-card>
                         `
-                    }).join(' ')}
+                }).join(' ')}
                     
                     
                 </div>

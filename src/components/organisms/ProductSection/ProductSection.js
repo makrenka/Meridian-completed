@@ -27,7 +27,9 @@ export class ProductSection extends Component {
                 this.setState((state) => {
                     return {
                         ...state,
-                        collections: data,
+                        collections: data
+                            .sort((a, b) => a.collectionNumber > b.collectionNumber ? 1 : -1)
+                            .filter(item => item.sectionNumber == 1),
                     }
                 });
 
@@ -46,14 +48,15 @@ export class ProductSection extends Component {
     }
 
     render() {
-        console.log(this.state.collections.slice(0, 5))
+
         return `
         
         <section class="homepage-main__product-section">
             <div class="container">
                 <div class="homepage-main__product-section-wrapper">
-                    ${this.state.collections.slice(0, 5).map(({ image, collectionNumber }) => {
-            return `
+                    ${this.state.collections
+                .slice(0, 5).map(({ image, collectionNumber }) => {
+                    return `
                         <mrd-collection-card
                             image="${image}"
                             collection-number="${collectionNumber}"
@@ -61,7 +64,7 @@ export class ProductSection extends Component {
                         >
                         </mrd-collection-card>
                         `
-        }).join(' ')}
+                }).join(' ')}
                     
                     
                 </div>

@@ -7,7 +7,7 @@ export class ProductPage extends Component {
 
         this.state = {
             isLoading: false,
-            product: null,
+            product: {},
         }
     }
 
@@ -24,7 +24,7 @@ export class ProductPage extends Component {
         })
     }
 
-    getProducts() {
+    getProduct() {
         this.toggleIsLoading();
         databaseService.getDocument("products", this.props.id)
             .then((data) => {
@@ -38,27 +38,39 @@ export class ProductPage extends Component {
             })
             .finally(() => {
                 this.toggleIsLoading();
-                console.log(this.state.product)
             })
     }
 
     componentDidMount() {
-        this.getProducts();
+        this.getProduct();
     }
 
     componentWillUnmount() {
-        this.getProducts();
+        this.getProduct();
     }
 
     render() {
+
+        const {
+            product: { image1, image2, image3, image4, image5 }
+        } = this.state;
+
         return `
-        
-        <mrd-breadcrump></mrd-breadcrump>
-        <mrd-product-page-product-section></mrd-product-page-product-section>
-        <mrd-pp-property-section></mrd-pp-property-section>
-        <mrd-pp-faq-section></mrd-pp-faq-section>
-        <mrd-pp-popular-section></mrd-pp-popular-section>
-        <mrd-pp-review-section></mrd-pp-review-section>
+        <it-preloader is-loading="${this.state.isLoading}">
+            <mrd-breadcrump></mrd-breadcrump>
+            <mrd-product-page-product-section
+                image1="${image1}"
+                image2="${image2}"
+                image3="${image3}"
+                image4="${image4}"
+                image5="${image5}"
+            >
+            </mrd-product-page-product-section>
+            <mrd-pp-property-section></mrd-pp-property-section>
+            <mrd-pp-faq-section></mrd-pp-faq-section>
+            <mrd-pp-popular-section></mrd-pp-popular-section>
+            <mrd-pp-review-section></mrd-pp-review-section>
+        </it-preloader>
         `
     }
 }

@@ -46,6 +46,10 @@ export class ProductPageProductSlider extends Component {
         })
     }
 
+    static get observedAttributes() {
+        return ["image1", "image2", "image3", "image4", "image5"];
+    }
+
     componentDidMount() {
         this.initSwiper();
     }
@@ -58,23 +62,23 @@ export class ProductPageProductSlider extends Component {
                     <div class="swiper-wrapper">
                     
                         <div class="swiper-slide product-main__product-section-slide">
-                            <img src="../../assets/images/product-photos/product-main.jpg" alt="product-photo"
+                            <img src="${this.props.image1}" alt="product-photo"
                                 class="product-main__product-section-slide-photo">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="product-photo"
+                            <img src="${this.props.image2}" alt="product-photo"
                                 class="product-main__product-section-slide-photo">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="product-photo"
+                            <img src="${this.props.image3}" alt="product-photo"
                                 class="product-main__product-section-slide-photo">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="product-photo"
+                            <img src="${this.props.image4}" alt="product-photo"
                                 class="product-main__product-section-slide-photo">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="product-photo"
+                            <img src="${this.props.image5}" alt="product-photo"
                                 class="product-main__product-section-slide-photo">
                         </div>
                     </div>
@@ -85,23 +89,23 @@ export class ProductPageProductSlider extends Component {
                 <div class="swiper product-main__product-section-slider2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide product-main__product-section-slide2">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="slide-photo"
+                            <img src="${this.props.image1}" alt="slide-photo"
                                 class="product-main__product-section-slide-photo2">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide2">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="slide-photo"
+                            <img src="${this.props.image2}" alt="slide-photo"
                                 class="product-main__product-section-slide-photo2">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide2">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="slide-photo"
+                            <img src="${this.props.image3}" alt="slide-photo"
                                 class="product-main__product-section-slide-photo2">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide2">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="slide-photo"
+                            <img src="${this.props.image4}" alt="slide-photo"
                                 class="product-main__product-section-slide-photo2">
                         </div>
                         <div class="swiper-slide product-main__product-section-slide2">
-                            <img src="./../assets/images/product-photos/product-main.jpg" alt="slide-photo"
+                            <img src="${this.props.image5}" alt="slide-photo"
                                 class="product-main__product-section-slide-photo2">
                         </div>
                     </div>

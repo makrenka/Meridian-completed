@@ -13,7 +13,7 @@ export class HomeGallerySection extends Component {
                 <div class="homepage-main__gallery-section-gallery-img-wrapper">
                     <img src="../../assets/images/gallery/gallery-img1.jpg" alt="gallery-img"
                         class="homepage-main__gallery-section-gallery-img">
-                    <mrd-link to="${appRoutes.productDetails}">
+                    <mrd-link to="${appRoutes.products}">
                         <button class="homepage-main__gallery-section-gallery-btn">View Product</button>
                     </mrd-link>
                 </div>

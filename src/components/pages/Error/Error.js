@@ -5,7 +5,7 @@ export class ErrorPage extends Component {
     return `
     <div class="error-page__wrapper">
         <div class="container">
-            <h1 class="error-page__h1">The page was not found</h1>
+            <h1 class="error-page__h1">Error: the page was not found</h1>
         </div>
     </div>
     `;

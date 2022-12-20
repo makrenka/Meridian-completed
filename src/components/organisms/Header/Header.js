@@ -10,7 +10,7 @@ export class Header extends Component {
 
     onSignOut(evt) {
         evt.preventDefault();
-        if (evt.target.closest('.sign-out-link')) {
+        if (evt.target.closest(".sign-out-link")) {
             this.dispatch(appEvents.userLoggedOut);
         }
     }

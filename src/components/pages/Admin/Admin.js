@@ -101,6 +101,10 @@ export class Admin extends Component {
                         <input class="admin-page__form-price" type="number" name="price">
                     </div>
                     <div class="admin-page__form-item">
+                        <label class="admin-page__form-label">Discount</label>
+                        <input class="admin-page__form-price" type="number" name="discount">
+                    </div>
+                    <div class="admin-page__form-item">
                         <label class="admin-page__form-label">Photo</label>
                         <input class="admin-page__form-file" type="file" id="formFile" name="image1">
                     </div>                    

@@ -57,6 +57,12 @@
     display: flex;
     align-items: center;
     box-shadow: inset 0px -1px 0px #EEEEEE;
+    overflow: auto;
+}
+
+.product-main__product-section-options-delivery-description-nav::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .product-main__product-section-options-delivery-description-nav-link {

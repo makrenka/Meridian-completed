@@ -52,7 +52,19 @@ export class ProductPage extends Component {
     render() {
 
         const {
-            product: { image1, image2, image3, image4, image5 }
+            product: {
+                image1,
+                image2,
+                image3,
+                image4,
+                image5,
+                title,
+                price,
+                discount,
+                delivery,
+                dimensions,
+                finance,
+                includes }
         } = this.state;
 
         return `
@@ -64,6 +76,13 @@ export class ProductPage extends Component {
                 image3="${image3}"
                 image4="${image4}"
                 image5="${image5}"
+                title="${title}"
+                price="${price}"
+                discount="${discount}"
+                delivery="${delivery}"
+                dimensions="${dimensions}"
+                finance="${finance}"
+                includes="${includes}"
             >
             </mrd-product-page-product-section>
             <mrd-pp-property-section></mrd-pp-property-section>

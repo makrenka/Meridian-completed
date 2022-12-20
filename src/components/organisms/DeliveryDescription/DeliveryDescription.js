@@ -2,6 +2,15 @@ import { Component } from "../../../core/Component/Component";
 
 export class DeliveryDescription extends Component {
 
+    static get observedAttributes() {
+        return [
+            "delivery",
+            "dimensions",
+            "finance",
+            "includes",
+        ];
+    }
+
     toggleClasses(evt) {
         const articles = [...this
             .querySelectorAll('.product-main__product-section-options-delivery-description-section-article')];
@@ -10,7 +19,7 @@ export class DeliveryDescription extends Component {
         const target = evt.target.closest('.product-main__product-section-options-delivery-description-nav-link')
         const article = articles.filter(item => target.className.includes(item.id));
 
-        if(target) {
+        if (target) {
             links.forEach(item => item.classList
                 .remove('product-main__product-section-options-delivery-description-nav-link--active'))
             target.classList.add('product-main__product-section-options-delivery-description-nav-link--active');
@@ -18,7 +27,7 @@ export class DeliveryDescription extends Component {
                 .remove('product-main__product-section-options-delivery-description-section-article--active'))
             article.forEach(item => item
                 .classList.add('product-main__product-section-options-delivery-description-section-article--active'));
-        } 
+        }
     }
 
     componentDidMount() {
@@ -60,12 +69,8 @@ export class DeliveryDescription extends Component {
                         class="product-main__product-section-options-delivery-description-section-article-heading">
                         What’s Included?
                     </h5>
-                    <p
-                        class="product-main__product-section-options-delivery-description-section-article-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam amet justo
-                        mi pharetra, consectetur facilisis. Velit est proin orci tristique nunc
-                        varius. Id consectetur nibh at aliquet habitant proin volutpat
-                        adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
+                    <p class="product-main__product-section-options-delivery-description-section-article-text">
+                        ${this.props.includes}
                     </p>
                 </article>
                 <article id="bringing"
@@ -74,12 +79,8 @@ export class DeliveryDescription extends Component {
                         class="product-main__product-section-options-delivery-description-section-article-heading">
                         Delivery
                     </h5>
-                    <p
-                        class="product-main__product-section-options-delivery-description-section-article-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam amet justo
-                        mi pharetra, consectetur facilisis. Velit est proin orci tristique nunc
-                        varius. Id consectetur nibh at aliquet habitant proin volutpat
-                        adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
+                    <p class="product-main__product-section-options-delivery-description-section-article-text">
+                        ${this.props.delivery}
                     </p>
                 </article>
                 <article id="dimensions"
@@ -88,12 +89,8 @@ export class DeliveryDescription extends Component {
                         class="product-main__product-section-options-delivery-description-section-article-heading">
                         Dimensions
                     </h5>
-                    <p
-                        class="product-main__product-section-options-delivery-description-section-article-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam amet justo
-                        mi pharetra, consectetur facilisis. Velit est proin orci tristique nunc
-                        varius. Id consectetur nibh at aliquet habitant proin volutpat
-                        adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
+                    <p class="product-main__product-section-options-delivery-description-section-article-text">
+                        ${this.props.dimensions}
                     </p>
                 </article>
                 <article id="finance"
@@ -102,12 +99,8 @@ export class DeliveryDescription extends Component {
                         class="product-main__product-section-options-delivery-description-section-article-heading">
                         Finance
                     </h5>
-                    <p
-                        class="product-main__product-section-options-delivery-description-section-article-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam amet justo
-                        mi pharetra, consectetur facilisis. Velit est proin orci tristique nunc
-                        varius. Id consectetur nibh at aliquet habitant proin volutpat
-                        adipiscing nisl. Facilisi donec tellus aliquet sed at non amet, massa.
+                    <p class="product-main__product-section-options-delivery-description-section-article-text">
+                        ${this.props.finance}
                     </p>
                 </article>
             </div>

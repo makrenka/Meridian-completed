@@ -2,11 +2,8 @@ import { Component } from "../../../core/Component/Component";
 
 export class ProductDescriptionDelivery extends Component {
 
-    static get observedAttributes() {
-        return ['name'];
-    }  
-
     render() {
+
         return `
         
         <div class="product-main__product-section-options-delivery">
@@ -22,7 +19,6 @@ export class ProductDescriptionDelivery extends Component {
                     </p>
                 </div>
             </div>
-            <mrd-delivery-description name="${this.props.name}"></mrd-delivery-description>
         </div>
         `
     }

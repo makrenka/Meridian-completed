@@ -2,14 +2,20 @@ import { Component } from "../../../core/Component/Component";
 
 export class ProductDescriptionHeading extends Component {
 
+    static get observedAttributes() {
+        return ["title", "price", "discount"];
+    }
+
     render() {
+        const isAddClassName = this.props.discount == "" ? "" : "-active";
+
         return `
         
-        <h3 class="product-main__product-section-options-heading">Alma Velvet Armless</h3>
+        <h3 class="product-main__product-section-options-heading">${this.props.title}</h3>
         <div class="product-main__product-section-options-text-wrapper">
-            <p class="product-main__product-section-options-price">£1,500.00</p>
-            <p class="product-main__product-section-options-discount">£2,500.00</p>
-            <p class="product-main__product-section-options-price">40% Off</p>
+            <p class="product-main__product-section-options-new-price${isAddClassName}">£${this.props.price * (1 - this.props.discount / 100)}</p>
+            <p class="product-main__product-section-options-price${isAddClassName}">£${this.props.price}</p>
+            <p class="product-main__product-section-options-discount${isAddClassName}">${this.props.discount}% Off</p>
         </div>
         `
     }

@@ -3,15 +3,36 @@ import { Component } from "../../../core/Component/Component";
 export class ProductPageProductSection extends Component {
 
     static get observedAttributes() {
-        return ["image1", "image2", "image3", "image4", "image5"];
+        return [
+            "image1",
+            "image2",
+            "image3",
+            "image4",
+            "image5",
+            "title",
+            "price",
+            "discount",
+            "delivery",
+            "dimensions",
+            "finance",
+            "includes",
+        ];
     }
 
     render() {
+
         return `
         
         <section class="product-main__product-section">
             <div class="product-main__product-section-slider-wrapper-adapt">
-                <mrd-product-page-product-slider-adapt></mrd-product-page-product-slider-adapt>
+                <mrd-product-page-product-slider-adapt
+                    image1="${this.props.image1}"
+                    image2="${this.props.image2}"
+                    image3="${this.props.image3}"
+                    image4="${this.props.image4}"
+                    image5="${this.props.image5}"
+                >
+                </mrd-product-page-product-slider-adapt>
             </div>
             <div class="container">
                 <div class="product-main__product-section-wrapper">
@@ -23,9 +44,28 @@ export class ProductPageProductSection extends Component {
                         image5="${this.props.image5}"
                     >
                     </mrd-product-page-product-slider>
-                    <mrd-product-description></mrd-product-description>
+
+                    <mrd-product-description
+                        title="${this.props.title}"
+                        price="${this.props.price}"
+                        discount="${this.props.discount}"
+                        delivery="${this.props.delivery}"
+                        dimensions="${this.props.dimensions}"
+                        finance="${this.props.finance}"
+                        includes="${this.props.includes}"
+                    >
+                    </mrd-product-description>
                 </div>
-                <mrd-product-description-adapt></mrd-product-description-adapt>
+                <mrd-product-description-adapt
+                    title="${this.props.title}"
+                    price="${this.props.price}"
+                    discount="${this.props.discount}"
+                    delivery="${this.props.delivery}"
+                    dimensions="${this.props.dimensions}"
+                    finance="${this.props.finance}"
+                    includes="${this.props.includes}"
+                >
+                </mrd-product-description-adapt>
             </div>
         </section>
         `

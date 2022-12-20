@@ -1,6 +1,7 @@
 import { appEvents } from "../../../constants/appEvents";
 import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
+import { eventBus } from "../../../core";
 
 export class Header extends Component {
     constructor() {
@@ -35,7 +36,7 @@ export class Header extends Component {
     }
 
     componentDidMount() {
-        this.dispatch(appEvents.changeRoute, this.onChangeRoute);
+        eventBus.on(appEvents.changeRoute, this.onChangeRoute);
         this.addEventListener('click', this.onSignOut);
     }
 
@@ -66,12 +67,12 @@ export class Header extends Component {
                     </li>
                     <li class="header__main-bar-retail-section-list-item">
                         <mrd-link to="${appRoutes.signUp}">
-                            <span class="header__main-bar-retail-section-list-link">Become A Dealer</span>
+                            <span class="header__main-bar-retail-section-list-link ${this.isActiveLink(appRoutes.signUp)}">Become A Dealer</span>
                         </mrd-link>
                     </li>
                     <li class="header__main-bar-retail-section-list-item">
                         <mrd-link to="${appRoutes.findRetail}">
-                            <span class="header__main-bar-retail-section-list-link">Find A Retail</span>
+                            <span class="header__main-bar-retail-section-list-link ${this.isActiveLink(appRoutes.findRetail)}">Find A Retail</span>
                         </mrd-link>
                     </li>
                     `

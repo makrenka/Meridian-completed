@@ -1,5 +1,6 @@
 import { appEvents } from "../../../constants/appEvents";
 import { appRoutes } from "../../../constants/appRoutes";
+import { eventBus } from "../../../core";
 import { Component } from "../../../core/Component/Component";
 import { FormManager } from "../../../core/FormManager/FormManager";
 import { authService } from "../../../services/Auth";
@@ -31,7 +32,7 @@ export class Admin extends Component {
             .then((user) => {
                 authService.user = user;
                 if (!authService.user) {
-                    this.dispatch(appEvents.changeRoute, {
+                    eventBus.emit(appEvents.changeRoute, {
                         target: appRoutes[this.props.path ?? "signIn"],
                     });
                 }

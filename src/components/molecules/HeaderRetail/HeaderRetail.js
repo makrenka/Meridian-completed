@@ -1,5 +1,6 @@
 import { appEvents } from "../../../constants/appEvents";
 import { appRoutes } from "../../../constants/appRoutes";
+import { eventBus } from "../../../core";
 import { Component } from "../../../core/Component/Component";
 
 export class HeaderRetail extends Component {
@@ -24,7 +25,7 @@ export class HeaderRetail extends Component {
     }
 
     componentDidMount() {
-        this.dispatch(appEvents.changeRoute, this.onChangeRoute);
+        eventBus.on(appEvents.changeRoute, this.onChangeRoute);
     }
 
     render() {

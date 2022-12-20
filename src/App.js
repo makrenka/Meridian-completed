@@ -2,6 +2,7 @@ import './components';
 import { appEvents } from './constants/appEvents';
 import { appRoutes } from './constants/appRoutes';
 import * as core from "./core";
+import { eventBus } from './core';
 import { authService } from './services/Auth';
 
 export class App extends core.Component {
@@ -83,14 +84,14 @@ export class App extends core.Component {
 
     componentDidMount() {
         this.getUser();
-        this.addEventListener(appEvents.userLoggedOut, this.onSignOut);
-        this.addEventListener(appEvents.userAuthorized, this.setIsLogged);
+        eventBus.on(appEvents.userLoggedOut, this.onSignOut);
+        eventBus.on(appEvents.userAuthorized, this.setIsLogged);
     }
 
     componentWillUnmount() {
         this.getUser();
-        this.removeEventListener(appEvents.userLoggedOut, this.onSignOut);
-        this.removeEventListener(appEvents.userAuthorized, this.setIsLogged);
+        eventBus.off(appEvents.userLoggedOut, this.onSignOut);
+        eventBus.off(appEvents.userAuthorized, this.setIsLogged);
     }
 
     render() {

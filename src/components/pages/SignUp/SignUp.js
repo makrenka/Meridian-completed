@@ -1,5 +1,6 @@
 import { appEvents } from "../../../constants/appEvents";
 import { appRoutes } from "../../../constants/appRoutes";
+import { eventBus } from "../../../core";
 import { Component } from "../../../core/Component/Component";
 import { FormManager } from "../../../core/FormManager/FormManager";
 import { Validator } from "../../../core/FormManager/Validator";
@@ -35,7 +36,8 @@ export class SignUp extends Component {
             .signUp(data.email, data.password)
             .then((user) => {
                 authService.user = user;
-                this.dispatch(appEvents.changeRoute, { target: appRoutes.home });
+                eventBus.emit(appEvents.changeRoute, { target: appRoutes.home });
+                eventBus.emit(appEvents.userAuthorized);
             })
             .catch((error) => {
                 this.setState((state) => {
@@ -76,13 +78,13 @@ export class SignUp extends Component {
 
     componentDidMount() {
         this.addEventListener('click', this.validateForm);
-        this.addEventListener("validate-controls", this.validate);
+        eventBus.on(appEvents.validateControls, this.validate);
         this.addEventListener("submit", this.form.handleSubmit(this.registerUser));
     }
 
     componentWillUnmount() {
         this.removeEventListener('click', this.validateForm);
-        this.removeEventListener("validate-controls", this.validate);
+        eventBus.off(appEvents.validateControls, this.validate);
         this.removeEventListener("submit", this.form.handleSubmit(this.registerUser));
     }
 

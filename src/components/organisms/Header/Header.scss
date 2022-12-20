@@ -21,6 +21,15 @@
     align-items: center;
 }
 
+.active-link {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: var(--header-nav-active-link);
+    text-decoration: none;
+}
 
 @media screen and (max-width: 1740px) {
     .header__main-bar-navigation-list-item {

@@ -1,5 +1,6 @@
 import { appEvents } from "../../../constants/appEvents";
 import { appRoutes } from "../../../constants/appRoutes";
+import { eventBus } from "../../../core";
 import { Component } from "../../../core/Component/Component";
 import './HeaderNavigation.scss';
 
@@ -25,7 +26,7 @@ export class HeaderNavigation extends Component {
     }
 
     componentDidMount() {
-        this.dispatch(appEvents.changeRoute, this.onChangeRoute);
+        eventBus.on(appEvents.changeRoute, this.onChangeRoute);
     }
 
     render() {

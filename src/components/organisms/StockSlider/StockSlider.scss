@@ -44,7 +44,7 @@
 
 @media screen and (max-width: 1740px) {
     .homepage-main__in-stock-slide-img {
-        width: 220px;
+        width: 255px;
     }
 
     .homepage-main__in-stock-slider {
@@ -78,7 +78,7 @@
 
 @media screen and (max-width: 1280px) {
     .homepage-main__in-stock-slide-img {
-        width: 155px;
+        width: 194px;
     }
 
     .homepage-main__in-stock-slide-img-wrapper {
@@ -89,6 +89,7 @@
     .homepage-main__in-stock-slide-price,
     .homepage-main__in-stock-slide-btn {
         font-size: 13px;
+        line-height: 25px;
     }
 
     .homepage-main__in-stock-slide-btn {
@@ -115,7 +116,7 @@
     }
 
     .homepage-main__in-stock-slide-img {
-        width: 125px;
+        width: 150px;
     }
 
     .homepage-main__in-stock-slide-title,
@@ -139,13 +140,11 @@
     }
 
     .homepage-main__in-stock-slide-img-wrapper {
-        height: 199px;
+        height: 270px;
     }
 
     .homepage-main__in-stock-slide-img {
-        width: 150px;
-        padding-top: 34px;
-        padding-bottom: 17px;
+        width: 256px;
     }
 
     .homepage-main__in-stock-slide-title,
@@ -166,6 +165,7 @@
     }
 
     .homepage-main__in-stock-slider {
+        margin-top: 30px;
         padding-bottom: 50px !important;
     }
 
@@ -186,6 +186,14 @@
 
     .in-stock-scrollbar {
         margin: 0;
+    }
+
+    .homepage-main__in-stock-slide-img-wrapper {
+        height: 220px;
+    }
+
+    .homepage-main__in-stock-slide-img {
+        width: 189px;
     }
 }
 

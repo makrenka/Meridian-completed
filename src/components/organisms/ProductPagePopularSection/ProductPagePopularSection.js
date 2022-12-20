@@ -53,10 +53,10 @@ export class ProductPagePopularSection extends Component {
                 <div class="container">
                     <h2 class="product-main__popular-heading">Shop Our Other Popular Sets</h2>
                     <div class="product-main__popular-sets">
-                        ${this.state.products.map(({ image, title, price, id }) =>
+                        ${this.state.products.slice(0, 4).map(({ image1, title, price, id }) =>
             `
                             <div class="product-main__popular-set">
-                                <img src="${image}" alt="popular-sets-image"
+                                <img src="${image1}" alt="popular-sets-image"
                                     class="product-main__popular-set-img">
                                 <h6 class="product-main__popular-set-heading">${title}</h6>
                                 <p class="product-main__popular-set-text">£${price}</p>

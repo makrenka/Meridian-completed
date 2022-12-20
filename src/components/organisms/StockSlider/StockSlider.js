@@ -100,12 +100,12 @@ export class StockSlider extends Component {
                         <div class="swiper homepage-main__in-stock-slider">
                         <div class="swiper-wrapper">
                             
-                            ${this.state.products.map(({ id, image, title, price }) => {
+                            ${this.state.products.map(({ id, image1, title, price }) => {
             return `
                             <div class="swiper-slide homepage-main__in-stock-slide">               
                                 <mrd-stock-slide 
                                     id='${id}'
-                                    image='${image}'
+                                    image='${image1}'
                                     title='${title}'
                                     price='${price}'>
                                 </mrd-stock-slide>

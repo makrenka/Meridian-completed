@@ -13,8 +13,8 @@ export class ProductDescriptionHeading extends Component {
         
         <h3 class="product-main__product-section-options-heading">${this.props.title}</h3>
         <div class="product-main__product-section-options-text-wrapper">
-            <p class="product-main__product-section-options-new-price${isAddClassName}">£${this.props.price * (1 - this.props.discount / 100)}</p>
-            <p class="product-main__product-section-options-price${isAddClassName}">£${this.props.price}</p>
+            <p class="product-main__product-section-options-new-price${isAddClassName}">£${Number(this.props.price).toFixed(2)}</p>
+            <p class="product-main__product-section-options-price${isAddClassName}">£${(this.props.price / (1 - this.props.discount / 100)).toFixed(2)}</p>
             <p class="product-main__product-section-options-discount${isAddClassName}">${this.props.discount}% Off</p>
         </div>
         `

@@ -1,5 +1,5 @@
 import { Component } from "../../../core/Component/Component";
-import Swiper, { Navigation, Pagination, Thumbs } from 'swiper';
+import Swiper, { Pagination } from 'swiper';
 
 export class ProductPageProductSliderAdapt extends Component {
     constructor() {
@@ -18,22 +18,12 @@ export class ProductPageProductSliderAdapt extends Component {
         let swiper = new Swiper(".product-main__product-section-slider-adapt", {
             spaceBetween: 10,
 
-            modules: [Navigation, Pagination, Thumbs],
+            modules: [Pagination],
 
             pagination: {
                 el: ".product-section-slider-pagination",
                 type: "bullets",
                 clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            thumbs: {
-                swiper: {
-                    el: '.product-main__product-section-slider2',
-                    slidesPerView: 5,
-                },
             },
 
         });

@@ -9,23 +9,19 @@ export class StockSlide extends Component {
 
     render() {
         return `
-        <div class="homepage-main__in-stock-slide-img-wrapper">
-            <mrd-link to="${appRoutes.productDetails}/${this.props.id}" class="homepage-main__in-stock-slide-img-link">            
+        <mrd-link to="${appRoutes.productDetails}/${this.props.id}" class="homepage-main__in-stock-slide-img-link">
+            <div class="homepage-main__in-stock-slide-img-wrapper">
                 <img src="${this.props.image}.jpg" alt="${this.props.title}"
                 class="homepage-main__in-stock-slide-img">
-            </mrd-link>                                
-        </div>
-        <div class="homepage-main__in-stock-slide-description-wrapper">
-            <mrd-link to="${appRoutes.productDetails}/${this.props.id}" class="homepage-main__in-stock-slide-title-link">            
+            </div>
+            <div class="homepage-main__in-stock-slide-description-wrapper">
                 <h4 class="homepage-main__in-stock-slide-title">${this.props.title}</h4>
-            </mrd-link>                                
-            <p class="homepage-main__in-stock-slide-price">£${this.props.price}</p>
-            <mrd-link to="${appRoutes.productDetails}/${this.props.id}">
+                <p class="homepage-main__in-stock-slide-price">£${this.props.price}</p>
                 <button class="homepage-main__in-stock-slide-btn" type="submit">
                     View Details Products
                 </button>
-            </mrd-link>                                
-        </div>
+            </div>
+        </mrd-link>
         `
     }
 }

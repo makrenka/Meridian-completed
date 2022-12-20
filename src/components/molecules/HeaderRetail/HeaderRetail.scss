@@ -37,3 +37,13 @@
 .header__main-bar-retail-section-list-link:hover {
     color: var(--header-nav-active-link);
 }
+
+.active-link {
+    font-family: 'HK Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: var(--header-nav-active-link);
+    text-decoration: none;
+}

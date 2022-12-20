@@ -3,6 +3,12 @@ import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 
 export class Header extends Component {
+    constructor() {
+        super();
+        this.state = {
+            activePath: window.location.pathname,
+        };
+    }
 
     static get observedAttributes() {
         return ["is-logged"];
@@ -15,7 +21,21 @@ export class Header extends Component {
         }
     }
 
+    onChangeRoute = (evt) => {
+        this.setState((state) => {
+            return {
+                ...state,
+                activePath: evt.detail.target,
+            };
+        });
+    };
+
+    isActiveLink(path) {
+        return this.state.activePath === path ? "active-link" : "";
+    }
+
     componentDidMount() {
+        this.dispatch(appEvents.changeRoute, this.onChangeRoute);
         this.addEventListener('click', this.onSignOut);
     }
 

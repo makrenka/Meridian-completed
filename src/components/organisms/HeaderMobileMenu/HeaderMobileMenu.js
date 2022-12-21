@@ -13,9 +13,9 @@ export class HeaderMobileMenu extends Component {
     toggleMenu(evt) {
         const target = evt.target.closest('.header__main-bar-hamburger-menu')
         const mobileMenu = document.querySelector('.header__main-bar-mobile');
-        if(target) {
+        if (target) {
             mobileMenu.classList.toggle('header__main-bar-mobile--active');
-        }        
+        }
     }
 
     componentDidMount() {

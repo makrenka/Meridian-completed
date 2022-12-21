@@ -88,7 +88,12 @@ export class ProductPage extends Component {
             <mrd-pp-property-section></mrd-pp-property-section>
             <mrd-pp-faq-section></mrd-pp-faq-section>
             <mrd-pp-popular-section></mrd-pp-popular-section>
-            <mrd-pp-review-section></mrd-pp-review-section>
+            <mrd-pp-review-section
+                id="${this.props.id}"
+            >
+            </mrd-pp-review-section>
+
+            
         </it-preloader>
         `
     }

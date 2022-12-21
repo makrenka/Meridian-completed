@@ -40,12 +40,41 @@ export class ProductPageReviewSection extends Component {
         return swiper;
     }
 
+    static get observedAttributes() {
+        return ["id"];
+    }
+
+    openCommentForm = (evt) => {
+        const target = evt.target.closest('.product-main__reviews-btn');
+        const comment = document.querySelector('.comment-form');
+        const overlay = document.querySelector('.overlay');
+        if (target) {
+            comment.classList.add('comment-form--active');
+            overlay.classList.add('overlay--active');
+        }
+    }
+
+    closeCommentForm = (evt) => {
+        const target1 = evt.target.closest('.comment-page__close-icon');
+        const target2 = evt.target.closest('.comment-page__btn');
+        const comment = document.querySelector('.comment-form');
+        const overlay = document.querySelector('.overlay');
+        if (target1 || target2) {
+            comment.classList.remove('comment-form--active');
+            overlay.classList.remove('overlay--active');
+        }
+    }
+
     componentDidMount() {
         this.initSwiper();
+        this.addEventListener('click', this.openCommentForm);
+        this.addEventListener('click', this.closeCommentForm);
     }
 
     componentWillUnmount() {
         this.initSwiper();
+        this.removeEventListener('click', this.openCommentForm);
+        this.removeEventListener('click', this.closeCommentForm);
     }
 
     render() {
@@ -55,9 +84,8 @@ export class ProductPageReviewSection extends Component {
             <div class="container">
                 <div class="product-main__reviews-heading-wrapper">
                     <h3 class="product-main__reviews-heading">Reviews (168)</h3>
-                    <mrd-link to="${appRoutes.comment}">
-                        <button class="product-main__reviews-btn">Write A Review</button>
-                    </mrd-link>
+                    <button class="product-main__reviews-btn">Write A Review</button>                        
+                    <comment-form class="comment-form" id="${this.props.id}"></comment-form>
                 </div>
     
                 <div class="swiper product-main__reviews-slider">
@@ -69,12 +97,7 @@ export class ProductPageReviewSection extends Component {
                             </div>
                             `
         ).join(' ')}
-                        
-    
-                        
-    
                     </div>
-    
                     <div class="swiper-pagination reviews-slider-pagination"></div>
     
                     <div class="swiper-button-prev reviews-slider-btn-prev">
@@ -97,6 +120,8 @@ export class ProductPageReviewSection extends Component {
             </div>
 
         </section>
+
+        <mrd-overlay></mrd-overlay>
         `
     }
 }

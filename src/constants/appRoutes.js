@@ -11,6 +11,5 @@ export const appRoutes = {
     findRetail: '/find-retail',
     productDetails: '/product-details',
     cart: '/cart',
-    comment: '/comment',
     errorPage: '*',
 }

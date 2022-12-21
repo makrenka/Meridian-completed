@@ -2,14 +2,24 @@ import { Component } from "../../../core/Component/Component";
 
 export class Comment extends Component {
 
+
+
+    static get observedAttributes() {
+        return ["id"];
+    }
+
     render() {
         return `
         <div class="comment-page__wrapper">
             <div class="comment-page__container">
-                <h1 class="comment-page__heading">Write your comment</h1>
+                <div class="comment-page__heading-wrapper">
+                    <h1 class="comment-page__heading">Write your comment</h1>
+                    <img src="../../assets/images/icons/close-window-icon.png"
+                        class="comment-page__close-icon" alt="close-window-icon">
+                </div>
                 <form class="comment-page__form">
-                    <div class="comment-page__form-item">
-                        <input class="comment-page__form-control" type="text" name="id" value="id">
+                    <div class="comment-page__form-item-id">
+                        <input class="comment-page__form-control" type="text" name="id" value="${this.props.id}">
                     </div>
                     <div class="comment-page__form-item">
                         <label class="comment-page__form-label">Product</label>
@@ -39,4 +49,4 @@ export class Comment extends Component {
     }
 }
 
-customElements.define('comment-page', Comment);
+customElements.define('comment-form', Comment);

@@ -189,6 +189,20 @@
     right: 645px !important;
 }
 
+.comment-form {
+    position: fixed;
+    top: 2%;
+    right: 10%;
+    left: 10%;
+    background: white;
+    display: none;
+}
+
+.comment-form--active {
+    display: block;
+    z-index: 101;
+}
+
 @media screen and (max-width: 1740px) {
 
     .product-main__reviews-review-wrapper {

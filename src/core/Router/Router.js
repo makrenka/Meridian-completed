@@ -1,3 +1,5 @@
+import { appEvents } from '../../constants/appEvents';
+import { eventBus } from '../EventBus';
 import { matchRoute } from './utils';
 
 export class Router extends HTMLElement {
@@ -18,7 +20,7 @@ export class Router extends HTMLElement {
 
     navigate(url) {
         const matchedRoute = matchRoute(this.routes, url);
-        if(matchedRoute) {
+        if (matchedRoute) {
             window.history.pushState(null, null, url);
             this.renderPage(matchedRoute)
         }
@@ -26,16 +28,16 @@ export class Router extends HTMLElement {
 
     renderPage(activeRoute) {
         const { component, title, params = {} } = activeRoute;
-        if(component) {
-            while(this.outlet.firstChild) {
+        if (component) {
+            while (this.outlet.firstChild) {
                 this.outlet.removeChild(this.outlet.firstChild)
             }
 
             const updateView = () => {
                 const view = document.createElement(component);
                 document.title = title || document.title;
-                for(let key in params) {
-                    if(key !== '*') {
+                for (let key in params) {
+                    if (key !== '*') {
                         view.setAttribute(key, params[key]);
                     }
                 }
@@ -57,13 +59,13 @@ export class Router extends HTMLElement {
 
     connectedCallback() {
         this.navigate(window.location.pathname);
-        this.addEventListener('popstate', this.onPopState);
-        window.addEventListener('change-route', this.onChangeRoute);
+        window.addEventListener('popstate', this.onPopState);
+        eventBus.on(appEvents.changeRoute, this.onChangeRoute);
     }
 
     disconnectedCallback() {
         this.removeEventListener('popstate', this.onPopState);
-        window.removeEventListener('change-route', this.onChangeRoute);
+        eventBus.off(appEvents.changeRoute, this.onChangeRoute);
     }
 }
 

@@ -1,4 +1,6 @@
+import { appEvents } from "../../constants/appEvents";
 import { Component } from "../Component";
+import { eventBus } from "../EventBus";
 
 export class LinkFooter extends Component {
     constructor() {
@@ -12,7 +14,7 @@ export class LinkFooter extends Component {
 
     onClick = (evt) => {
         evt.preventDefault();
-        this.dispatch('change-route', { target: this.props.to });
+        eventBus.emit(appEvents.changeRoute, { target: this.props.to });
     }
 
     componentDidMount() {
@@ -30,6 +32,6 @@ export class LinkFooter extends Component {
             </a>
         `;
     }
-} 
+}
 
 customElements.define('mrd-link-footer', LinkFooter);

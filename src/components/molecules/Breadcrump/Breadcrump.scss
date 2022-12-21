@@ -50,3 +50,9 @@
     text-transform: uppercase;
     color: #272727;
 }
+
+@media screen and (max-width: 768px) {
+    .product-main__breadcrump-wrapper {
+        border-top: none;
+    }
+}

@@ -38,7 +38,7 @@ export class Comment extends Component {
                             Your comment
                         </label>
                         <textarea name="description" class="comment-page__form-area" id="exampleFormControlTextarea1"
-                            rows="10"></textarea>
+                            rows="5"></textarea>
                     </div>
 
                     <button type="submit" class="comment-page__btn">Send</button>

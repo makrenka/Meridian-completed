@@ -35,13 +35,41 @@ export class Header extends Component {
         return this.state.activePath === path ? "active-link" : "";
     }
 
+    onSearch = (evt) => {
+        const target = evt.target.closest('.header__main-bar-icons-search');
+        const searchInput = document.querySelector('.header__main-bar-search-input');
+        const cartIcon = document.querySelector('.header__main-bar-icons-cart');
+        const linkRetail = document.querySelector('.find-a-retail');
+        if (target) {
+            searchInput.classList.add('header__main-bar-search-input--active');
+            cartIcon.classList.add('header__main-bar-icons-cart--unactive');
+            linkRetail.classList.add('find-a-retail--unactive');
+        }
+    }
+
+    closeSearch = (evt) => {
+        const target = evt.target.closest('.header__main-bar-search-form');
+        const searchInput = document.querySelector('.header__main-bar-search-input');
+        const cartIcon = document.querySelector('.header__main-bar-icons-cart');
+        const linkRetail = document.querySelector('.find-a-retail');
+        if (!target) {
+            searchInput.classList.remove('header__main-bar-search-input--active');
+            cartIcon.classList.remove('header__main-bar-icons-cart--unactive');
+            linkRetail.classList.remove('find-a-retail--unactive');
+        }
+    }
+
     componentDidMount() {
         eventBus.on(appEvents.changeRoute, this.onChangeRoute);
         this.addEventListener('click', this.onSignOut);
+        this.addEventListener('click', this.onSearch);
+        window.addEventListener('click', this.closeSearch);
     }
 
     componentWillUnmount() {
         this.removeEventListener('click', this.onSignOut);
+        this.removeEventListener('click', this.onSearch);
+        window.removeEventListener('click', this.closeSearch);
     }
 
     render() {
@@ -81,7 +109,13 @@ export class Header extends Component {
                     </nav>
                     <div class="header__main-bar-icons">
                         <mrd-cart-icon></mrd-cart-icon>
-                        <img src="../../assets/images/icons/search.svg" alt="search-icon" class="header__main-bar-icons-search">
+                        <form class="header__main-bar-search-form">
+                            <input type="text" name="header-search" placeholder="Search"
+                                class="header__main-bar-search-input">
+                            <button type="submit" class="header__main-bar-search-btn">
+                                <img src="../../assets/images/icons/search.svg" alt="search-icon" class="header__main-bar-icons-search">
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

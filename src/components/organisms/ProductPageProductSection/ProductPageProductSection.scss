@@ -162,3 +162,40 @@
 .product-main__product-section-options-paying-images-img {
     margin-left: 27px;
 }
+
+@media screen and (max-width: 1024px) {
+
+    .product-main__product-section-options-price-active,
+    .product-main__product-section-options-new-price-active,
+    .product-main__product-section-options-discount-active {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .product-main__product-section-options-price-active,
+    .product-main__product-section-options-new-price-active,
+    .product-main__product-section-options-discount-active {
+        font-size: 26px;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+
+    .product-main__product-section-options-price-active,
+    .product-main__product-section-options-new-price-active,
+    .product-main__product-section-options-discount-active {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .product-main__product-section-options-price-active,
+    .product-main__product-section-options-new-price-active,
+    .product-main__product-section-options-discount-active {
+        line-height: 10px;
+    }
+}

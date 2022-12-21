@@ -41,7 +41,7 @@ export class HeaderRetail extends Component {
                         <span class="header__main-bar-retail-section-list-link ${this.isActiveLink(appRoutes.signUp)}">Become A Dealer</span>
                     </mrd-link>
                 </li>
-                <li class="header__main-bar-retail-section-list-item">
+                <li class="header__main-bar-retail-section-list-item find-a-retail">
                     <mrd-link to="${appRoutes.findRetail}">
                         <span class="header__main-bar-retail-section-list-link ${this.isActiveLink.findRetail}">Find A Retail</span>
                     </mrd-link>

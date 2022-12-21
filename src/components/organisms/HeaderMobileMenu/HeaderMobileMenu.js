@@ -3,9 +3,10 @@ import { Component } from "../../../core";
 export class HeaderMobileMenu extends Component {
 
     userClickOutside(evt) {
-        const target = evt.target.closest('.header__main-bar-hamburger-menu')
+        const target1 = evt.target.closest('.header__main-bar-hamburger-menu');
+        const target2 = evt.target.closest('.header__main-bar-mobile');
         const mobileMenu = document.querySelector('.header__main-bar-mobile');
-        if (!target) {
+        if (!target1 && !target2) {
             mobileMenu.classList.remove('header__main-bar-mobile--active');
         }
     }

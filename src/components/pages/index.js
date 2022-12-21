@@ -10,3 +10,4 @@ export * from './AboutUs';
 export * from './Contact';
 export * from './FindRetail';
 export * from './Cart';
+export * from './Comment';

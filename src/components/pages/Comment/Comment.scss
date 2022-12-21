@@ -1,0 +1,91 @@
+.comment-page__wrapper {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 80px 0;
+}
+
+.comment-page__container {
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.comment-page__heading {
+    color: #272727;
+    font-family: Outfit, sans-serif;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 56px;
+}
+
+.comment-page__form-label {
+    color: #848484;
+    font-family: HK Grotesk, sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.comment-page__form-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    margin: 30px 0;
+}
+
+.comment-page__form-control,
+.comment-page__form-range,
+.comment-page__form-area {
+    border: 1px solid #848484;
+}
+
+.comment-page__btn {
+    background-color: var(--properties-background);
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 56px;
+}
+
+@media screen and (max-width: 1280px) {
+    .comment-page__container {
+        max-width: 1004px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .comment-page__container {
+        max-width: 748px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .comment-page__container {
+        max-width: 620px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .comment-page__container {
+        max-width: 408px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .comment-page__container {
+        max-width: 380px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .comment-page__container {
+        max-width: 300px;
+    }
+}

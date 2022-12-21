@@ -1,5 +1,6 @@
 import { Component } from "../../../core/Component/Component";
 import Swiper, { Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
+import { appRoutes } from "../../../constants/appRoutes";
 
 export class ProductPageReviewSection extends Component {
     constructor() {
@@ -54,7 +55,9 @@ export class ProductPageReviewSection extends Component {
             <div class="container">
                 <div class="product-main__reviews-heading-wrapper">
                     <h3 class="product-main__reviews-heading">Reviews (168)</h3>
-                    <button class="product-main__reviews-btn">Write A Review</button>
+                    <mrd-link to="${appRoutes.comment}">
+                        <button class="product-main__reviews-btn">Write A Review</button>
+                    </mrd-link>
                 </div>
     
                 <div class="swiper product-main__reviews-slider">

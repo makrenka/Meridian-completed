@@ -68,7 +68,7 @@ export class ProductPage extends Component {
         } = this.state;
 
         return `
-        <it-preloader is-loading="${this.state.isLoading}">
+        <mrd-preloader is-loading="${this.state.isLoading}">
             <mrd-breadcrump></mrd-breadcrump>
             <mrd-product-page-product-section
                 image1="${image1}"
@@ -90,11 +90,12 @@ export class ProductPage extends Component {
             <mrd-pp-popular-section></mrd-pp-popular-section>
             <mrd-pp-review-section
                 id="${this.props.id}"
+                title="${title}"
             >
             </mrd-pp-review-section>
 
             
-        </it-preloader>
+        </mrd-preloader>
         `
     }
 }

@@ -41,7 +41,7 @@ export class ProductPageReviewSection extends Component {
     }
 
     static get observedAttributes() {
-        return ["id"];
+        return ["id", "title"];
     }
 
     openCommentForm = (evt) => {
@@ -85,7 +85,11 @@ export class ProductPageReviewSection extends Component {
                 <div class="product-main__reviews-heading-wrapper">
                     <h3 class="product-main__reviews-heading">Reviews (168)</h3>
                     <button class="product-main__reviews-btn">Write A Review</button>                        
-                    <comment-form class="comment-form" id="${this.props.id}"></comment-form>
+                    <comment-form class="comment-form" 
+                        id="${this.props.id}"
+                        title="${this.props.title}"
+                    >
+                    </comment-form>
                 </div>
     
                 <div class="swiper product-main__reviews-slider">

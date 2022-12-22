@@ -23,3 +23,4 @@ export * from './ProductPagePopularSection';
 export * from './ProductPageReviewSection';
 export * from './ProductPageReviewSlide';
 export * from './HeaderMobileMenu';
+export * from './CommentForm';

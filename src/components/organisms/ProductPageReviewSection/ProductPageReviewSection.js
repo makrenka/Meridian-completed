@@ -109,8 +109,12 @@ export class ProductPageReviewSection extends Component {
     }
 
     render() {
-        console.log(this.state.comments)
+        const oneSlide = this.state.comments.filter(item => item.product == this.props.title).slice(0, 10).length;
+        const twoSlide = this.state.comments.filter(item => item.product == this.props.title).slice(10, 20).length;
+        const isAddClassNameSlider = !oneSlide ? "--unactive-slider" : "";
+        const isAddClassNameSlide = !twoSlide ? "--unactive-slide" : "";
         return `        
+        <mrd-preloader is-loading="${this.state.isLoading}">
             <section class="product-main__reviews">
                 <div class="container">
                     <div class="product-main__reviews-heading-wrapper">
@@ -123,25 +127,39 @@ export class ProductPageReviewSection extends Component {
                         </comment-form>
                     </div>
         
-                    <div class="swiper product-main__reviews-slider">
+                    <div class="swiper product-main__reviews-slider${isAddClassNameSlider}">
                         <div class="swiper-wrapper product-main__reviews-slider-wrapper">
                             
-                                <div class="swiper-slide product-main__reviews-slider-slide">
-                                    <mtd-pp-review-slide1 
-                                        title="${this.props.title}"
-                                    >
-                                    </mtd-pp-review-slide1>
-                                </div>
-                                <div class="swiper-slide product-main__reviews-slider-slide">
-                                <mtd-pp-review-slide2 
-                                    title="${this.props.title}"
-                                >
-                                </mtd-pp-review-slide2>
-                                </div>
-                                
-                  
-                        </div>
-                        <div class="swiper-pagination reviews-slider-pagination"></div>            
+                            <div class="swiper-slide product-main__reviews-slider-slide">
+                    ${this.state.comments
+                .filter(item => item.product == this.props.title)
+                .slice(0, 10)
+                .map(({ name, description, date }) => `
+                            <mtd-pp-review-slide 
+                                name="${name}"
+                                description="${description}"
+                                date="${date}"
+                            >
+                            </mtd-pp-review-slide>
+                            `).join(' ')}                                    
+                            </div>                                
+                            <div class="swiper-slide product-main__reviews-slider-slide${isAddClassNameSlide}">
+                    ${this.state.comments
+                .filter(item => item.product == this.props.title)
+                .slice(10, 20)
+                .map(({ name, description, date }) =>
+                    `
+                            <mtd-pp-review-slide 
+                                name="${name}"
+                                description="${description}"
+                                date="${date}"
+                            >
+                            </mtd-pp-review-slide>
+                            `
+                ).join(' ')}
+                            </div>
+                        </div >
+                        <div class="swiper-pagination reviews-slider-pagination${isAddClassNameSlide}"></div>            
                         <div class="swiper-button-prev reviews-slider-btn-prev">
                             <svg width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -158,14 +176,14 @@ export class ProductPageReviewSection extends Component {
                                 <rect x="0.846924" y="1.16382" width="78.7823" height="78.7823" rx="5.5" stroke="#545454" />
                             </svg>
                         </div>
-                    </div>
-                </div>
+                    </div >
+                </div >
 
-            </section>
-
-            <mrd-overlay></mrd-overlay>
+            </section >
         
-        `
+            <mrd-overlay></mrd-overlay>
+        </mrd-preloader>
+`
     }
 }
 

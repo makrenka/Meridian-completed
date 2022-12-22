@@ -34,6 +34,14 @@
     margin-top: 45px;
 }
 
+.product-main__reviews-slider--unactive-slider {
+    display: none;
+}
+
+.product-main__reviews-slider-slide--unactive-slide {
+    display: none;
+}
+
 .product-main__reviews-slider-wrapper {
     margin-bottom: 124px;
 }
@@ -131,6 +139,10 @@
 .reviews-slider-pagination {
     display: flex;
     justify-content: center;
+}
+
+.reviews-slider-pagination--unactive-slide {
+    display: none;
 }
 
 .reviews-slider-pagination .swiper-pagination-bullet {

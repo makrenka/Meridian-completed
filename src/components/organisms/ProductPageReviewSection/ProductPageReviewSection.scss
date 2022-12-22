@@ -48,17 +48,16 @@
 
 .product-main__reviews-review-wrapper {
     border-bottom: 1px solid #E2E2E2;
-    padding-top: 50px;
-}
-
-.product-main__reviews-review-wrapper:first-child {
-    padding-top: 0;
 }
 
 .product-main__reviews-review {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    padding: 50px 205px 40px 0 !important;
+}
+
+.product-main__reviews-review:first-child {
     padding: 0 205px 40px 0;
 }
 

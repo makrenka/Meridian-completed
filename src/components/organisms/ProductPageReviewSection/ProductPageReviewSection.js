@@ -134,6 +134,7 @@ export class ProductPageReviewSection extends Component {
                     ${this.state.comments
                 .filter(item => item.product == this.props.title)
                 .slice(0, 10)
+                .sort((a, b) => b.date > a.date ? 1 : -1)
                 .map(({ name, description, date }) => `
                             <mtd-pp-review-slide 
                                 name="${name}"
@@ -147,6 +148,7 @@ export class ProductPageReviewSection extends Component {
                     ${this.state.comments
                 .filter(item => item.product == this.props.title)
                 .slice(10, 20)
+                .sort((a, b) => b.date > a.date ? 1 : -1)
                 .map(({ name, description, date }) =>
                     `
                             <mtd-pp-review-slide 

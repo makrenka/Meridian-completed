@@ -71,12 +71,7 @@
 .product-main__product-section-options-rating {
     display: flex;
     align-items: center;
-    margin-top: 20px;
-}
-
-.product-main__product-section-options-rating-img {
-    width: 47px;
-    padding-right: 5px;
+    width: 220px;
 }
 
 .product-main__product-section-options-rating-text {
@@ -87,6 +82,7 @@
     line-height: 40px;
     color: #A9A9A9;
     padding-left: 6px;
+    margin-top: 5px;
 }
 
 .product-main__product-section-options-colors {

@@ -72,7 +72,7 @@ export class Comment extends Component {
                         </div>
                         <div class="comment-page__form-item">
                             <label class="comment-page__form-label">Your grade</label>
-                            <input class="comment-page__form-range" type="range" name="grade" min="0" max="5" step="0.5">
+                            <input class="comment-page__form-range" type="range" name="grade" min="0" max="5" step="1">
                         </div>
                         <div class="comment-page__form-item">
                             <label for="exampleFormControlTextarea1" class="comment-page__form-label">

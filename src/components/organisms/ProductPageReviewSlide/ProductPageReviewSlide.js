@@ -3,7 +3,7 @@ import { Component } from "../../../core/Component/Component";
 export class ProductPageReviewSlide extends Component {
 
     static get observedAttributes() {
-        return ["name", "description", "date"];
+        return ["name", "description", "date", "grade"];
     }
 
     render() {
@@ -22,16 +22,10 @@ export class ProductPageReviewSlide extends Component {
                                 class="product-main__reviews-review-author-verification-img"></object>
                         </div>
                         <div class="product-main__reviews-review-author-rating">
-                            <img src="../../assets/images/icons/rating-star.svg" alt="rating-star"
-                                class="product-main__reviews-review-author-rating-img">
-                            <img src="../../assets/images/icons/rating-star.svg" alt="rating-star"
-                                class="product-main__reviews-review-author-rating-img">
-                            <img src="../../assets/images/icons/rating-star.svg" alt="rating-star"
-                                class="product-main__reviews-review-author-rating-img">
-                            <img src="../../assets/images/icons/rating-star.svg" alt="rating-star"
-                                class="product-main__reviews-review-author-rating-img">
-                            <img src="../../assets/images/icons/rating-star.svg" alt="rating-star"
-                                class="product-main__reviews-review-author-rating-img">
+                            <mrd-product-rating
+                                grade="${this.props.grade}" 
+                            >
+                            </mrd-product-rating>
                         </div>
                     </div>
                     <div class="product-main__reviews-review-description">

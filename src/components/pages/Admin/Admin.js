@@ -26,6 +26,10 @@ export class Admin extends Component {
         })
     }
 
+    static get observedAttributes() {
+        return ["path"];
+    }
+
     checkUser() {
         this.toggleIsLoading();
         authService.init()

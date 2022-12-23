@@ -85,8 +85,6 @@ export class HomeCommentSlider extends Component {
     }
 
     render() {
-        const filt = this.state.comments.filter(item => item.grade == 5)
-        console.log(filt)
         return `
         <mrd-preloader is-loading="${this.state.isLoading}">
             <section class="homepage-main__comment-section">

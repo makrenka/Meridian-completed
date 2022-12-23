@@ -1,5 +1,8 @@
-import { Component } from "../../../core";
+import { appEvents } from "../../../constants/appEvents";
+import { appRoutes } from "../../../constants/appRoutes";
+import { Component, eventBus } from "../../../core";
 import { FormManager } from "../../../core/FormManager/FormManager";
+import { authService } from "../../../services/Auth";
 import { databaseService } from "../../../services/Database";
 import { storageService } from "../../../services/Storage";
 
@@ -22,6 +25,34 @@ export class AdminCollections extends Component {
         })
     }
 
+    static get observedAttributes() {
+        return ["path"];
+    }
+
+    checkUser() {
+        this.toggleIsLoading();
+        authService.init()
+            .then((user) => {
+                authService.user = user;
+                if (!authService.user) {
+                    eventBus.emit(appEvents.changeRoute, {
+                        target: appRoutes[this.props.path ?? "signIn"],
+                    });
+                }
+            })
+            .catch((error) => {
+                this.setState((state) => {
+                    return {
+                        ...state,
+                        error: error.message,
+                    }
+                })
+            })
+            .finally(() => {
+                this.toggleIsLoading();
+            })
+    }
+
     createCollection = (data) => {
         this.toggleIsLoading();
         storageService.uploadImage(data.image)
@@ -39,11 +70,13 @@ export class AdminCollections extends Component {
     }
 
     componentDidMount() {
+        this.checkUser();
         this.form.init(this.querySelector('.admin-page__collections-form'), {});
         this.addEventListener('submit', this.form.handleSubmit(this.createCollection));
     }
 
     componentWillUnmount() {
+        this.checkUser();
         this.removeEventListener('submit', this.form.handleSubmit(this.createCollection));
     }
 

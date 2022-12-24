@@ -58,8 +58,8 @@ export class ProductDescription extends Component {
 
     render() {
         const filt = this.state.comments.filter(item => item.product == this.props.title);
-        const avrGrade = Math.round(filt.map(({ grade }) => Number(grade))
-            .reduce((sum, current) => sum + current, 0) / filt.length);
+        const avrGrade = !filt.length == 0 ? Math.round(filt.map(({ grade }) => Number(grade))
+            .reduce((sum, current) => sum + current, 0) / filt.length) : '0';
 
         return `
         <mrd-preloader is-loading="${this.state.isLoading}">

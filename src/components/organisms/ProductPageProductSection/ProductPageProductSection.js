@@ -16,11 +16,12 @@ export class ProductPageProductSection extends Component {
             "dimensions",
             "finance",
             "includes",
+            "data",
         ];
     }
 
     render() {
-
+        console.log(this.props.data)
         return `
         
         <section class="product-main__product-section">

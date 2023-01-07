@@ -3,4 +3,5 @@ export const appEvents = {
     changeRoute: "change-route",
     userAuthorized: "user-authorized",
     validateControls: "validate-controls",
+    localStorage: "local-storage",
 }

@@ -71,6 +71,7 @@ export class ProductPage extends Component {
         <mrd-preloader is-loading="${this.state.isLoading}">
             <mrd-breadcrump></mrd-breadcrump>
             <mrd-product-page-product-section
+                data="${JSON.stringify(this.state.product)}"
                 image1="${image1}"
                 image2="${image2}"
                 image3="${image3}"

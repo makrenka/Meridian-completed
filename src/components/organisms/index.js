@@ -24,3 +24,5 @@ export * from './ProductPageReviewSection';
 export * from './ProductPageReviewSlide';
 export * from './HeaderMobileMenu';
 export * from './CommentForm';
+export * from './CartTable';
+export * from './CartSummary';

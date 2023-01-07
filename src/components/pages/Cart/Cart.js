@@ -3,11 +3,19 @@ import { Component } from "../../../core/Component/Component";
 export class Cart extends Component {
     render() {
         return `
-        <div class="cart-page__wrapper">
+        <main class="cart">
+            <mrd-breadcrump-cart></mrd-breadcrump-cart>
             <div class="container">
-                <h1 class="cart-page__h1">Cart</h1>
+                <div class="cart-wrapper">
+                    <mrd-cart-table></mrd-cart-table>
+                    <mrd-cart-summary></mrd-cart-summary>
+                </div>
+
+                <mrd-cart-table-adapt></mrd-cart-table-adapt>
             </div>
-        </div>
+
+            <mrd-cart-summary-adapt></mrd-cart-summary-adapt>
+        </main>
         `
     }
 }

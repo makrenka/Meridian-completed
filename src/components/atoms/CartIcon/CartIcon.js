@@ -12,47 +12,27 @@ export class CartIcon extends Component {
         }
     }
 
-    cartDataAdapter = (data) => {
-        const cartData = data.map((item, _, arr) => {
-            return {
-                ...item,
-                quantity: item.quantity
-                    ? item.quantity
-                    : arr.filter((subItem) => subItem.id === item.id).length,
-            }
-        })
-            .filter(
-                (item, index, arr) =>
-                    arr.findIndex((finditem) => finditem.id === item.id) === index
-            );
-
-        this.state.quantity = cartData.reduce((acc, current) => (acc += current.quantity), 0);
-
-        return cartData;
-
-    }
-
-    initializeData = () => {
-        const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+    countProducts = () => {
         this.setState((state) => {
+            const data = localStorageService.getItem(STORAGE_KEYS.cartData);
             return {
                 ...state,
-                data: data ? this.cartDataAdapter(data) : [],
+                data: data,
                 quantity: data?.length ?? 0,
             }
         })
     }
 
     componentDidMount() {
-        this.initializeData();
+        this.countProducts();
     }
 
     componentWillUnmount() {
-        this.initializeData();
+        this.countProducts();
     }
 
     render() {
-        console.log(this.state.quantity)
+
         return `
         <mrd-link to="${appRoutes.cart}">
             <div class="header__main-bar-icons-cart">

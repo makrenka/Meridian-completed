@@ -1,8 +1,55 @@
 import { Component } from "../../../core/Component/Component";
+import localStorageService from "../../../services/LocalStorageService";
+import { STORAGE_KEYS } from '../../../constants/localStorage';
 
 export class CartTable extends Component {
+    constructor() {
+        super();
+        this.state = {
+            quantity: 0,
+            isVisible: false,
+            data: [],
+        }
+    }
+
+    cartDataAdapter(data) {
+        const cartData = data.map((item, _, arr) => {
+            return {
+                ...item,
+                quantity: item.quantity
+                    ? item.quantity
+                    : arr.filter((subItem) => subItem.title === item.title).length,
+            }
+        })
+            .filter(
+                (item, index, arr) =>
+                    arr.findIndex((finditem) => finditem.title === item.title) === index
+            );
+
+        return cartData;
+    }
+
+    initializeData() {
+        const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+        this.setState((state) => {
+            return {
+                ...state,
+                data: data ? this.cartDataAdapter(data) : [],
+                quantity: data?.length ?? 0,
+            }
+        })
+    }
+
+    componentDidMount() {
+        this.initializeData();
+    }
+
+    componentWillUnmount() {
+        this.initializeData();
+    }
 
     render() {
+
         return `
         <div class="cart__cart">
             <div class="cart__cart-text-wrapper">

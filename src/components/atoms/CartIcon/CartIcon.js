@@ -2,8 +2,6 @@ import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 import localStorageService from "../../../services/LocalStorageService";
 import { STORAGE_KEYS } from '../../../constants/localStorage';
-import { eventBus } from "../../../core/EventBus";
-import { appEvents } from "../../../constants/appEvents";
 
 export class CartIcon extends Component {
     constructor() {
@@ -36,29 +34,25 @@ export class CartIcon extends Component {
 
     initializeData = () => {
         const data = localStorageService.getItem(STORAGE_KEYS.cartData);
-        this.state.data = data ? this.cartDataAdapter(data) : [];
-        this.state.quantity = data?.length ?? 0;
-    }
-
-    watchOnData() {
-        eventBus.on(appEvents.localStorage, (evt) => {
-            this.state.data = this.cartDataAdapter(evt.detail.value);
-        });
-        this.render();
+        this.setState((state) => {
+            return {
+                ...state,
+                data: data ? this.cartDataAdapter(data) : [],
+                quantity: data?.length ?? 0,
+            }
+        })
     }
 
     componentDidMount() {
         this.initializeData();
-        this.watchOnData();
     }
 
     componentWillUnmount() {
         this.initializeData();
-        this.watchOnData();
     }
 
     render() {
-
+        console.log(this.state.quantity)
         return `
         <mrd-link to="${appRoutes.cart}">
             <div class="header__main-bar-icons-cart">

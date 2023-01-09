@@ -16,12 +16,12 @@ export class ProductPageProductSection extends Component {
             "dimensions",
             "finance",
             "includes",
-            "data",
+            "id",
         ];
     }
 
     render() {
-        console.log(this.props.data)
+
         return `
         
         <section class="product-main__product-section">
@@ -47,6 +47,7 @@ export class ProductPageProductSection extends Component {
                     </mrd-product-page-product-slider>
 
                     <mrd-product-description
+                        id="${this.props.id}"
                         title="${this.props.title}"
                         price="${this.props.price}"
                         discount="${this.props.discount}"
@@ -58,6 +59,7 @@ export class ProductPageProductSection extends Component {
                     </mrd-product-description>
                 </div>
                 <mrd-product-description-adapt
+                    id="${this.props.id}"
                     title="${this.props.title}"
                     price="${this.props.price}"
                     discount="${this.props.discount}"

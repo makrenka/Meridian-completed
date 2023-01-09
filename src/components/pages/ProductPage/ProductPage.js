@@ -70,8 +70,9 @@ export class ProductPage extends Component {
         return `
         <mrd-preloader is-loading="${this.state.isLoading}">
             <mrd-breadcrump></mrd-breadcrump>
+
             <mrd-product-page-product-section
-                data="${JSON.stringify(this.state.product)}"
+                id="${this.props.id}"
                 image1="${image1}"
                 image2="${image2}"
                 image3="${image3}"
@@ -86,6 +87,7 @@ export class ProductPage extends Component {
                 includes="${includes}"
             >
             </mrd-product-page-product-section>
+
             <mrd-pp-property-section></mrd-pp-property-section>
             <mrd-pp-faq-section></mrd-pp-faq-section>
             <mrd-pp-popular-section></mrd-pp-popular-section>

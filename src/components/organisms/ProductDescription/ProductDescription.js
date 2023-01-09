@@ -45,6 +45,7 @@ export class ProductDescription extends Component {
             "dimensions",
             "finance",
             "includes",
+            "id",
         ];
     }
 
@@ -78,7 +79,12 @@ export class ProductDescription extends Component {
                 <p class="product-main__product-section-options-rating-text">${avrGrade} (${filt.length} customers review)</p>
 
                 <mrd-product-colors></mrd-product-colors>
-                <mrd-button-add-to-cart></mrd-button-add-to-cart>
+
+                <mrd-button-add-to-cart
+                    id="${this.props.id}"
+                >
+                </mrd-button-add-to-cart>
+
                 <mrd-product-paying></mrd-product-paying>
                 <mrd-product-delivery></mrd-product-delivery>
 

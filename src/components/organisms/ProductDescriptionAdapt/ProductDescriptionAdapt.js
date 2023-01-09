@@ -11,6 +11,7 @@ export class ProductDescriptionAdapt extends Component {
             "dimensions",
             "finance",
             "includes",
+            "id",
         ];
     }
 
@@ -27,7 +28,12 @@ export class ProductDescriptionAdapt extends Component {
 
             <mrd-product-rating></mrd-product-rating>
             <mrd-finance-available-adaptive></mrd-finance-available-adaptive>
-            <mrd-button-add-to-cart></mrd-button-add-to-cart>
+
+            <mrd-button-add-to-cart
+                id="${this.props.id}"
+            >
+            </mrd-button-add-to-cart>
+
             <mrd-product-paying></mrd-product-paying>
 
             <mrd-delivery-description

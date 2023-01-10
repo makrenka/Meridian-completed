@@ -320,6 +320,10 @@
     color: #808080;
 }
 
+.empty-cart {
+    padding: 30px 0;
+}
+
 @media screen and (max-width: 1740px) {
     .cart-wrapper {
         grid-template-columns: 1fr 400px;

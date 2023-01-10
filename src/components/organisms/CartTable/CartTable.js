@@ -18,12 +18,12 @@ export class CartTable extends Component {
                 ...item,
                 quantity: item.quantity
                     ? item.quantity
-                    : arr.filter((subItem) => subItem.title === item.title).length,
+                    : arr.filter((subItem) => subItem.id === item.id).length,
             }
         })
             .filter(
                 (item, index, arr) =>
-                    arr.findIndex((finditem) => finditem.title === item.title) === index
+                    arr.findIndex((finditem) => finditem.id === item.id) === index
             );
 
         return cartData;
@@ -72,25 +72,26 @@ export class CartTable extends Component {
                     <th>Total</th>
                     <th></th>
                 </tr>
+                ${this.state.data.length ? `
+                ${this.state.data.map((item) => `
                 <tr class="cart__cart-table-row">
                     <td>
-                        <img src="../../assets/images/gallery/gallery-img1.jpg" alt="cart-image"
-                            class="cart__cart-table-img">
+                        <img src="${item.image1}" alt="cart-image" class="cart__cart-table-img">                        
                     </td>
                     <td>
                         <p class="cart__cart-table-product-title">
-                            Serene Linen Deluxe Cloud
+                            ${item.title}
                         </p>
                     </td>
                     <td>
                         <div class="cart__cart-table-row-count-wrapper">
                             <button class="cart__cart-table-count-button">-</button>
-                            <p class="cart__cart-table-count">1</p>
+                            <p class="cart__cart-table-count">${item.quantity}</p>
                             <button class="cart__cart-table-count-button">+</button>
                         </div>
                     </td>
                     <td>
-                        <p class="cart__cart-table-product-price">£2,500.00</p>
+                        <p class="cart__cart-table-product-price">£${Number(item.price).toFixed(2)}</p>
                     </td>
                     <td style="text-align: end;">
                         <button class="cart__cart-table-delete-btn">
@@ -98,6 +99,16 @@ export class CartTable extends Component {
                         </button>
                     </td>
                 </tr>
+                `).join(' ')}
+                ` : `
+                    <tr>
+                        <td>
+                            <p class="cart__cart-table-product-price empty-cart">Your cart is empty</p>                        
+                        </td>
+                    </tr>
+                `}
+                
+                
             </table>
         </div>
         `

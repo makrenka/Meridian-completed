@@ -40,18 +40,9 @@ export class ButtonAddToCart extends Component {
 
             })
             .finally(() => {
+                this.state.product.id = this.props.id;
                 this.toggleIsLoading();
             })
-    }
-
-    setIdProduct = (data) => {
-        const cartData = data.map((item) => {
-            return {
-                ...item,
-                id: this.props.id,
-            }
-        });
-        return cartData;
     }
 
     onClick(evt) {

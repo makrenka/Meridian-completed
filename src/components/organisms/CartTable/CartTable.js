@@ -7,7 +7,6 @@ export class CartTable extends Component {
         super();
         this.state = {
             quantity: 0,
-            isVisible: false,
             data: [],
         }
     }
@@ -40,12 +39,41 @@ export class CartTable extends Component {
         })
     }
 
+    increaseQuantity() {
+        this.setState((state) => {
+            return {
+                ...state,
+                quantity: state.quantity + 1,
+            }
+        })
+    }
+
+    decreaseQuantity() {
+        this.setState((state) => {
+            return {
+                ...state,
+                quantity: state.quantity - 1,
+            }
+        })
+    }
+
+    changeQuantity(evt) {
+        if (evt.target.closest('.minus-btn')) {
+            this.decreaseQuantity();
+        };
+        if (evt.target.closest('.plus-btn')) {
+            this.increaseQuantity();
+        };
+    }
+
     componentDidMount() {
         this.initializeData();
+        this.addEventListener('click', this.changeQuantity);
     }
 
     componentWillUnmount() {
         this.initializeData();
+        this.removeEventListener('click', this.changeQuantity);
     }
 
     render() {
@@ -85,9 +113,9 @@ export class CartTable extends Component {
                     </td>
                     <td>
                         <div class="cart__cart-table-row-count-wrapper">
-                            <button class="cart__cart-table-count-button">-</button>
+                            <button class="cart__cart-table-count-button minus-btn">-</button>
                             <p class="cart__cart-table-count">${item.quantity}</p>
-                            <button class="cart__cart-table-count-button">+</button>
+                            <button class="cart__cart-table-count-button plus-btn">+</button>
                         </div>
                     </td>
                     <td>
@@ -102,8 +130,8 @@ export class CartTable extends Component {
                 `).join(' ')}
                 ` : `
                     <tr>
-                        <td>
-                            <p class="cart__cart-table-product-price empty-cart">Your cart is empty</p>                        
+                        <td colspan=2>
+                            <p class="cart__cart-table-product-price empty-cart">Your cart is empty</p>                    
                         </td>
                     </tr>
                 `}

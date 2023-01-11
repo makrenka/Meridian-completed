@@ -15,9 +15,9 @@ export class CartTable extends Component {
         const cartData = data.map((item, _, arr) => {
             return {
                 ...item,
-                quantity: item.quantity
-                    ? item.quantity
-                    : arr.filter((subItem) => subItem.id === item.id).length,
+                quantity: arr.filter((subItem) => subItem.id === item.id).length > 1
+                    ? arr.filter((subItem) => subItem.id === item.id).length
+                    : item.quantity,
             }
         })
             .filter(
@@ -30,50 +30,82 @@ export class CartTable extends Component {
 
     initializeData() {
         const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+        const quantityCount = data.reduce((acc, item) => {
+            return acc + item.quantity
+        }, 0);
         this.setState((state) => {
             return {
                 ...state,
                 data: data ? this.cartDataAdapter(data) : [],
-                quantity: data?.length ?? 0,
+                quantity: quantityCount ?? 0,
             }
         })
     }
 
-    increaseQuantity() {
-        this.setState((state) => {
-            return {
-                ...state,
-                quantity: state.quantity + 1,
-            }
-        })
+    decreaseQuantity(evt) {
+        const data = this.state.data;
+        if (evt.target.closest('.minus-btn')) {
+            const productId = evt.target.dataset.productId;
+            const filteredData = data.map((item) => {
+                if (item.id == productId) {
+                    return {
+                        ...item,
+                        quantity: item.quantity - 1,
+                    }
+                };
+                return {
+                    ...item,
+                };
+            }).filter((item) => Boolean(item.quantity));
+            localStorageService.setItem(STORAGE_KEYS.cartData, filteredData);
+        };
     }
 
-    decreaseQuantity() {
-        this.setState((state) => {
-            return {
-                ...state,
-                quantity: state.quantity - 1,
-            }
-        })
+    increaseQuantity(evt) {
+        const data = this.state.data;
+        if (evt.target.closest('.plus-btn')) {
+            const productId = evt.target.dataset.productId;
+            const filteredData = data.map((item) => {
+                if (item.id == productId) {
+                    return {
+                        ...item,
+                        quantity: item.quantity + 1,
+                    }
+                };
+                return {
+                    ...item,
+                };
+            }).filter((item) => Boolean(item.quantity));
+            localStorageService.setItem(STORAGE_KEYS.cartData, filteredData);
+        };
     }
 
     changeQuantity(evt) {
-        if (evt.target.closest('.minus-btn')) {
-            this.decreaseQuantity();
-        };
-        if (evt.target.closest('.plus-btn')) {
-            this.increaseQuantity();
-        };
+        this.decreaseQuantity(evt);
+        this.increaseQuantity(evt);
+        const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+        const quantityCount = data.reduce((acc, item) => {
+            return acc + item.quantity
+        }, 0);
+        this.setState((state) => {
+            return {
+                ...state,
+                data: data,
+                quantity: quantityCount ?? 0,
+            }
+        })
     }
 
     componentDidMount() {
-        this.initializeData();
+
         this.addEventListener('click', this.changeQuantity);
+        this.initializeData();
     }
 
     componentWillUnmount() {
-        this.initializeData();
+
         this.removeEventListener('click', this.changeQuantity);
+        this.initializeData();
     }
 
     render() {
@@ -85,7 +117,7 @@ export class CartTable extends Component {
                     Shopping Cart
                 </h2>
                 <p class="cart__cart-items">
-                    2 Items
+                    ${this.state.quantity} Items
                 </p>
             </div>
             <table class="cart__cart-table">
@@ -113,9 +145,11 @@ export class CartTable extends Component {
                     </td>
                     <td>
                         <div class="cart__cart-table-row-count-wrapper">
-                            <button class="cart__cart-table-count-button minus-btn">-</button>
+                            <button class="cart__cart-table-count-button minus-btn"
+                            data-product-id="${item.id}">-</button>
                             <p class="cart__cart-table-count">${item.quantity}</p>
-                            <button class="cart__cart-table-count-button plus-btn">+</button>
+                            <button class="cart__cart-table-count-button plus-btn"
+                            data-product-id="${item.id}">+</button>
                         </div>
                     </td>
                     <td>

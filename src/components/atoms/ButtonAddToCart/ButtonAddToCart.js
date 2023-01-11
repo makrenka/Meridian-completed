@@ -41,14 +41,15 @@ export class ButtonAddToCart extends Component {
             })
             .finally(() => {
                 this.state.product.id = this.props.id;
+                this.state.product.quantity = 1;
                 this.toggleIsLoading();
             })
     }
 
     onClick(evt) {
         if (evt.target.closest('.product-main__product-section-options-form-btn')) {
-            const state = localStorageService.getItem(STORAGE_KEYS.cartData) ?? [];
-            localStorageService.setItem(STORAGE_KEYS.cartData, [...state, this.state.product]);
+            const data = localStorageService.getItem(STORAGE_KEYS.cartData) ?? [];
+            localStorageService.setItem(STORAGE_KEYS.cartData, [...data, this.state.product]);
         }
     }
 

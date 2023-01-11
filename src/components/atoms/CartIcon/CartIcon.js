@@ -15,10 +15,13 @@ export class CartIcon extends Component {
     countProducts = () => {
         this.setState((state) => {
             const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+            const quantityCount = data.reduce((acc, item) => {
+                return acc + item.quantity
+            }, 0);
             return {
                 ...state,
                 data: data,
-                quantity: data?.length ?? 0,
+                quantity: quantityCount ?? 0,
             }
         })
     }

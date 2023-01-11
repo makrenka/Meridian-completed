@@ -1,6 +1,8 @@
 import { Component } from "../../../core/Component/Component";
 import localStorageService from "../../../services/LocalStorageService";
 import { STORAGE_KEYS } from '../../../constants/localStorage';
+import { eventBus } from "../../../core/EventBus";
+import { appEvents } from "../../../constants/appEvents";
 
 export class CartTable extends Component {
     constructor() {
@@ -80,9 +82,29 @@ export class CartTable extends Component {
         };
     }
 
+    deleteItem(evt) {
+        const data = this.state.data;
+        if (evt.target.closest('.delete-cart-button')) {
+            const productId = evt.target.dataset.productId;
+            const filteredData = data.map((item) => {
+                if (item.id == productId) {
+                    return {
+                        ...item,
+                        quantity: 0,
+                    }
+                };
+                return {
+                    ...item,
+                };
+            }).filter((item) => Boolean(item.quantity));
+            localStorageService.setItem(STORAGE_KEYS.cartData, filteredData);
+        }
+    }
+
     changeQuantity(evt) {
         this.decreaseQuantity(evt);
         this.increaseQuantity(evt);
+        this.deleteItem(evt);
         const data = localStorageService.getItem(STORAGE_KEYS.cartData);
         const quantityCount = data.reduce((acc, item) => {
             return acc + item.quantity
@@ -93,17 +115,16 @@ export class CartTable extends Component {
                 data: data,
                 quantity: quantityCount ?? 0,
             }
-        })
+        });
+        eventBus.emit(appEvents.localStorage);
     }
 
     componentDidMount() {
-
         this.addEventListener('click', this.changeQuantity);
         this.initializeData();
     }
 
     componentWillUnmount() {
-
         this.removeEventListener('click', this.changeQuantity);
         this.initializeData();
     }
@@ -157,7 +178,8 @@ export class CartTable extends Component {
                     </td>
                     <td style="text-align: end;">
                         <button class="cart__cart-table-delete-btn">
-                            <img src="../../assets/images/icons/delete-cart-button.svg" alt="delete-cart-button">
+                            <img src="../../assets/images/icons/delete-cart-button.svg" alt="delete-cart-button"
+                                class="delete-cart-button"  data-product-id="${item.id}">
                         </button>
                     </td>
                 </tr>

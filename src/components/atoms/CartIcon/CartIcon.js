@@ -2,6 +2,8 @@ import { appRoutes } from "../../../constants/appRoutes";
 import { Component } from "../../../core/Component/Component";
 import localStorageService from "../../../services/LocalStorageService";
 import { STORAGE_KEYS } from '../../../constants/localStorage';
+import { eventBus } from "../../../core/EventBus";
+import { appEvents } from "../../../constants/appEvents";
 
 export class CartIcon extends Component {
     constructor() {
@@ -14,7 +16,7 @@ export class CartIcon extends Component {
 
     countProducts = () => {
         this.setState((state) => {
-            const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+            const data = localStorageService.getItem(STORAGE_KEYS.cartData) ?? [];
             const quantityCount = data.reduce((acc, item) => {
                 return acc + item.quantity
             }, 0);
@@ -28,10 +30,12 @@ export class CartIcon extends Component {
 
     componentDidMount() {
         this.countProducts();
+        eventBus.on(appEvents.localStorage, this.countProducts);
     }
 
     componentWillUnmount() {
         this.countProducts();
+        eventBus.off(appEvents.localStorage, this.countProducts)
     }
 
     render() {

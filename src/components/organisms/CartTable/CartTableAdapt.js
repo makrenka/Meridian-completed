@@ -1,6 +1,8 @@
 import { Component } from "../../../core/Component/Component";
 import localStorageService from "../../../services/LocalStorageService";
 import { STORAGE_KEYS } from '../../../constants/localStorage';
+import { eventBus } from "../../../core/EventBus";
+import { appEvents } from "../../../constants/appEvents";
 
 export class CartTableAdapt extends Component {
     constructor() {
@@ -15,9 +17,9 @@ export class CartTableAdapt extends Component {
         const cartData = data.map((item, _, arr) => {
             return {
                 ...item,
-                quantity: item.quantity
-                    ? item.quantity
-                    : arr.filter((subItem) => subItem.id === item.id).length,
+                quantity: arr.filter((subItem) => subItem.id === item.id).length > 1
+                    ? arr.filter((subItem) => subItem.id === item.id).length
+                    : item.quantity,
             }
         })
             .filter(
@@ -30,20 +32,100 @@ export class CartTableAdapt extends Component {
 
     initializeData() {
         const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+        const quantityCount = data.reduce((acc, item) => {
+            return acc + item.quantity
+        }, 0);
         this.setState((state) => {
             return {
                 ...state,
                 data: data ? this.cartDataAdapter(data) : [],
-                quantity: data?.length ?? 0,
+                quantity: quantityCount ?? 0,
             }
         })
     }
 
+    decreaseQuantity(evt) {
+        const data = this.state.data;
+        if (evt.target.closest('.minus-btn')) {
+            const productId = evt.target.dataset.productId;
+            const filteredData = data.map((item) => {
+                if (item.id == productId) {
+                    return {
+                        ...item,
+                        quantity: item.quantity - 1,
+                    }
+                };
+                return {
+                    ...item,
+                };
+            }).filter((item) => Boolean(item.quantity));
+            localStorageService.setItem(STORAGE_KEYS.cartData, filteredData);
+        };
+    }
+
+    increaseQuantity(evt) {
+        const data = this.state.data;
+        if (evt.target.closest('.plus-btn')) {
+            const productId = evt.target.dataset.productId;
+            const filteredData = data.map((item) => {
+                if (item.id == productId) {
+                    return {
+                        ...item,
+                        quantity: item.quantity + 1,
+                    }
+                };
+                return {
+                    ...item,
+                };
+            }).filter((item) => Boolean(item.quantity));
+            localStorageService.setItem(STORAGE_KEYS.cartData, filteredData);
+        };
+    }
+
+    deleteItem(evt) {
+        const data = this.state.data;
+        if (evt.target.closest('.delete-cart-button')) {
+            const productId = evt.target.dataset.productId;
+            const filteredData = data.map((item) => {
+                if (item.id == productId) {
+                    return {
+                        ...item,
+                        quantity: 0,
+                    }
+                };
+                return {
+                    ...item,
+                };
+            }).filter((item) => Boolean(item.quantity));
+            localStorageService.setItem(STORAGE_KEYS.cartData, filteredData);
+        }
+    }
+
+    changeQuantity(evt) {
+        this.decreaseQuantity(evt);
+        this.increaseQuantity(evt);
+        this.deleteItem(evt);
+        const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+        const quantityCount = data.reduce((acc, item) => {
+            return acc + item.quantity
+        }, 0);
+        this.setState((state) => {
+            return {
+                ...state,
+                data: data,
+                quantity: quantityCount ?? 0,
+            }
+        });
+        eventBus.emit(appEvents.localStorage);
+    }
+
     componentDidMount() {
+        this.addEventListener('click', this.changeQuantity);
         this.initializeData();
     }
 
     componentWillUnmount() {
+        this.removeEventListener('click', this.changeQuantity);
         this.initializeData();
     }
 
@@ -63,11 +145,14 @@ export class CartTableAdapt extends Component {
                     </div>
                     <div class="cart__adapt-buttons-wrapper">
                         <div class="cart__cart-table-row-count-wrapper">
-                            <button class="cart__cart-table-count-button">-</button>
+                            <button class="cart__cart-table-count-button minus-btn"
+                            data-product-id="${item.id}">-</button>
                             <p class="cart__cart-table-count">${item.quantity}</p>
-                            <button class="cart__cart-table-count-button">+</button>
+                            <button class="cart__cart-table-count-button plus-btn"
+                            data-product-id="${item.id}">+</button>
                         </div>
-                        <button class="cart__cart-table-delete-btn">
+                        <button class="cart__cart-table-delete-btn delete-cart-button"
+                        data-product-id="${item.id}">
                             Remove
                             <img src="../../assets/images/icons/cart-trash-btn.svg" alt="delete-cart-button">
                         </button>

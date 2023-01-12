@@ -1,8 +1,42 @@
 import { Component } from "../../../core/Component/Component";
+import localStorageService from "../../../services/LocalStorageService";
+import { STORAGE_KEYS } from '../../../constants/localStorage';
+import { eventBus } from "../../../core/EventBus";
+import { appEvents } from "../../../constants/appEvents";
 
 export class CartSummary extends Component {
+    constructor() {
+        super();
+        this.state = {
+            data: [],
+        }
+    }
+
+    getData = () => {
+        const data = localStorageService.getItem(STORAGE_KEYS.cartData);
+        this.setState((state) => {
+            return {
+                ...state,
+                data: data,
+            }
+        })
+    }
+
+    componentDidMount() {
+        this.getData();
+        eventBus.on(appEvents.localStorage, this.getData);
+    }
+
+    componentWillUnmount() {
+        this.getData();
+        eventBus.off(appEvents.localStorage, this.getData);
+    }
 
     render() {
+        const subtotal = this.state.data.reduce((acc, item) => {
+            return acc + Number(item.price) * item.quantity
+        }, 0);
+
         return `
         <form class="cart__summary">
             <h2 class="cart__summary-heading">
@@ -11,10 +45,10 @@ export class CartSummary extends Component {
             <div class="cart__summary-body">
                 <div class="cart__summary-body-subtotal-wrapper">
                     <p class="cart__summary-body-subtotal">Subtotal</p>
-                    <p class="cart__summary-body-subtotal-value">£5,000.00</p>
+                    <p class="cart__summary-body-subtotal-value">£${subtotal.toFixed(2)}</p>
                 </div>
                 <p class="cart__summary-body-tax">
-                    (includes £416.67 20% VAT)
+                    (includes £${(subtotal * 0.2).toFixed(2)} 20% VAT)
                 </p>
                 <div class="cart__summary-body-input">
                     <div class="cart__summary-body-input-wrapper">

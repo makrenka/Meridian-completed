@@ -35,7 +35,7 @@ export class CartIcon extends Component {
 
     componentWillUnmount() {
         this.countProducts();
-        eventBus.off(appEvents.localStorage, this.countProducts)
+        eventBus.off(appEvents.localStorage, this.countProducts);
     }
 
     render() {

@@ -22,14 +22,29 @@ export class CartSummary extends Component {
         })
     }
 
+    calcTotal = () => {
+        const shippingInput = [...this.querySelectorAll('.cart__summary-body-input-btn')];
+        const checkShipping = shippingInput.map((item) => {
+            if (item.checked && item.id == "standardShipping") {
+                return "0";
+            };
+            if (item.checked && item.id == "premiumShipping") {
+                return 118.8;
+            }
+        }).filter((item) => item)[0]
+        console.log(checkShipping)
+    }
+
     componentDidMount() {
         this.getData();
         eventBus.on(appEvents.localStorage, this.getData);
+        this.addEventListener("change", this.calcTotal);
     }
 
     componentWillUnmount() {
         this.getData();
         eventBus.off(appEvents.localStorage, this.getData);
+        this.removeEventListener("change", this.calcTotal);
     }
 
     render() {

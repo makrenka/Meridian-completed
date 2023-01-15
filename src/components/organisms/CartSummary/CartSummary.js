@@ -22,29 +22,14 @@ export class CartSummary extends Component {
         })
     }
 
-    calcTotal = () => {
-        const shippingInput = [...this.querySelectorAll('.cart__summary-body-input-btn')];
-        const checkShipping = shippingInput.map((item) => {
-            if (item.checked && item.id == "standardShipping") {
-                return "0";
-            };
-            if (item.checked && item.id == "premiumShipping") {
-                return 118.8;
-            }
-        }).filter((item) => item)[0]
-        console.log(checkShipping)
-    }
-
     componentDidMount() {
         this.getData();
         eventBus.on(appEvents.localStorage, this.getData);
-        this.addEventListener("change", this.calcTotal);
     }
 
     componentWillUnmount() {
         this.getData();
         eventBus.off(appEvents.localStorage, this.getData);
-        this.removeEventListener("change", this.calcTotal);
     }
 
     render() {
@@ -65,26 +50,9 @@ export class CartSummary extends Component {
                 <p class="cart__summary-body-tax">
                     (includes £${(subtotal * 0.2).toFixed(2)} 20% VAT)
                 </p>
-                <div class="cart__summary-body-input">
-                    <div class="cart__summary-body-input-wrapper">
-                        <input type="radio" value="standard-shipping" class="cart__summary-body-input-btn"
-                            name="shipping" id="standardShipping" checked>
-                        <label for="standardShipping" class="cart__summary-body-input-text">
-                            Standard Free Shipping
-                        </label>
-                    </div>
-                    <p class="cart__summary-body-input-price">£00.00</p>
-                </div>
-                <div class="cart__summary-body-input">
-                    <div class="cart__summary-body-input-wrapper">
-                        <input type="radio" value="premium-shipping" class="cart__summary-body-input-btn"
-                            name="shipping" id="premiumShipping">
-                        <label for="premiumShipping" class="cart__summary-body-input-text">
-                            Premium Shipping
-                        </label>
-                    </div>
-                    <p class="cart__summary-body-input-price">£118.80</p>
-                </div>
+
+                <mrd-cart-input-group></mrd-cart-input-group>
+
                 <div class="cart__summary-body-total-wrapper">
                     <p class="cart__summary-body-total">Total</p>
                     <p class="cart__summary-body-total-value">£5,000.00</p>

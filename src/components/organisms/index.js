@@ -26,4 +26,3 @@ export * from './HeaderMobileMenu';
 export * from './CommentForm';
 export * from './CartTable';
 export * from './CartSummary';
-export * from './CartInputGroup';

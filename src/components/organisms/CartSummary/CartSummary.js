@@ -9,6 +9,7 @@ export class CartSummary extends Component {
         super();
         this.state = {
             data: [],
+            option: 'option1',
         }
     }
 
@@ -18,6 +19,15 @@ export class CartSummary extends Component {
             return {
                 ...state,
                 data: data,
+            }
+        })
+    }
+
+    handleRadioChange = (evt) => {
+        this.setState((state) => {
+            return {
+                ...state,
+                option: evt.target.value,
             }
         })
     }
@@ -36,7 +46,7 @@ export class CartSummary extends Component {
         const subtotal = this.state.data.reduce((acc, item) => {
             return acc + Number(item.price) * item.quantity
         }, 0);
-
+        console.log(this.state.option)
         return `
         <form class="cart__summary">
             <h2 class="cart__summary-heading">
@@ -51,7 +61,40 @@ export class CartSummary extends Component {
                     (includes £${(subtotal * 0.2).toFixed(2)} 20% VAT)
                 </p>
 
-                <mrd-cart-input-group></mrd-cart-input-group>
+                <div class="cart__summary-body-input">
+                    <div class="cart__summary-body-input-wrapper">
+                        <input 
+                            type="radio" 
+                            value="option1" 
+                            class="cart__summary-body-input-btn"
+                            name="shipping" 
+                            id="standardShipping" 
+                            checked="${this.state.option == 'option1'}"
+                            onChange="${this.handleRadioChange()}"
+                        >
+                        <label for="standardShipping" class="cart__summary-body-input-text">
+                            Standard Free Shipping
+                        </label>
+                    </div>
+                    <p class="cart__summary-body-input-price">£00.00</p>
+                </div>
+                <div class="cart__summary-body-input">
+                    <div class="cart__summary-body-input-wrapper">
+                        <input 
+                            type="radio" 
+                            value="option2" 
+                            class="cart__summary-body-input-btn"
+                            name="shipping" 
+                            id="premiumShipping" 
+                            checked="${this.state.option == 'option2'}"
+                            onChange="${this.handleRadioChange()}"
+                        >
+                        <label for="premiumShipping" class="cart__summary-body-input-text">
+                            Premium Shipping
+                        </label>
+                    </div>
+                    <p class="cart__summary-body-input-price">£118.80</p>
+                </div>
 
                 <div class="cart__summary-body-total-wrapper">
                     <p class="cart__summary-body-total">Total</p>

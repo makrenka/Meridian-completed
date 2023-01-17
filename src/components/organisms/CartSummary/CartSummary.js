@@ -30,23 +30,26 @@ export class CartSummary extends Component {
                 option: evt.target.value,
             }
         })
+
     }
 
     componentDidMount() {
         this.getData();
         eventBus.on(appEvents.localStorage, this.getData);
+        this.addEventListener("change", this.handleRadioChange);
     }
 
     componentWillUnmount() {
         this.getData();
         eventBus.off(appEvents.localStorage, this.getData);
+        this.removeEventListener("change", this.handleRadioChange)
     }
 
     render() {
         const subtotal = this.state.data.reduce((acc, item) => {
             return acc + Number(item.price) * item.quantity
         }, 0);
-        console.log(this.state.option)
+
         return `
         <form class="cart__summary">
             <h2 class="cart__summary-heading">
@@ -69,8 +72,6 @@ export class CartSummary extends Component {
                             class="cart__summary-body-input-btn"
                             name="shipping" 
                             id="standardShipping" 
-                            checked="${this.state.option == 'option1'}"
-                            onChange="${this.handleRadioChange()}"
                         >
                         <label for="standardShipping" class="cart__summary-body-input-text">
                             Standard Free Shipping
@@ -86,8 +87,6 @@ export class CartSummary extends Component {
                             class="cart__summary-body-input-btn"
                             name="shipping" 
                             id="premiumShipping" 
-                            checked="${this.state.option == 'option2'}"
-                            onChange="${this.handleRadioChange()}"
                         >
                         <label for="premiumShipping" class="cart__summary-body-input-text">
                             Premium Shipping

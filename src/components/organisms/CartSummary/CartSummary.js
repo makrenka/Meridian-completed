@@ -9,7 +9,8 @@ export class CartSummary extends Component {
         super();
         this.state = {
             data: [],
-            option: 'option1',
+            value: '',
+            checked: true,
         }
     }
 
@@ -23,32 +24,37 @@ export class CartSummary extends Component {
         })
     }
 
-    handleRadioChange = (evt) => {
-        this.setState((state) => {
-            return {
-                ...state,
-                option: evt.target.value,
-            }
-        })
-
+    changeCheckedInput(evt) {
+        evt.target.closest('.cart__summary-body-input-btn');
+        if (evt.target.checked) {
+            this.setState((state) => {
+                return {
+                    ...state,
+                    value: evt.target.value,
+                    checked: !this.state.checked,
+                }
+            })
+        };
     }
 
     componentDidMount() {
         this.getData();
         eventBus.on(appEvents.localStorage, this.getData);
-        this.addEventListener("change", this.handleRadioChange);
+        this.addEventListener('change', this.changeCheckedInput);
     }
 
     componentWillUnmount() {
         this.getData();
         eventBus.off(appEvents.localStorage, this.getData);
-        this.removeEventListener("change", this.handleRadioChange)
+        this.removeEventListener('change', this.changeCheckedInput);
     }
 
     render() {
         const subtotal = this.state.data.reduce((acc, item) => {
             return acc + Number(item.price) * item.quantity
         }, 0);
+        const isChecked = this.state.checked ? 'checked' : '';
+        const isNotChecked = this.state.checked ? '' : 'checked';
 
         return `
         <form class="cart__summary">
@@ -68,10 +74,11 @@ export class CartSummary extends Component {
                     <div class="cart__summary-body-input-wrapper">
                         <input 
                             type="radio" 
-                            value="option1" 
+                            value="0" 
                             class="cart__summary-body-input-btn"
                             name="shipping" 
                             id="standardShipping" 
+                            ${isChecked}
                         >
                         <label for="standardShipping" class="cart__summary-body-input-text">
                             Standard Free Shipping
@@ -83,10 +90,11 @@ export class CartSummary extends Component {
                     <div class="cart__summary-body-input-wrapper">
                         <input 
                             type="radio" 
-                            value="option2" 
+                            value="118.8" 
                             class="cart__summary-body-input-btn"
                             name="shipping" 
                             id="premiumShipping" 
+                            ${isNotChecked}
                         >
                         <label for="premiumShipping" class="cart__summary-body-input-text">
                             Premium Shipping
@@ -97,7 +105,7 @@ export class CartSummary extends Component {
 
                 <div class="cart__summary-body-total-wrapper">
                     <p class="cart__summary-body-total">Total</p>
-                    <p class="cart__summary-body-total-value">£5,000.00</p>
+                    <p class="cart__summary-body-total-value">£${(subtotal + Number(this.state.value)).toFixed(2)}</p>
                 </div>
                 <button class="cart__summary-body-button">Proceed To Checkout</button>
                 <div class="cart__summary-body-pays">

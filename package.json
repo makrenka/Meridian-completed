@@ -10,7 +10,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.build.config.js",
-    "start": "webpack serve --open --config webpack.dev.config.js"
+    "start": "webpack serve --open --config webpack.dev.config.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -48,7 +50,9 @@
     "bootstrap": "^5.2.3",
     "dotenv-webpack": "^8.0.1",
     "firebase": "^9.15.0",
+    "gh-pages": "^5.0.0",
     "normalize.css": "^8.0.1",
     "swiper": "^8.4.5"
-  }
+  },
+  "homepage": "https://makrenka.github.io/Meridian-completed"
 }
